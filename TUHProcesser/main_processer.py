@@ -4,7 +4,7 @@ from classes.data import Data
 import csv
 
 # Path where list of recordings is stored
-out_path = Path('/users/sista/mvanmarc/Documents/Doctoraat/12. Python/Challenge16Feb2025/TUHProcesser/dataset_lists')
+out_path = Path('dataset_lists')
 
 with open(os.path.join(out_path, 'recordings.tsv'), 'r', newline='') as tsvfile:
     reader = csv.reader(tsvfile, delimiter='\t', lineterminator='\n')
