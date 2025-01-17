@@ -1,6 +1,6 @@
 import os
 from pathlib import Path
-from TUHProcesser.classes.recording_reader import Recording_Reader
+from TUHProcesser.loaders.recording_reader import Recording_Reader
 import csv
 
 # Path where list of recordings is stored

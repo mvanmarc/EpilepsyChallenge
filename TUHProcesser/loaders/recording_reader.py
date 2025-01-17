@@ -1,7 +1,7 @@
 import os
 import pyedflib
 import warnings
-from classes.utils import pre_process, standardizeEEGChannelName, extractMontage
+from TUHProcesser.loaders.utils_preprocessing import pre_process, standardizeEEGChannelName, extractMontage
 import numpy as np
 
 class Recording_Reader:
