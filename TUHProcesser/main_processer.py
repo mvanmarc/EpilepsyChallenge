@@ -1,6 +1,6 @@
 import os
 from pathlib import Path
-from classes.data import Data
+from TUHProcesser.classes.recording_reader import Recording_Reader
 import csv
 
 # Path where list of recordings is stored
@@ -15,7 +15,7 @@ with open(os.path.join(out_path, 'recordings.tsv'), 'r', newline='') as tsvfile:
         path = row[-1]
 
         # Remove non-EEG channels and standardize the channel names
-        data = Data.loadData(path)
+        data = Recording_Reader.loadData(path)
 
         # Preprocess the recording
         data.preprocessData()
