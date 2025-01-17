@@ -28,7 +28,7 @@ def getSubEDFFiles(path: Path) -> list:
         return []
 
 # Specify paths
-out_path = Path('/users/sista/mvanmarc/Documents/Doctoraat/12. Python/Challenge16Feb2025/TUHProcesser/dataset_lists') # Path for output files
+out_path = Path('dataset_lists') # Path for output files
 data_path = Path('/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg/v2.0.1/edf/') # Path of data files
 
 # Construct and save list of patient groups, subject ids and recordings

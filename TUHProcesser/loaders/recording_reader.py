@@ -4,7 +4,7 @@ import warnings
 from classes.utils import pre_process, standardizeEEGChannelName, extractMontage
 import numpy as np
 
-class Data:
+class Recording_Reader:
     def __init__(
         self,
         data,

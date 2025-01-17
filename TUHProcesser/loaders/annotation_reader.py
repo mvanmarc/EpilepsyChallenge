@@ -2,7 +2,7 @@ import os
 from typing import List, Tuple
 
 
-class Annotation:
+class Annotation_Reader:
     """ Class to store seizure annotations as read in the tsv annotation files from the SeizeIT2 BIDS dataset. """
     def __init__(
         self,
