@@ -1,6 +1,7 @@
+import copy
 import os
 from pathlib import Path
-from TUHProcesser.loaders.recording_reader import Recording_Reader
+from loaders.recording_reader import Recording_Reader
 import csv
 import argparse
 from tqdm import tqdm
@@ -9,35 +10,40 @@ from joblib import Parallel, delayed
 
 def process_one_subject(path: str)-> bool:
     """ Process one subject's EDF recordings. """
-    data = Recording_Reader.loadData(path)
 
-    # Preprocess the recording
-    data.preprocessData()
+    try:
+        data = Recording_Reader.loadData(path)
+        data.preprocessData()
+        data.save_hdf5()
 
-    data.save_hdf5()
-
-    # Channel configurations and sampling frequency can vary !!
-    # print('Sampling Frequency:', data.getFs())
-    # print('Montage:', data.getMontage())
+    except Exception as e:
+        #save all such errors in a common file
+        with open('error_file.txt', 'a') as f:
+            f.write(path + '\n')
+            f.write(str(e) + '\n')
+        return False
     return True # Success
 
 #main
 if __name__ == '__main__':
 
     parser = argparse.ArgumentParser(description='Heatmap of Tuning')
-    parser.add_argument('--rec_path', default="dataset_lists/recordings.tsv", type=str, help='Path to the recordings.tsv file')
+    parser.add_argument('--rec_path', default="./dataset_lists/recordings.tsv", type=str, help='Path to the recordings.tsv file')
     parser.add_argument('--parallel', action='store_true', help='Parallel processing')
     args = parser.parse_args()
 
     with open(Path(args.rec_path), 'r', newline='') as tsvfile:
         reader = csv.reader(tsvfile, delimiter='\t', lineterminator='\n')
-        next(reader)
-        print(args.parallel)
+        next(reader) # Skip the header
+        reader = list(reader)
+
         if args.parallel:
-            Parallel(n_jobs=-1)(delayed(process_one_subject)(row[-1]) for row in tqdm(reader))
+            #catch boolen values to see if all were successful
+            success = Parallel(n_jobs=-1)(delayed(process_one_subject)(row[-1]) for i, row in tqdm(enumerate(reader), total=len(reader))) #run the first 100 recordings
+            print("Successful cases: ", success.count(True))
+            print("Failed cases: ", success.count(False))
+            # Parallel(n_jobs=-1)(delayed(process_one_subject)(row[-1]) for row in tqdm(reader))
         else:
-            for id, row in tqdm(enumerate(reader)):
-                path = row[-1]
-                process_one_subject(path)
-                if id == 10:
-                    break
+            for i, row in tqdm(enumerate(reader)):
+                process_one_subject(row[-1])
+                if i == 10: break

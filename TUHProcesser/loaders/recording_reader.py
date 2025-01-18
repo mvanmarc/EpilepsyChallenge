@@ -1,7 +1,7 @@
 import os
 import pyedflib
 import warnings
-from TUHProcesser.loaders.utils_preprocessing import pre_process, standardizeEEGChannelName, extractMontage
+from loaders.utils_preprocessing import pre_process, standardizeEEGChannelName, extractMontage
 import numpy as np
 import h5py
 
@@ -136,5 +136,6 @@ class Recording_Reader:
             for i in range(len(self.channels)):
                 f.create_dataset(self.channels[i], data=self.data[i])
             f.create_dataset('fs', data=self.fs)
+            f.create_dataset('channel_names', data=self.channels)
             f.create_dataset('montage', data=self.montage)
             f.create_dataset('rec_path', data=self.rec_path)
