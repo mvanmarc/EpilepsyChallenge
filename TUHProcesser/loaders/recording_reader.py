@@ -3,6 +3,8 @@ import pyedflib
 import warnings
 from TUHProcesser.loaders.utils_preprocessing import pre_process, standardizeEEGChannelName, extractMontage
 import numpy as np
+import h5py
+
 
 class Recording_Reader:
     def __init__(
@@ -127,3 +129,12 @@ class Recording_Reader:
             montage,
             rec_path
         )
+
+    def save_hdf5(self):
+        """ Save the recording as an HDF5 file """
+        with h5py.File(self.rec_path[:-4]+'.h5', 'w') as f:
+            for i in range(len(self.channels)):
+                f.create_dataset(self.channels[i], data=self.data[i])
+            f.create_dataset('fs', data=self.fs)
+            f.create_dataset('montage', data=self.montage)
+            f.create_dataset('rec_path', data=self.rec_path)
