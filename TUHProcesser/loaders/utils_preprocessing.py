@@ -27,32 +27,31 @@ def isAnnotationAvailable(path: Path) -> bool:
     ann_path = path[:-4] + ".csv_bi"
     return os.path.isfile(ann_path)
 
-def pre_process(ch_data, fs_data, american = False):
+def pre_process(ch_data, fs_data, fs_resamp = 200, 
+                butter_order = 4, fc_low = 0.5, fc_high = 100):
     """ Resample and filter given channel """
+    
+    ## Filtering : 0.5 - 100 Hz
+
+    b, a = signal.butter(butter_order, fc_low/(fs_data/2), 'high')
+    ch_data = signal.filtfilt(b, a, ch_data)
+
+    b, a = signal.butter(butter_order, fc_high/(fs_data/2), 'low')
+    ch_data = signal.filtfilt(b, a, ch_data)
+
+    ## Powerline-interference filtering : 50 and 60 Hz
+
+    b, a = signal.butter(butter_order, [59.5/(fs_data/2), 60.5/(fs_data/2)], 'bandstop')
+    ch_data = signal.filtfilt(b, a, ch_data)
+    
+    b, a = signal.butter(butter_order, [49.5/(fs_data/2), 50.5/(fs_data/2)], 'bandstop')
+    ch_data = signal.filtfilt(b, a, ch_data)
+
 
     ## Resampling to 200 Hz
 
-    fs_resamp = 200
-
     if fs_resamp != fs_data:
         ch_data = signal.resample(ch_data, int(fs_resamp*len(ch_data)/fs_data))
-    
-    ## Filtering : 0.5 - 60 Hz
-
-    b, a = signal.butter(4, 0.5/(fs_resamp/2), 'high')
-    ch_data = signal.filtfilt(b, a, ch_data)
-
-    b, a = signal.butter(4, 60/(fs_resamp/2), 'low')
-    ch_data = signal.filtfilt(b, a, ch_data)
-
-    ## Powerline-interference filtering : 50 or 60 Hz
-
-    if american: # 60 Hz Notch
-        b, a = signal.butter(4, [59.5/(fs_resamp/2), 60.5/(fs_resamp/2)], 'bandstop')
-        ch_data = signal.filtfilt(b, a, ch_data)
-    else: # 50 Hz Notch
-        b, a = signal.butter(4, [49.5/(fs_resamp/2), 50.5/(fs_resamp/2)], 'bandstop')
-        ch_data = signal.filtfilt(b, a, ch_data)
 
     return ch_data, fs_resamp
 
@@ -85,9 +84,9 @@ def mask2eventList(mask, fs):
     return events
 
 def standardizeEEGChannelName(name):
-    """ Standardize the EEG channel names from "EEG F1-REF" to "F1" """
-    return name.split(" ")[1].split("-")[0]
-
+    """ Standardize the EEG channel names from "EEG FP1-REF" to "Fp1" """
+    return name.lower().split(" ")[1].split("-")[0]
+    
 def extractMontage(name):
     """ Extract the montage (given a channel name) """
     return name.split(" ")[1].split("-")[1]

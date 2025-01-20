@@ -8,7 +8,7 @@ class Annotation_Reader:
     """ Class to store seizure annotations as read in the csv annotation files from the TUH dataset. """
     def __init__(
         self,
-        events: List[List[int, int]],
+        events: List[List[int]],
         annotation_path: str,
         total_duration: float
     ):
@@ -27,6 +27,9 @@ class Annotation_Reader:
 
     def getEvents(self):
         return self.events
+    
+    def getDuration(self):
+        return self.total_duration
 
     @classmethod
     def loadAnnotation(
@@ -60,8 +63,8 @@ class Annotation_Reader:
             dur
         )
 
-    def save_hdf5(self):
-        """ Save the annotation as an HDF5 file """
-        with h5py.File(self.annotation_path[:-7]+'_annotation.h5', 'w') as f:
-            f.create_dataset('events', data=self.events)
-            f.create_dataset('duration', data=self.total_duration)
+    # def save_hdf5(self):
+    #     """ Save the annotation as an HDF5 file """
+    #     with h5py.File(self.annotation_path[:-7]+'_annotation.h5', 'w') as f:
+    #         f.create_dataset('events', data=self.events)
+    #         f.create_dataset('duration', data=self.total_duration)

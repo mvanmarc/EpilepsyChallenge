@@ -4,7 +4,7 @@ import warnings
 from loaders.utils_preprocessing import pre_process, standardizeEEGChannelName, extractMontage
 import numpy as np
 import h5py
-
+from loaders.annotation_reader import Annotation_Reader
 
 class Recording_Reader:
     def __init__(
@@ -37,7 +37,8 @@ class Recording_Reader:
         else:
             self.fs = fs[0]
 
-    def preprocessData(self, american = False):
+    def preprocessData(self, fs_resamp = 200, 
+                butter_order = 4, fc_low = 0.5, fc_high = 100):
         """ Resample and filter the channels in this recording.
         If the preprocessing has already happened, then the channels are not affected. """
 
@@ -48,7 +49,8 @@ class Recording_Reader:
         # Resample and filter the channels
         res = []
         for i in range(len(self.getChannelNames())):
-            tmp, newfs = pre_process(self.getChannel(i), self.getFs(), american)
+            tmp, newfs = pre_process(self.getChannel(i), self.getFs(), 
+                                     fs_resamp, butter_order, fc_low, fc_high)
             res.append(tmp)
         self.fs = newfs
         self.data = res
@@ -130,7 +132,7 @@ class Recording_Reader:
             rec_path
         )
 
-    def save_hdf5(self):
+    def save_hdf5(self, annotation_reader: Annotation_Reader):
         """ Save the recording as an HDF5 file """
         with h5py.File(self.rec_path[:-4]+'.h5', 'w') as f:
             for i in range(len(self.channels)):
@@ -139,3 +141,5 @@ class Recording_Reader:
             f.create_dataset('channel_names', data=self.channels)
             f.create_dataset('montage', data=self.montage)
             f.create_dataset('rec_path', data=self.rec_path)
+            f.create_dataset('events', data=annotation_reader.getEvents())
+            f.create_dataset('duration', data=annotation_reader.getDuration())
