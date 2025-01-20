@@ -8,7 +8,7 @@ class Annotation_Reader:
     """ Class to store seizure annotations as read in the csv annotation files from the TUH dataset. """
     def __init__(
         self,
-        events: List[Tuple[int, int]],
+        events: List[List[int, int]],
         annotation_path: str,
         total_duration: float
     ):

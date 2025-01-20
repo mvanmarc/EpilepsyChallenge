@@ -2,35 +2,13 @@ from pathlib import Path
 import os
 import csv
 from tqdm import tqdm
+from loaders.utils_preprocessing import getSubFolders, getSubFiles, isAnnotationAvailable
 
 #########################################################
 # Script to create the list of patients/recordings/edfs #
 #########################################################
 
 # Example of path: /esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaaac/s001_2002/02_tcp_le/aaaaaaac_s001_t000.edf
-
-def getSubFolders(path: Path) -> list:
-    """ Get list of all subfolders in a given folder """
-    try:
-        res = [name for name in os.listdir(path) if os.path.isdir(os.path.join(path,name))]
-        return sorted(res)
-    except Exception as exc:
-        print(exc)
-        return []
-
-def getSubEDFFiles(path: Path) -> list:
-    """ Get list of all EDF files (.edf) in a given folder """
-    try:
-        res = [name for name in os.listdir(path) if os.path.isfile(os.path.join(path,name)) and name[-4:] == ".edf"]
-        return sorted(res)
-    except Exception as exc:
-        print(exc)
-        return []
-    
-def isAnnotationAvailable(path: Path) -> bool:
-    """ Check whether a given EDF file has an annotation file available. """
-    ann_path = path[:-4] + ".csv_bi"
-    return os.path.isfile(ann_path)
 
 # Specify paths
 out_path = Path('dataset_lists') # Path for output files
@@ -55,7 +33,7 @@ with open(os.path.join(out_path, 'recordings.tsv'), 'w', newline='') as tsvfile_
             for sess in sessions:
                 monts = getSubFolders(os.path.join(data_path,sub,sess))
                 for mont in monts:
-                    recs = getSubEDFFiles(os.path.join(data_path,sub,sess, mont))
+                    recs = getSubFiles(os.path.join(data_path,sub,sess, mont), ".edf")
                     for rec in recs:
                         rec_path = os.path.join(data_path,sub,sess, mont, rec)
                         writer_recs.writerow([sub, sess, mont, rec, rec_path])

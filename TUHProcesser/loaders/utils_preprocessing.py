@@ -1,6 +1,31 @@
 from scipy import signal
 import numpy as np
 import matplotlib.pyplot as plt
+import os
+from pathlib import Path
+
+def getSubFolders(path: Path) -> list:
+    """ Get list of all subfolders in a given folder """
+    try:
+        res = [name for name in os.listdir(path) if os.path.isdir(os.path.join(path,name))]
+        return sorted(res)
+    except Exception as exc:
+        print(exc)
+        return []
+
+def getSubFiles(path: Path, type:str) -> list:
+    """ Get list of all EDF files (.edf) in a given folder """
+    try:
+        res = [name for name in os.listdir(path) if os.path.isfile(os.path.join(path,name)) and name[-len(type):] == type]
+        return sorted(res)
+    except Exception as exc:
+        print(exc)
+        return []
+    
+def isAnnotationAvailable(path: Path) -> bool:
+    """ Check whether a given EDF file has an annotation file available. """
+    ann_path = path[:-4] + ".csv_bi"
+    return os.path.isfile(ann_path)
 
 def pre_process(ch_data, fs_data, american = False):
     """ Resample and filter given channel """
