@@ -2,6 +2,7 @@ import copy
 import os
 from pathlib import Path
 from loaders.recording_reader import Recording_Reader
+from loaders.annotation_reader import Annotation_Reader
 import csv
 import argparse
 from tqdm import tqdm
@@ -15,6 +16,8 @@ def process_one_subject(path: str)-> bool:
         data = Recording_Reader.loadData(path)
         data.preprocessData()
         data.save_hdf5()
+        annotation = Annotation_Reader.loadAnnotation(path)
+        annotation.save_hdf5()
 
     except Exception as e:
         #save all such errors in a common file
