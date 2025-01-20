@@ -12,7 +12,7 @@ from loaders.utils_preprocessing import getSubFolders, getSubFiles, isAnnotation
 
 # Specify paths
 out_path = Path('dataset_lists') # Path for output files
-data_path = Path('/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train') # Path of data files
+data_path = Path('/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf') # Path of data files
 
 # Construct and save list subject ids and recordings
 with open(os.path.join(out_path, 'recordings.tsv'), 'w', newline='') as tsvfile_recs:
@@ -20,25 +20,26 @@ with open(os.path.join(out_path, 'recordings.tsv'), 'w', newline='') as tsvfile_
     writer_recs.writerow(["group_id", "subject_id", "session","montage", "recording", "path"])
     with open(os.path.join(out_path, 'subject_ids.tsv'), 'w', newline='') as tsvfile_subs:
         writer_subs = csv.writer(tsvfile_subs, delimiter='\t', lineterminator='\n')
-        writer_subs.writerow(["subject_id"])
+        writer_subs.writerow(["Set", "subject_id"])
 
-        # Get list of all patients
-        sub_ids = getSubFolders(data_path)
-        writer_subs.writerows([[x] for x in sub_ids])
+        for grp in ["dev", "eval","train"]:
+            # Get list of all patients
+            sub_ids = getSubFolders(os.path.join(data_path, grp))
+            writer_subs.writerows([[grp, x] for x in sub_ids])
 
-        # Get list of all recordings
-        print("Extract each recording for each out of", len(sub_ids),"patients:")
-        for sub in tqdm(sub_ids):
-            sessions = getSubFolders(os.path.join(data_path,sub))
-            for sess in sessions:
-                monts = getSubFolders(os.path.join(data_path,sub,sess))
-                for mont in monts:
-                    recs = getSubFiles(os.path.join(data_path,sub,sess, mont), ".edf")
-                    for rec in recs:
-                        rec_path = os.path.join(data_path,sub,sess, mont, rec)
-                        writer_recs.writerow([sub, sess, mont, rec, rec_path])
-                        if not isAnnotationAvailable(rec_path):
-                            print("Annotation not found of recording:", rec_path)
+            # Get list of all recordings
+            print("Extract each recording for each out of", len(sub_ids),"patients:")
+            for sub in tqdm(sub_ids):
+                sessions = getSubFolders(os.path.join(data_path, grp,sub))
+                for sess in sessions:
+                    monts = getSubFolders(os.path.join(data_path, grp,sub,sess))
+                    for mont in monts:
+                        recs = getSubFiles(os.path.join(data_path, grp,sub,sess, mont), ".edf")
+                        for rec in recs:
+                            rec_path = os.path.join(data_path, grp,sub,sess, mont, rec)
+                            writer_recs.writerow([grp, sub, sess, mont, rec, rec_path])
+                            if not isAnnotationAvailable(rec_path):
+                                print("Annotation not found of recording:", rec_path)
 
 
 # with h5py.File(os.path.join(config.save_dir, 'predictions', name, rec[0] + '_' + rec[1] + '_preds.h5'), 'w') as f:
