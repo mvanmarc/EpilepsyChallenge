@@ -1,7 +1,5 @@
-import os
-from typing import List, Tuple
+from typing import List
 import pandas as pd
-import h5py
 import csv
 
 class Annotation_Reader:
