@@ -3,9 +3,10 @@ from pathlib import Path
 import os
 from tqdm import tqdm
 
-data_path = Path('/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg/v2.0.1/edf') # Path of data files
+data_path = Path('/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf') # Path of data files
 groupids = getSubFolders(data_path)
-for grp in tqdm(groupids):
+for grp in (groupids):
+    print("Busy removing files in "+grp+" folder ...")
     sub_ids = getSubFolders(os.path.join(data_path, grp))
     for sub in tqdm(sub_ids):
         sessions = getSubFolders(os.path.join(data_path, grp,sub))

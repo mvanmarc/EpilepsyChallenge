@@ -1,6 +1,7 @@
 from loaders.annotation_reader import Annotation_Reader
 from loaders.recording_reader import Recording_Reader
 import numpy as np
+from loaders.utils_preprocessing import mask2eventList
 
 class Checker:
 
@@ -42,20 +43,43 @@ class Checker:
         for i in range(len(channels)):
             if channels[i] in self.minimumChannels:
                 ch = np.array(recording.getChannel(i))
-                if np.sum(np.diff(ch) == 0)>len(ch)/2:
-                    self.lastMsg = "More than half of the recording stays the same value: "+ str(np.sum(np.diff(ch) == 0)/len(ch))
+                diffs = np.diff(ch) == 0
+                evs = mask2eventList(diffs, recording.getFs())
+                maxdur = 0
+                for ev in evs:
+                    dur = ev[1]-ev[0]
+                    if dur > 0 :
+                        maxdur = dur 
+                if maxdur > 1:
+                    self.lastMsg = "More than 1 contiguous second of the recording stays the same value: " + channels[i]+" "+str(maxdur)+" seconds."
                     return False
+        for i in range(len(channels)):
+            for j in range(i+1,len(channels)):
+                if channels[i] in self.minimumChannels and channels[j] in self.minimumChannels:
+                    ch1 = np.array(recording.getChannel(i))
+                    ch2 = np.array(recording.getChannel(j))
+                    diffs = np.diff(ch1-ch2) == 0
+                    evs = mask2eventList(diffs, recording.getFs())
+                    maxdur = 0
+                    for ev in evs:
+                        dur = ev[1]-ev[0]
+                        if dur > 0 :
+                            maxdur = dur 
+                    if maxdur > 1:
+                        self.lastMsg = "More than 1 contiguous second of the recording stays the same value: "+channels[i]+" - "+channels[j]+" "+str(maxdur)+" seconds."
+                        return False
         return True
     
-    # def _isReferenceMontage(self, recording: Recording_Reader, annotation: Annotation_Reader):
-    #     if recording.getMontage().lower() != "ref" and recording.getMontage().lower() != "avg" :
-    #                 self.lastMsg = "Not in a referential montage: "+ recording.getMontage()
-    #                 return False
-    #     return True
+    def _isReferenceMontage(self, recording: Recording_Reader, annotation: Annotation_Reader):
+        if recording.getMontage().lower() != "ref" and recording.getMontage().lower() != "avg" :
+                    self.lastMsg = "Not in a referential montage: "+ recording.getMontage()
+                    return False
+        return True
     
     def __call__(self, recording: Recording_Reader, annotation: Annotation_Reader):
         checkFunctions = [self._isAnnotationValid,
                           self._allChannelsPresent,
                           self._channelsNotShort,
-                          self._channelsNotEmpty]
+                          self._channelsNotEmpty,
+                          self._isReferenceMontage]
         return all([func(recording, annotation) for func in checkFunctions])
