@@ -1,0 +1,1652 @@
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaabep/s001_2003/02_tcp_le/aaaaabep_s001_t001.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaadkb/s010_2016/01_tcp_ar/aaaaadkb_s010_t001.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'a1', 'a2', 'cz', 'ekg1']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaaayf/s001_2003/02_tcp_le/aaaaaayf_s001_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaagbf/s004_2015/01_tcp_ar/aaaaagbf_s004_t001.edf
+More than 1 contiguous second of the recording stays the same value: fp1 - fp2 13.94921875 seconds.
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaacqc/s001_2004/02_tcp_le/aaaaacqc_s001_t001.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaaayf/s002_2003/02_tcp_le/aaaaaayf_s002_t001.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaaazz/s001_2003/02_tcp_le/aaaaaazz_s001_t001.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaaazz/s002_2006/02_tcp_le/aaaaaazz_s002_t001.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaabep/s001_2003/02_tcp_le/aaaaabep_s001_t002.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaaayf/s001_2003/02_tcp_le/aaaaaayf_s001_t001.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaahie/s008_2014/01_tcp_ar/aaaaahie_s008_t001.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1', 'a1', 'a2']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaahie/s010_2014/03_tcp_ar_a/aaaaahie_s010_t002.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaaajy/s004_2003/02_tcp_le/aaaaaajy_s004_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaabxe/s001_2003/02_tcp_le/aaaaabxe_s001_t001.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaaajy/s001_2003/02_tcp_le/aaaaaajy_s001_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaagdr/s002_2007/02_tcp_le/aaaaagdr_s002_t002.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaacqc/s001_2004/02_tcp_le/aaaaacqc_s001_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaahie/s007_2014/01_tcp_ar/aaaaahie_s007_t005.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1', 'a1', 'a2']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaahie/s007_2014/01_tcp_ar/aaaaahie_s007_t008.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1', 'a1', 'a2']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaahie/s007_2014/01_tcp_ar/aaaaahie_s007_t007.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1', 'a1', 'a2']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaahie/s007_2014/01_tcp_ar/aaaaahie_s007_t009.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1', 'a1', 'a2']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaahie/s007_2014/01_tcp_ar/aaaaahie_s007_t010.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1', 'a1', 'a2']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaahie/s007_2014/01_tcp_ar/aaaaahie_s007_t003.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1', 'a1', 'a2']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaahie/s007_2014/01_tcp_ar/aaaaahie_s007_t014.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1', 'a1', 'a2']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaahie/s007_2014/01_tcp_ar/aaaaahie_s007_t001.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1', 'a1', 'a2']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaahie/s016_2015/03_tcp_ar_a/aaaaahie_s016_t000.edf
+More than 1 contiguous second of the recording stays the same value: fp1 - fp2 5.69921875 seconds.
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaaayf/s002_2003/02_tcp_le/aaaaaayf_s002_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaahie/s007_2014/01_tcp_ar/aaaaahie_s007_t004.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1', 'a1', 'a2']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaaclc/s001_2004/02_tcp_le/aaaaaclc_s001_t001.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaadkj/s001_2005/02_tcp_le/aaaaadkj_s001_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaagdr/s002_2007/02_tcp_le/aaaaagdr_s002_t003.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaahie/s007_2014/01_tcp_ar/aaaaahie_s007_t006.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1', 'a1', 'a2']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaahie/s007_2014/01_tcp_ar/aaaaahie_s007_t002.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1', 'a1', 'a2']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaadkb/s001_2005/02_tcp_le/aaaaadkb_s001_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaacyi/s001_2004/02_tcp_le/aaaaacyi_s001_t001.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaahie/s010_2014/03_tcp_ar_a/aaaaahie_s010_t000.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaacqc/s002_2004/02_tcp_le/aaaaacqc_s002_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaahie/s008_2014/01_tcp_ar/aaaaahie_s008_t000.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1', 'a1', 'a2']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaafjv/s001_2006/02_tcp_le/aaaaafjv_s001_t001.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaahie/s010_2014/03_tcp_ar_a/aaaaahie_s010_t001.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaahie/s007_2014/01_tcp_ar/aaaaahie_s007_t012.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1', 'a1', 'a2']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaahie/s007_2014/01_tcp_ar/aaaaahie_s007_t013.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1', 'a1', 'a2']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaaict/s001_2008/02_tcp_le/aaaaaict_s001_t001.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaaict/s001_2008/02_tcp_le/aaaaaict_s001_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaagus/s001_2008/02_tcp_le/aaaaagus_s001_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaahie/s007_2014/01_tcp_ar/aaaaahie_s007_t011.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1', 'a1', 'a2']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaahie/s022_2016/01_tcp_ar/aaaaahie_s022_t003.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1', 'a1', 'a2']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaahie/s022_2016/01_tcp_ar/aaaaahie_s022_t005.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1', 'a1', 'a2']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaahie/s022_2016/01_tcp_ar/aaaaahie_s022_t001.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1', 'a1', 'a2']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaahie/s022_2016/01_tcp_ar/aaaaahie_s022_t000.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1', 'a1', 'a2']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaahie/s022_2016/01_tcp_ar/aaaaahie_s022_t002.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1', 'a1', 'a2']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaahie/s022_2016/01_tcp_ar/aaaaahie_s022_t004.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1', 'a1', 'a2']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaahie/s022_2016/01_tcp_ar/aaaaahie_s022_t006.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1', 'a1', 'a2']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaahie/s023_2016/01_tcp_ar/aaaaahie_s023_t011.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1', 'a1', 'a2']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaaict/s001_2008/02_tcp_le/aaaaaict_s001_t002.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaahie/s023_2016/01_tcp_ar/aaaaahie_s023_t008.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1', 'a1', 'a2']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaahie/s023_2016/01_tcp_ar/aaaaahie_s023_t009.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1', 'a1', 'a2']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaahie/s023_2016/01_tcp_ar/aaaaahie_s023_t004.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1', 'a1', 'a2']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaahie/s023_2016/01_tcp_ar/aaaaahie_s023_t010.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1', 'a1', 'a2']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaahie/s023_2016/01_tcp_ar/aaaaahie_s023_t007.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1', 'a1', 'a2']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaahie/s023_2016/01_tcp_ar/aaaaahie_s023_t002.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1', 'a1', 'a2']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaahie/s023_2016/01_tcp_ar/aaaaahie_s023_t006.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1', 'a1', 'a2']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaahie/s022_2016/01_tcp_ar/aaaaahie_s022_t008.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1', 'a1', 'a2']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaahie/s023_2016/01_tcp_ar/aaaaahie_s023_t000.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1', 'a1', 'a2']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaahie/s023_2016/01_tcp_ar/aaaaahie_s023_t003.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1', 'a1', 'a2']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaahie/s023_2016/01_tcp_ar/aaaaahie_s023_t001.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1', 'a1', 'a2']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaahie/s030_2016/01_tcp_ar/aaaaahie_s030_t008.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1', 'a1', 'a2']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaahie/s022_2016/01_tcp_ar/aaaaahie_s022_t009.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1', 'a1', 'a2']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaahie/s022_2016/01_tcp_ar/aaaaahie_s022_t007.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1', 'a1', 'a2']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaahie/s033_2016/01_tcp_ar/aaaaahie_s033_t002.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1', 'a1', 'a2']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaahie/s030_2016/01_tcp_ar/aaaaahie_s030_t001.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1', 'a1', 'a2']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaahie/s030_2016/01_tcp_ar/aaaaahie_s030_t002.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1', 'a1', 'a2']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaahie/s032_2016/01_tcp_ar/aaaaahie_s032_t022.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1', 'a1', 'a2']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaahie/s030_2016/01_tcp_ar/aaaaahie_s030_t003.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1', 'a1', 'a2']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaahie/s030_2016/01_tcp_ar/aaaaahie_s030_t004.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1', 'a1', 'a2']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaahie/s030_2016/01_tcp_ar/aaaaahie_s030_t007.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1', 'a1', 'a2']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaahie/s030_2016/01_tcp_ar/aaaaahie_s030_t006.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1', 'a1', 'a2']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaahie/s030_2016/01_tcp_ar/aaaaahie_s030_t005.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1', 'a1', 'a2']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaahie/s031_2016/01_tcp_ar/aaaaahie_s031_t000.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1', 'a1', 'a2']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaahie/s031_2016/01_tcp_ar/aaaaahie_s031_t002.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1', 'a1', 'a2']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaahie/s031_2016/01_tcp_ar/aaaaahie_s031_t001.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1', 'a1', 'a2']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaahie/s031_2016/01_tcp_ar/aaaaahie_s031_t003.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1', 'a1', 'a2']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaahie/s031_2016/01_tcp_ar/aaaaahie_s031_t005.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1', 'a1', 'a2']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaahie/s031_2016/01_tcp_ar/aaaaahie_s031_t004.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1', 'a1', 'a2']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaahie/s031_2016/01_tcp_ar/aaaaahie_s031_t007.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1', 'a1', 'a2']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaahie/s031_2016/01_tcp_ar/aaaaahie_s031_t006.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1', 'a1', 'a2']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaahie/s031_2016/01_tcp_ar/aaaaahie_s031_t008.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1', 'a1', 'a2']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaahie/s031_2016/01_tcp_ar/aaaaahie_s031_t009.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1', 'a1', 'a2']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaahie/s031_2016/01_tcp_ar/aaaaahie_s031_t010.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1', 'a1', 'a2']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaagdr/s002_2007/02_tcp_le/aaaaagdr_s002_t001.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaaict/s002_2008/02_tcp_le/aaaaaict_s002_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaakcy/s006_2015/03_tcp_ar_a/aaaaakcy_s006_t000.edf
+More than 1 contiguous second of the recording stays the same value: fp1 - fp2 14.82421875 seconds.
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaakcy/s003_2010/02_tcp_le/aaaaakcy_s003_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaahie/s031_2016/01_tcp_ar/aaaaahie_s031_t014.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1', 'a1', 'a2']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaagbf/s002_2007/02_tcp_le/aaaaagbf_s002_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaadkj/s002_2007/02_tcp_le/aaaaadkj_s002_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaahie/s031_2016/01_tcp_ar/aaaaahie_s031_t011.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1', 'a1', 'a2']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaahie/s031_2016/01_tcp_ar/aaaaahie_s031_t013.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1', 'a1', 'a2']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaahie/s032_2016/01_tcp_ar/aaaaahie_s032_t009.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1', 'a1', 'a2']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaahie/s032_2016/01_tcp_ar/aaaaahie_s032_t006.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1', 'a1', 'a2']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaahie/s031_2016/01_tcp_ar/aaaaahie_s031_t022.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1', 'a1', 'a2']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaagbf/s001_2007/02_tcp_le/aaaaagbf_s001_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaaewf/s001_2006/02_tcp_le/aaaaaewf_s001_t001.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaahie/s031_2016/01_tcp_ar/aaaaahie_s031_t019.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1', 'a1', 'a2']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaahie/s031_2016/01_tcp_ar/aaaaahie_s031_t023.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1', 'a1', 'a2']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaahie/s032_2016/01_tcp_ar/aaaaahie_s032_t007.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1', 'a1', 'a2']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaahie/s032_2016/01_tcp_ar/aaaaahie_s032_t016.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1', 'a1', 'a2']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaahie/s032_2016/01_tcp_ar/aaaaahie_s032_t010.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1', 'a1', 'a2']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaahie/s032_2016/01_tcp_ar/aaaaahie_s032_t018.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1', 'a1', 'a2']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaahie/s032_2016/01_tcp_ar/aaaaahie_s032_t003.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1', 'a1', 'a2']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaahie/s032_2016/01_tcp_ar/aaaaahie_s032_t001.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1', 'a1', 'a2']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaahie/s032_2016/01_tcp_ar/aaaaahie_s032_t015.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1', 'a1', 'a2']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaahie/s031_2016/01_tcp_ar/aaaaahie_s031_t012.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1', 'a1', 'a2']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaahie/s032_2016/01_tcp_ar/aaaaahie_s032_t014.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1', 'a1', 'a2']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaahie/s033_2016/01_tcp_ar/aaaaahie_s033_t001.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1', 'a1', 'a2']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaahie/s032_2016/01_tcp_ar/aaaaahie_s032_t021.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1', 'a1', 'a2']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaahie/s032_2016/01_tcp_ar/aaaaahie_s032_t004.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1', 'a1', 'a2']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaahie/s032_2016/01_tcp_ar/aaaaahie_s032_t012.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1', 'a1', 'a2']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaahie/s031_2016/01_tcp_ar/aaaaahie_s031_t020.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1', 'a1', 'a2']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaaexe/s001_2006/02_tcp_le/aaaaaexe_s001_t001.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaahie/s032_2016/01_tcp_ar/aaaaahie_s032_t017.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1', 'a1', 'a2']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaahie/s032_2016/01_tcp_ar/aaaaahie_s032_t020.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1', 'a1', 'a2']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaahie/s031_2016/01_tcp_ar/aaaaahie_s031_t018.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1', 'a1', 'a2']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaahie/s031_2016/01_tcp_ar/aaaaahie_s031_t015.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1', 'a1', 'a2']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaahie/s032_2016/01_tcp_ar/aaaaahie_s032_t008.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1', 'a1', 'a2']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaahie/s032_2016/01_tcp_ar/aaaaahie_s032_t002.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1', 'a1', 'a2']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaahie/s032_2016/01_tcp_ar/aaaaahie_s032_t005.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1', 'a1', 'a2']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaahie/s031_2016/01_tcp_ar/aaaaahie_s031_t016.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1', 'a1', 'a2']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaahie/s032_2016/01_tcp_ar/aaaaahie_s032_t019.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1', 'a1', 'a2']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaahie/s031_2016/01_tcp_ar/aaaaahie_s031_t017.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1', 'a1', 'a2']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaagus/s002_2008/02_tcp_le/aaaaagus_s002_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaaict/s001_2008/02_tcp_le/aaaaaict_s001_t003.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaahie/s031_2016/01_tcp_ar/aaaaahie_s031_t021.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1', 'a1', 'a2']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaahie/s032_2016/01_tcp_ar/aaaaahie_s032_t011.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1', 'a1', 'a2']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaahie/s033_2016/01_tcp_ar/aaaaahie_s033_t000.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1', 'a1', 'a2']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaakcy/s003_2010/02_tcp_le/aaaaakcy_s003_t001.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaacqc/s003_2006/02_tcp_le/aaaaacqc_s003_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaahie/s032_2016/01_tcp_ar/aaaaahie_s032_t013.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1', 'a1', 'a2']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaagdr/s001_2007/02_tcp_le/aaaaagdr_s001_t001.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaahie/s001_2008/02_tcp_le/aaaaahie_s001_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaahie/s002_2008/02_tcp_le/aaaaahie_s002_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaaiup/s001_2009/02_tcp_le/aaaaaiup_s001_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaamnk/s007_2012/01_tcp_ar/aaaaamnk_s007_t005.edf
+More than 1 contiguous second of the recording stays the same value: f3 2.99609375 seconds.
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaahsn/s001_2007/02_tcp_le/aaaaahsn_s001_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaamnk/s003_2012/01_tcp_ar/aaaaamnk_s003_t005.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1', 'a1', 'a2']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaamqq/s003_2012/01_tcp_ar/aaaaamqq_s003_t002.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1', 'a1', 'a2']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaamnk/s002_2012/01_tcp_ar/aaaaamnk_s002_t002.edf
+More than 1 contiguous second of the recording stays the same value: fp1 2.1015625 seconds.
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaamnk/s005_2012/01_tcp_ar/aaaaamnk_s005_t003.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1', 'a1', 'a2']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaaiij/s002_2010/02_tcp_le/aaaaaiij_s002_t001.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaamqq/s002_2012/01_tcp_ar/aaaaamqq_s002_t007.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1', 'a1', 'a2']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaahln/s001_2008/02_tcp_le/aaaaahln_s001_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaaiup/s005_2009/02_tcp_le/aaaaaiup_s005_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaakcy/s001_2010/02_tcp_le/aaaaakcy_s001_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaaiij/s001_2009/02_tcp_le/aaaaaiij_s001_t001.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaamva/s003_2016/01_tcp_ar/aaaaamva_s003_t001.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'a1', 'a2', 'cz', 'ekg1']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaamnk/s005_2012/01_tcp_ar/aaaaamnk_s005_t001.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1', 'a1', 'a2']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaamnk/s005_2012/01_tcp_ar/aaaaamnk_s005_t002.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1', 'a1', 'a2']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaamnk/s003_2012/01_tcp_ar/aaaaamnk_s003_t001.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1', 'a1', 'a2']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaamqq/s008_2012/01_tcp_ar/aaaaamqq_s008_t002.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1', 'a1', 'a2']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaamva/s004_2016/01_tcp_ar/aaaaamva_s004_t022.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1', 'a1', 'a2']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaamva/s005_2016/01_tcp_ar/aaaaamva_s005_t002.edf
+More than 1 contiguous second of the recording stays the same value: fp1 - fp2 1.01171875 seconds.
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaamnk/s005_2012/01_tcp_ar/aaaaamnk_s005_t000.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1', 'a1', 'a2']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaakcy/s004_2010/02_tcp_le/aaaaakcy_s004_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaamnk/s003_2012/01_tcp_ar/aaaaamnk_s003_t004.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1', 'a1', 'a2']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaamnk/s003_2012/01_tcp_ar/aaaaamnk_s003_t002.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1', 'a1', 'a2']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaamnk/s003_2012/01_tcp_ar/aaaaamnk_s003_t003.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1', 'a1', 'a2']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaamnk/s002_2012/01_tcp_ar/aaaaamnk_s002_t000.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1', 'a1', 'a2']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaamnk/s002_2012/01_tcp_ar/aaaaamnk_s002_t001.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1', 'a1', 'a2']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaamva/s004_2016/01_tcp_ar/aaaaamva_s004_t008.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1', 'a1', 'a2']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaampk/s010_2012/01_tcp_ar/aaaaampk_s010_t004.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1', 'a1', 'a2']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaamqq/s003_2012/01_tcp_ar/aaaaamqq_s003_t001.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1', 'a1', 'a2']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaamqq/s008_2012/01_tcp_ar/aaaaamqq_s008_t000.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1', 'a1', 'a2']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaamqq/s008_2012/01_tcp_ar/aaaaamqq_s008_t001.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1', 'a1', 'a2']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaamqq/s003_2012/01_tcp_ar/aaaaamqq_s003_t000.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1', 'a1', 'a2']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaampk/s010_2012/01_tcp_ar/aaaaampk_s010_t003.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1', 'a1', 'a2']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaampk/s010_2012/01_tcp_ar/aaaaampk_s010_t000.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1', 'a1', 'a2']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaampk/s010_2012/01_tcp_ar/aaaaampk_s010_t002.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1', 'a1', 'a2']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaaoek/s013_2013/01_tcp_ar/aaaaaoek_s013_t003.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1', 'a1', 'a2']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaamqq/s002_2012/01_tcp_ar/aaaaamqq_s002_t006.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1', 'a1', 'a2']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaampk/s010_2012/01_tcp_ar/aaaaampk_s010_t001.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1', 'a1', 'a2']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaaoek/s011_2013/01_tcp_ar/aaaaaoek_s011_t008.edf
+More than 1 contiguous second of the recording stays the same value: fp1 1.48046875 seconds.
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaamva/s004_2016/01_tcp_ar/aaaaamva_s004_t010.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1', 'a1', 'a2']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaamva/s004_2016/01_tcp_ar/aaaaamva_s004_t021.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1', 'a1', 'a2']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaamva/s004_2016/01_tcp_ar/aaaaamva_s004_t003.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1', 'a1', 'a2']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaaoek/s016_2013/01_tcp_ar/aaaaaoek_s016_t007.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1', 'a1', 'a2']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaamva/s004_2016/01_tcp_ar/aaaaamva_s004_t011.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1', 'a1', 'a2']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaamva/s004_2016/01_tcp_ar/aaaaamva_s004_t017.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1', 'a1', 'a2']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaamva/s004_2016/01_tcp_ar/aaaaamva_s004_t019.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1', 'a1', 'a2']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaamva/s004_2016/01_tcp_ar/aaaaamva_s004_t004.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1', 'a1', 'a2']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaaoek/s007_2013/01_tcp_ar/aaaaaoek_s007_t004.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1', 'a1', 'a2']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaamva/s004_2016/01_tcp_ar/aaaaamva_s004_t018.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1', 'a1', 'a2']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaamva/s004_2016/01_tcp_ar/aaaaamva_s004_t006.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1', 'a1', 'a2']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaamva/s005_2016/01_tcp_ar/aaaaamva_s005_t000.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1', 'a1', 'a2']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaamva/s004_2016/01_tcp_ar/aaaaamva_s004_t015.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1', 'a1', 'a2']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaamva/s004_2016/01_tcp_ar/aaaaamva_s004_t016.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1', 'a1', 'a2']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaamva/s004_2016/01_tcp_ar/aaaaamva_s004_t007.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1', 'a1', 'a2']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaamva/s004_2016/01_tcp_ar/aaaaamva_s004_t005.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1', 'a1', 'a2']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaamva/s004_2016/01_tcp_ar/aaaaamva_s004_t020.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1', 'a1', 'a2']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaamva/s004_2016/01_tcp_ar/aaaaamva_s004_t014.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1', 'a1', 'a2']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaamva/s004_2016/01_tcp_ar/aaaaamva_s004_t013.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1', 'a1', 'a2']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaamva/s004_2016/01_tcp_ar/aaaaamva_s004_t002.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1', 'a1', 'a2']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaamva/s005_2016/01_tcp_ar/aaaaamva_s005_t001.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1', 'a1', 'a2']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaamva/s004_2016/01_tcp_ar/aaaaamva_s004_t012.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1', 'a1', 'a2']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaamva/s004_2016/01_tcp_ar/aaaaamva_s004_t009.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1', 'a1', 'a2']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaaoek/s013_2013/01_tcp_ar/aaaaaoek_s013_t000.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1', 'a1', 'a2']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaaoek/s016_2013/01_tcp_ar/aaaaaoek_s016_t005.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1', 'a1', 'a2']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaaoek/s013_2013/01_tcp_ar/aaaaaoek_s013_t002.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1', 'a1', 'a2']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaaoek/s016_2013/01_tcp_ar/aaaaaoek_s016_t006.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1', 'a1', 'a2']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaaoek/s007_2013/01_tcp_ar/aaaaaoek_s007_t003.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1', 'a1', 'a2']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaaoek/s013_2013/01_tcp_ar/aaaaaoek_s013_t001.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1', 'a1', 'a2']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaaoek/s007_2013/01_tcp_ar/aaaaaoek_s007_t000.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1', 'a1', 'a2']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaaoek/s016_2013/01_tcp_ar/aaaaaoek_s016_t004.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1', 'a1', 'a2']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaaoek/s016_2013/01_tcp_ar/aaaaaoek_s016_t003.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1', 'a1', 'a2']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaaoek/s016_2013/01_tcp_ar/aaaaaoek_s016_t001.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1', 'a1', 'a2']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaaoek/s016_2013/01_tcp_ar/aaaaaoek_s016_t000.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1', 'a1', 'a2']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaaoek/s007_2013/01_tcp_ar/aaaaaoek_s007_t002.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1', 'a1', 'a2']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaaoek/s016_2013/01_tcp_ar/aaaaaoek_s016_t002.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1', 'a1', 'a2']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaaoek/s007_2013/01_tcp_ar/aaaaaoek_s007_t001.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1', 'a1', 'a2']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaaool/s009_2013/01_tcp_ar/aaaaaool_s009_t000.edf
+More than 1 contiguous second of the recording stays the same value: fp1 1.88671875 seconds.
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaaoiz/s008_2016/01_tcp_ar/aaaaaoiz_s008_t002.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1', 'a1', 'a2']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaaoiz/s008_2016/01_tcp_ar/aaaaaoiz_s008_t001.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1', 'a1', 'a2']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaaoiz/s008_2016/01_tcp_ar/aaaaaoiz_s008_t000.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1', 'a1', 'a2']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaaoxa/s009_2013/01_tcp_ar/aaaaaoxa_s009_t003.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1', 'a1', 'a2']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaaptf/s007_2013/01_tcp_ar/aaaaaptf_s007_t004.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1', 'a1', 'a2']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaaoxa/s009_2013/01_tcp_ar/aaaaaoxa_s009_t001.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1', 'a1', 'a2']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaaoxa/s009_2013/01_tcp_ar/aaaaaoxa_s009_t000.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1', 'a1', 'a2']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaaoxa/s009_2013/01_tcp_ar/aaaaaoxa_s009_t002.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1', 'a1', 'a2']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaaptf/s007_2013/01_tcp_ar/aaaaaptf_s007_t003.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1', 'a1', 'a2']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaaptf/s007_2013/01_tcp_ar/aaaaaptf_s007_t001.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1', 'a1', 'a2']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaasgd/s002_2015/01_tcp_ar/aaaaasgd_s002_t004.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1', 'a1', 'a2']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaaptf/s007_2013/01_tcp_ar/aaaaaptf_s007_t002.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1', 'a1', 'a2']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaaptf/s007_2013/01_tcp_ar/aaaaaptf_s007_t000.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1', 'a1', 'a2']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaarsp/s002_2014/03_tcp_ar_a/aaaaarsp_s002_t012.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/eval/aaaaaarq/s014_2014/01_tcp_ar/aaaaaarq_s014_t003.edf
+More than 1 contiguous second of the recording stays the same value: fp1 1.06640625 seconds.
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaarsp/s002_2014/03_tcp_ar_a/aaaaarsp_s002_t005.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaarsp/s002_2014/03_tcp_ar_a/aaaaarsp_s002_t002.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaaskf/s002_2014/03_tcp_ar_a/aaaaaskf_s002_t003.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaaskf/s002_2014/03_tcp_ar_a/aaaaaskf_s002_t002.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaarsp/s002_2014/03_tcp_ar_a/aaaaarsp_s002_t004.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaaskf/s002_2014/03_tcp_ar_a/aaaaaskf_s002_t000.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaarsp/s002_2014/03_tcp_ar_a/aaaaarsp_s002_t008.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaarsp/s002_2014/03_tcp_ar_a/aaaaarsp_s002_t006.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaarsp/s002_2014/03_tcp_ar_a/aaaaarsp_s002_t003.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaarsp/s002_2014/03_tcp_ar_a/aaaaarsp_s002_t011.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaarsp/s002_2014/03_tcp_ar_a/aaaaarsp_s002_t010.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaasgd/s002_2015/01_tcp_ar/aaaaasgd_s002_t001.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1', 'a1', 'a2']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaasgd/s002_2015/01_tcp_ar/aaaaasgd_s002_t002.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1', 'a1', 'a2']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaasgd/s002_2015/01_tcp_ar/aaaaasgd_s002_t003.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1', 'a1', 'a2']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaaskf/s001_2014/03_tcp_ar_a/aaaaaskf_s001_t002.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaaskf/s002_2014/03_tcp_ar_a/aaaaaskf_s002_t001.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaarsp/s002_2014/03_tcp_ar_a/aaaaarsp_s002_t001.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaaskf/s001_2014/03_tcp_ar_a/aaaaaskf_s001_t001.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaaskf/s001_2014/03_tcp_ar_a/aaaaaskf_s001_t000.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaarsp/s002_2014/03_tcp_ar_a/aaaaarsp_s002_t007.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaarsp/s002_2014/03_tcp_ar_a/aaaaarsp_s002_t009.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaatgc/s003_2015/03_tcp_ar_a/aaaaatgc_s003_t002.edf
+More than 1 contiguous second of the recording stays the same value: fp1 - fp2 5.76171875 seconds.
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaasgd/s002_2015/01_tcp_ar/aaaaasgd_s002_t000.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1', 'a1', 'a2']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaatgc/s003_2015/03_tcp_ar_a/aaaaatgc_s003_t000.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaatgc/s003_2015/03_tcp_ar_a/aaaaatgc_s003_t001.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/eval/aaaaajru/s037_2014/01_tcp_ar/aaaaajru_s037_t005.edf
+More than 1 contiguous second of the recording stays the same value: fp1 1.80078125 seconds.
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/eval/aaaaaarq/s014_2014/01_tcp_ar/aaaaaarq_s014_t009.edf
+More than 1 contiguous second of the recording stays the same value: f7 1.0859375 seconds.
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaadkb/s010_2016/01_tcp_ar/aaaaadkb_s010_t000.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'a1', 'a2', 'cz', 'ekg1']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaaed/s001_2003/02_tcp_le/aaaaaaed_s001_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaafs/s001_2003/02_tcp_le/aaaaaafs_s001_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaagt/s001_2003/02_tcp_le/aaaaaagt_s001_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaasy/s005_2003/02_tcp_le/aaaaaasy_s005_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaaac/s001_2002/02_tcp_le/aaaaaaac_s001_t001.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaaac/s002_2002/02_tcp_le/aaaaaaac_s002_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/eval/aaaaatdt/s001_2015/01_tcp_ar/aaaaatdt_s001_t001.edf
+More than 1 contiguous second of the recording stays the same value: fp1 - fp2 2.96875 seconds.
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaaac/s005_2002/02_tcp_le/aaaaaaac_s005_t003.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaalq/s002_2003/02_tcp_le/aaaaaalq_s002_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaatf/s001_2003/02_tcp_le/aaaaaatf_s001_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaaac/s001_2002/02_tcp_le/aaaaaaac_s001_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaaac/s005_2002/02_tcp_le/aaaaaaac_s005_t002.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaaac/s004_2002/02_tcp_le/aaaaaaac_s004_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaalq/s002_2003/02_tcp_le/aaaaaalq_s002_t005.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaasy/s005_2003/02_tcp_le/aaaaaasy_s005_t002.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaasy/s005_2003/02_tcp_le/aaaaaasy_s005_t003.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaaac/s005_2002/02_tcp_le/aaaaaaac_s005_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaaug/s002_2003/02_tcp_le/aaaaaaug_s002_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaaug/s002_2003/02_tcp_le/aaaaaaug_s002_t004.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaacz/s006_2015/03_tcp_ar_a/aaaaaacz_s006_t000.edf
+More than 1 contiguous second of the recording stays the same value: fp1 - fp2 9.296875 seconds.
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaaug/s003_2003/02_tcp_le/aaaaaaug_s003_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaatf/s001_2003/02_tcp_le/aaaaaatf_s001_t002.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaatf/s001_2003/02_tcp_le/aaaaaatf_s001_t001.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaaug/s002_2003/02_tcp_le/aaaaaaug_s002_t009.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaajk/s001_2003/02_tcp_le/aaaaaajk_s001_t001.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaaac/s005_2002/02_tcp_le/aaaaaaac_s005_t001.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaatf/s001_2003/02_tcp_le/aaaaaatf_s001_t005.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/eval/aaaaasoc/s001_2015/01_tcp_ar/aaaaasoc_s001_t000.edf
+More than 1 contiguous second of the recording stays the same value: fp1 - fp2 8.234375 seconds.
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaatf/s001_2003/02_tcp_le/aaaaaatf_s001_t006.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaaug/s002_2003/02_tcp_le/aaaaaaug_s002_t005.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaaug/s002_2003/02_tcp_le/aaaaaaug_s002_t008.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaaug/s002_2003/02_tcp_le/aaaaaaug_s002_t007.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaasy/s005_2003/02_tcp_le/aaaaaasy_s005_t005.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaaug/s002_2003/02_tcp_le/aaaaaaug_s002_t006.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaaug/s003_2003/02_tcp_le/aaaaaaug_s003_t001.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaasy/s005_2003/02_tcp_le/aaaaaasy_s005_t006.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaaug/s002_2003/02_tcp_le/aaaaaaug_s002_t002.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaabdv/s001_2003/02_tcp_le/aaaaabdv_s001_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaasy/s005_2003/02_tcp_le/aaaaaasy_s005_t004.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaasy/s005_2003/02_tcp_le/aaaaaasy_s005_t001.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaasy/s004_2003/02_tcp_le/aaaaaasy_s004_t001.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaasy/s004_2003/02_tcp_le/aaaaaasy_s004_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaabbd/s001_2003/02_tcp_le/aaaaabbd_s001_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaalq/s002_2003/02_tcp_le/aaaaaalq_s002_t001.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaasy/s004_2003/02_tcp_le/aaaaaasy_s004_t002.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaaug/s002_2003/02_tcp_le/aaaaaaug_s002_t001.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaalq/s002_2003/02_tcp_le/aaaaaalq_s002_t002.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaalq/s002_2003/02_tcp_le/aaaaaalq_s002_t004.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaaac/s004_2002/02_tcp_le/aaaaaaac_s004_t002.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaaug/s002_2003/02_tcp_le/aaaaaaug_s002_t003.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaalq/s002_2003/02_tcp_le/aaaaaalq_s002_t003.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaasy/s004_2003/02_tcp_le/aaaaaasy_s004_t003.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaatf/s001_2003/02_tcp_le/aaaaaatf_s001_t004.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaaxl/s001_2003/02_tcp_le/aaaaaaxl_s001_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaajk/s001_2003/02_tcp_le/aaaaaajk_s001_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaafn/s001_2003/02_tcp_le/aaaaaafn_s001_t001.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaalb/s002_2004/02_tcp_le/aaaaaalb_s002_t001.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaaqc/s011_2009/02_tcp_le/aaaaaaqc_s011_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaacz/s001_2003/02_tcp_le/aaaaaacz_s001_t001.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaacc/s004_2004/02_tcp_le/aaaaaacc_s004_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaabke/s001_2003/02_tcp_le/aaaaabke_s001_t002.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaakv/s001_2003/02_tcp_le/aaaaaakv_s001_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaaii/s002_2003/02_tcp_le/aaaaaaii_s002_t001.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaamp/s003_2003/02_tcp_le/aaaaaamp_s003_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaati/s003_2003/02_tcp_le/aaaaaati_s003_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaajk/s003_2004/02_tcp_le/aaaaaajk_s003_t001.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaabms/s003_2003/02_tcp_le/aaaaabms_s003_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaabms/s003_2003/02_tcp_le/aaaaabms_s003_t001.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaauj/s001_2003/02_tcp_le/aaaaaauj_s001_t001.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaawc/s001_2003/02_tcp_le/aaaaaawc_s001_t001.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaabms/s002_2003/02_tcp_le/aaaaabms_s002_t003.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaasf/s002_2003/02_tcp_le/aaaaaasf_s002_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaabms/s002_2003/02_tcp_le/aaaaabms_s002_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaabms/s002_2003/02_tcp_le/aaaaabms_s002_t002.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaasf/s001_2003/02_tcp_le/aaaaaasf_s001_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaafs/s001_2003/02_tcp_le/aaaaaafs_s001_t001.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaapo/s002_2003/02_tcp_le/aaaaaapo_s002_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaabms/s002_2003/02_tcp_le/aaaaabms_s002_t001.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaabke/s001_2003/02_tcp_le/aaaaabke_s001_t003.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaaqc/s004_2003/02_tcp_le/aaaaaaqc_s004_t001.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaaed/s001_2003/02_tcp_le/aaaaaaed_s001_t001.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaabms/s002_2003/02_tcp_le/aaaaabms_s002_t004.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaald/s001_2003/02_tcp_le/aaaaaald_s001_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaabms/s002_2003/02_tcp_le/aaaaabms_s002_t005.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaajv/s002_2004/02_tcp_le/aaaaaajv_s002_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaalq/s001_2003/02_tcp_le/aaaaaalq_s001_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaaju/s001_2003/02_tcp_le/aaaaaaju_s001_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaaug/s004_2003/02_tcp_le/aaaaaaug_s004_t001.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaabcy/s001_2003/02_tcp_le/aaaaabcy_s001_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaalq/s002_2003/02_tcp_le/aaaaaalq_s002_t006.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaatf/s002_2003/02_tcp_le/aaaaaatf_s002_t001.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaawc/s002_2003/02_tcp_le/aaaaaawc_s002_t001.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaauj/s002_2003/02_tcp_le/aaaaaauj_s002_t001.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaabms/s002_2003/02_tcp_le/aaaaabms_s002_t006.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaauj/s003_2003/02_tcp_le/aaaaaauj_s003_t001.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaabdv/s001_2003/02_tcp_le/aaaaabdv_s001_t001.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaabbd/s001_2003/02_tcp_le/aaaaabbd_s001_t001.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaasy/s002_2003/02_tcp_le/aaaaaasy_s002_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaabfo/s003_2004/02_tcp_le/aaaaabfo_s003_t001.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaaxg/s001_2003/02_tcp_le/aaaaaaxg_s001_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaagt/s001_2003/02_tcp_le/aaaaaagt_s001_t001.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaabms/s002_2003/02_tcp_le/aaaaabms_s002_t007.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaabms/s001_2003/02_tcp_le/aaaaabms_s001_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaasy/s001_2003/02_tcp_le/aaaaaasy_s001_t001.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaaql/s001_2003/02_tcp_le/aaaaaaql_s001_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaatf/s001_2003/02_tcp_le/aaaaaatf_s001_t003.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaawe/s001_2003/02_tcp_le/aaaaaawe_s001_t001.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaaug/s001_2003/02_tcp_le/aaaaaaug_s001_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaabfv/s001_2003/02_tcp_le/aaaaabfv_s001_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaabdi/s001_2003/02_tcp_le/aaaaabdi_s001_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaaju/s002_2006/02_tcp_le/aaaaaaju_s002_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaabnq/s004_2015/01_tcp_ar/aaaaabnq_s004_t000.edf
+More than 1 contiguous second of the recording stays the same value: fp1 - fp2 3.734375 seconds.
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaabiq/s002_2004/02_tcp_le/aaaaabiq_s002_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaaar/s003_2007/02_tcp_le/aaaaaaar_s003_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaabg/s002_2006/02_tcp_le/aaaaaabg_s002_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaabbc/s001_2003/02_tcp_le/aaaaabbc_s001_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaaju/s003_2006/02_tcp_le/aaaaaaju_s003_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaabgs/s001_2003/02_tcp_le/aaaaabgs_s001_t001.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaacyf/s002_2005/02_tcp_le/aaaaacyf_s002_t002.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaaqc/s005_2005/02_tcp_le/aaaaaaqc_s005_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaabke/s001_2003/02_tcp_le/aaaaabke_s001_t001.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaabjm/s001_2003/02_tcp_le/aaaaabjm_s001_t001.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaabiy/s001_2003/02_tcp_le/aaaaabiy_s001_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaaxl/s002_2008/02_tcp_le/aaaaaaxl_s002_t001.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaatf/s002_2003/02_tcp_le/aaaaaatf_s002_t002.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaahc/s003_2007/02_tcp_le/aaaaaahc_s003_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaabms/s003_2003/02_tcp_le/aaaaabms_s003_t002.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaabnn/s001_2004/02_tcp_le/aaaaabnn_s001_t001.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaacyk/s002_2006/02_tcp_le/aaaaacyk_s002_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaadhw/s001_2004/02_tcp_le/aaaaadhw_s001_t003.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaadhz/s001_2004/02_tcp_le/aaaaadhz_s001_t003.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaabnm/s001_2003/02_tcp_le/aaaaabnm_s001_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaabms/s004_2003/02_tcp_le/aaaaabms_s004_t002.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaadhz/s001_2004/02_tcp_le/aaaaadhz_s001_t004.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaacyy/s001_2004/02_tcp_le/aaaaacyy_s001_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaabts/s001_2004/02_tcp_le/aaaaabts_s001_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaacaf/s001_2004/02_tcp_le/aaaaacaf_s001_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaabog/s001_2004/02_tcp_le/aaaaabog_s001_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaabqy/s001_2004/02_tcp_le/aaaaabqy_s001_t001.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaabsz/s001_2004/02_tcp_le/aaaaabsz_s001_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaadhz/s001_2004/02_tcp_le/aaaaadhz_s001_t002.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaabwt/s003_2004/02_tcp_le/aaaaabwt_s003_t001.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaacex/s001_2004/02_tcp_le/aaaaacex_s001_t001.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaabzx/s002_2004/02_tcp_le/aaaaabzx_s002_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaccj/s001_2004/02_tcp_le/aaaaaccj_s001_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaacar/s001_2004/02_tcp_le/aaaaacar_s001_t001.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaabqv/s002_2004/02_tcp_le/aaaaabqv_s002_t001.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaachj/s001_2004/02_tcp_le/aaaaachj_s001_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaacni/s001_2004/02_tcp_le/aaaaacni_s001_t001.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaacyy/s001_2004/02_tcp_le/aaaaacyy_s001_t001.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaacmr/s001_2004/02_tcp_le/aaaaacmr_s001_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaacfv/s001_2004/02_tcp_le/aaaaacfv_s001_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaadhw/s001_2004/02_tcp_le/aaaaadhw_s001_t002.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaadse/s001_2006/02_tcp_le/aaaaadse_s001_t002.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaabyy/s001_2004/02_tcp_le/aaaaabyy_s001_t001.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaadse/s001_2006/02_tcp_le/aaaaadse_s001_t005.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaadse/s001_2006/02_tcp_le/aaaaadse_s001_t003.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaadse/s001_2006/02_tcp_le/aaaaadse_s001_t006.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaadse/s001_2006/02_tcp_le/aaaaadse_s001_t004.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaabiw/s009_2009/02_tcp_le/aaaaabiw_s009_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaadhw/s001_2004/02_tcp_le/aaaaadhw_s001_t004.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaacwv/s001_2004/02_tcp_le/aaaaacwv_s001_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaacts/s001_2004/02_tcp_le/aaaaacts_s001_t001.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaabms/s001_2003/02_tcp_le/aaaaabms_s001_t001.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaacki/s001_2003/02_tcp_le/aaaaacki_s001_t001.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaacjb/s003_2004/02_tcp_le/aaaaacjb_s003_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaabqv/s001_2004/02_tcp_le/aaaaabqv_s001_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaadse/s001_2006/02_tcp_le/aaaaadse_s001_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaabxr/s001_2004/02_tcp_le/aaaaabxr_s001_t001.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaacrb/s001_2004/02_tcp_le/aaaaacrb_s001_t001.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaabyr/s002_2004/02_tcp_le/aaaaabyr_s002_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaabuv/s001_2004/02_tcp_le/aaaaabuv_s001_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaadse/s001_2006/02_tcp_le/aaaaadse_s001_t001.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaadqe/s001_2006/02_tcp_le/aaaaadqe_s001_t003.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaclp/s001_2004/02_tcp_le/aaaaaclp_s001_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaacug/s001_2004/02_tcp_le/aaaaacug_s001_t001.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaabzf/s001_2004/02_tcp_le/aaaaabzf_s001_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaadri/s001_2006/02_tcp_le/aaaaadri_s001_t003.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaacsx/s001_2004/02_tcp_le/aaaaacsx_s001_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaacrd/s001_2004/02_tcp_le/aaaaacrd_s001_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaacyf/s002_2005/02_tcp_le/aaaaacyf_s002_t001.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaacqn/s001_2004/02_tcp_le/aaaaacqn_s001_t001.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaacjt/s001_2004/02_tcp_le/aaaaacjt_s001_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaaav/s001_2006/02_tcp_le/aaaaaaav_s001_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaabiw/s010_2009/02_tcp_le/aaaaabiw_s010_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaacho/s002_2004/02_tcp_le/aaaaacho_s002_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaduu/s001_2006/02_tcp_le/aaaaaduu_s001_t003.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaadqe/s001_2006/02_tcp_le/aaaaadqe_s001_t002.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaeph/s002_2006/02_tcp_le/aaaaaeph_s002_t001.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaeph/s003_2006/02_tcp_le/aaaaaeph_s003_t006.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaeph/s002_2006/02_tcp_le/aaaaaeph_s002_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaacpl/s003_2006/02_tcp_le/aaaaacpl_s003_t001.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaadro/s001_2006/02_tcp_le/aaaaadro_s001_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaadqe/s001_2006/02_tcp_le/aaaaadqe_s001_t001.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaeph/s003_2006/02_tcp_le/aaaaaeph_s003_t002.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaeph/s003_2006/02_tcp_le/aaaaaeph_s003_t005.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaeph/s003_2006/02_tcp_le/aaaaaeph_s003_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaduu/s001_2006/02_tcp_le/aaaaaduu_s001_t002.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaeph/s003_2006/02_tcp_le/aaaaaeph_s003_t008.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaeph/s003_2006/02_tcp_le/aaaaaeph_s003_t009.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaeph/s003_2006/02_tcp_le/aaaaaeph_s003_t013.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaadjj/s001_2005/02_tcp_le/aaaaadjj_s001_t001.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaeph/s003_2006/02_tcp_le/aaaaaeph_s003_t014.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaeph/s003_2006/02_tcp_le/aaaaaeph_s003_t007.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaeph/s003_2006/02_tcp_le/aaaaaeph_s003_t015.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaeph/s003_2006/02_tcp_le/aaaaaeph_s003_t017.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaadri/s001_2006/02_tcp_le/aaaaadri_s001_t002.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaeph/s002_2006/02_tcp_le/aaaaaeph_s002_t002.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaeph/s002_2006/02_tcp_le/aaaaaeph_s002_t003.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaeph/s003_2006/02_tcp_le/aaaaaeph_s003_t001.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaeph/s003_2006/02_tcp_le/aaaaaeph_s003_t003.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaeph/s002_2006/02_tcp_le/aaaaaeph_s002_t004.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaeph/s003_2006/02_tcp_le/aaaaaeph_s003_t011.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaadaq/s001_2004/02_tcp_le/aaaaadaq_s001_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaeph/s003_2006/02_tcp_le/aaaaaeph_s003_t010.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaadia/s001_2004/02_tcp_le/aaaaadia_s001_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaadax/s001_2004/02_tcp_le/aaaaadax_s001_t001.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaafav/s001_2006/02_tcp_le/aaaaafav_s001_t001.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaabok/s002_2008/02_tcp_le/aaaaabok_s002_t001.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaczt/s001_2004/02_tcp_le/aaaaaczt_s001_t001.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaadbc/s002_2006/02_tcp_le/aaaaadbc_s002_t002.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaeph/s003_2006/02_tcp_le/aaaaaeph_s003_t012.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaadyf/s001_2006/02_tcp_le/aaaaadyf_s001_t001.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaeph/s003_2006/02_tcp_le/aaaaaeph_s003_t004.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaafjw/s002_2007/02_tcp_le/aaaaafjw_s002_t010.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaadqb/s002_2007/02_tcp_le/aaaaadqb_s002_t001.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaafjw/s002_2007/02_tcp_le/aaaaafjw_s002_t005.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaafjw/s002_2007/02_tcp_le/aaaaafjw_s002_t007.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaadpr/s002_2006/02_tcp_le/aaaaadpr_s002_t001.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaafjw/s002_2007/02_tcp_le/aaaaafjw_s002_t008.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaadqe/s001_2006/02_tcp_le/aaaaadqe_s001_t004.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaadri/s001_2006/02_tcp_le/aaaaadri_s001_t004.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaeph/s003_2006/02_tcp_le/aaaaaeph_s003_t018.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaafrv/s002_2007/02_tcp_le/aaaaafrv_s002_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaccj/s002_2006/02_tcp_le/aaaaaccj_s002_t001.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaafjw/s002_2007/02_tcp_le/aaaaafjw_s002_t001.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaftk/s002_2007/02_tcp_le/aaaaaftk_s002_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaafjw/s002_2007/02_tcp_le/aaaaafjw_s002_t009.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaafav/s001_2006/02_tcp_le/aaaaafav_s001_t002.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaacby/s003_2008/02_tcp_le/aaaaacby_s003_t001.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaafjw/s002_2007/02_tcp_le/aaaaafjw_s002_t006.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaacyf/s001_2004/02_tcp_le/aaaaacyf_s001_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaelv/s001_2006/02_tcp_le/aaaaaelv_s001_t001.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaafjw/s002_2007/02_tcp_le/aaaaafjw_s002_t004.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaetk/s001_2006/02_tcp_le/aaaaaetk_s001_t001.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaeph/s003_2006/02_tcp_le/aaaaaeph_s003_t016.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaeha/s008_2011/03_tcp_ar_a/aaaaaeha_s008_t001.edf
+More than 1 contiguous second of the recording stays the same value: fp1 170.885 seconds.
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaadqb/s002_2007/02_tcp_le/aaaaadqb_s002_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaacyf/s003_2006/02_tcp_le/aaaaacyf_s003_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaegi/s002_2009/02_tcp_le/aaaaaegi_s002_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaacyf/s004_2008/02_tcp_le/aaaaacyf_s004_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaacyk/s002_2006/02_tcp_le/aaaaacyk_s002_t001.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaccj/s003_2008/02_tcp_le/aaaaaccj_s003_t001.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaafjw/s002_2007/02_tcp_le/aaaaafjw_s002_t002.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaadpr/s002_2006/02_tcp_le/aaaaadpr_s002_t002.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaacjb/s001_2004/02_tcp_le/aaaaacjb_s001_t001.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaafjw/s002_2007/02_tcp_le/aaaaafjw_s002_t003.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaachl/s002_2006/02_tcp_le/aaaaachl_s002_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaedz/s001_2004/02_tcp_le/aaaaaedz_s001_t001.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaedy/s003_2004/02_tcp_le/aaaaaedy_s003_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaftk/s002_2007/02_tcp_le/aaaaaftk_s002_t002.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaagpk/s013_2014/01_tcp_ar/aaaaagpk_s013_t008.edf
+More than 1 contiguous second of the recording stays the same value: fp1 2.41015625 seconds.
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaadiy/s004_2006/02_tcp_le/aaaaadiy_s004_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaagpk/s013_2014/01_tcp_ar/aaaaagpk_s013_t006.edf
+More than 1 contiguous second of the recording stays the same value: fp1 1.125 seconds.
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaafjw/s002_2007/02_tcp_le/aaaaafjw_s002_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaedy/s002_2004/02_tcp_le/aaaaaedy_s002_t001.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaelv/s001_2006/02_tcp_le/aaaaaelv_s001_t002.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaagpk/s009_2010/02_tcp_le/aaaaagpk_s009_t001.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaagpk/s013_2014/01_tcp_ar/aaaaagpk_s013_t002.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1', 'a1', 'a2']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaagez/s001_2007/02_tcp_le/aaaaagez_s001_t002.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaagez/s001_2007/02_tcp_le/aaaaagez_s001_t001.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaemw/s001_2006/02_tcp_le/aaaaaemw_s001_t001.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaafwz/s001_2007/02_tcp_le/aaaaafwz_s001_t001.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaadyf/s001_2006/02_tcp_le/aaaaadyf_s001_t002.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaddu/s001_2004/02_tcp_le/aaaaaddu_s001_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaent/s001_2006/02_tcp_le/aaaaaent_s001_t001.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaagez/s001_2007/02_tcp_le/aaaaagez_s001_t003.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaafav/s001_2006/02_tcp_le/aaaaafav_s001_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaeet/s001_2006/02_tcp_le/aaaaaeet_s001_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaadro/s002_2006/02_tcp_le/aaaaadro_s002_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaadpj/s003_2006/02_tcp_le/aaaaadpj_s003_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaagpk/s013_2014/01_tcp_ar/aaaaagpk_s013_t000.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1', 'a1', 'a2']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaadsz/s005_2006/02_tcp_le/aaaaadsz_s005_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaafav/s001_2006/02_tcp_le/aaaaafav_s001_t003.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaeau/s002_2006/02_tcp_le/aaaaaeau_s002_t002.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaadtv/s002_2008/02_tcp_le/aaaaadtv_s002_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaece/s001_2006/02_tcp_le/aaaaaece_s001_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaadrt/s003_2007/02_tcp_le/aaaaadrt_s003_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaabpp/s001_2004/02_tcp_le/aaaaabpp_s001_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaadwo/s002_2007/02_tcp_le/aaaaadwo_s002_t001.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaagpk/s013_2014/01_tcp_ar/aaaaagpk_s013_t005.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1', 'a1', 'a2']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaagpk/s013_2014/01_tcp_ar/aaaaagpk_s013_t001.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1', 'a1', 'a2']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaadsz/s007_2007/02_tcp_le/aaaaadsz_s007_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaebw/s001_2006/02_tcp_le/aaaaaebw_s001_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaefn/s001_2006/02_tcp_le/aaaaaefn_s001_t001.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaelb/s001_2006/02_tcp_le/aaaaaelb_s001_t002.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaagqb/s002_2008/02_tcp_le/aaaaagqb_s002_t002.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaadsz/s006_2006/02_tcp_le/aaaaadsz_s006_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaacna/s001_2004/02_tcp_le/aaaaacna_s001_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaegv/s001_2006/02_tcp_le/aaaaaegv_s001_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaead/s002_2006/02_tcp_le/aaaaaead_s002_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaacut/s001_2004/02_tcp_le/aaaaacut_s001_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaelb/s002_2009/02_tcp_le/aaaaaelb_s002_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaafwz/s001_2007/02_tcp_le/aaaaafwz_s001_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaedo/s001_2004/02_tcp_le/aaaaaedo_s001_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaadhe/s001_2004/02_tcp_le/aaaaadhe_s001_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaelp/s003_2010/02_tcp_le/aaaaaelp_s003_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaadoc/s001_2006/02_tcp_le/aaaaadoc_s001_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaagxr/s022_2015/01_tcp_ar/aaaaagxr_s022_t002.edf
+More than 1 contiguous second of the recording stays the same value: fp1 1.4140625 seconds.
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaeqy/s001_2006/02_tcp_le/aaaaaeqy_s001_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaegi/s001_2006/02_tcp_le/aaaaaegi_s001_t001.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaetk/s001_2006/02_tcp_le/aaaaaetk_s001_t002.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaafjj/s002_2007/02_tcp_le/aaaaafjj_s002_t001.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaadhp/s002_2006/02_tcp_le/aaaaadhp_s002_t001.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaeys/s001_2006/02_tcp_le/aaaaaeys_s001_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaewi/s001_2006/02_tcp_le/aaaaaewi_s001_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaexq/s001_2006/02_tcp_le/aaaaaexq_s001_t001.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaahpi/s002_2008/02_tcp_le/aaaaahpi_s002_t007.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaahpi/s002_2008/02_tcp_le/aaaaahpi_s002_t003.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaafbn/s001_2006/02_tcp_le/aaaaafbn_s001_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaafgk/s002_2006/02_tcp_le/aaaaafgk_s002_t001.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaahpi/s002_2008/02_tcp_le/aaaaahpi_s002_t004.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaahnz/s001_2008/02_tcp_le/aaaaahnz_s001_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaahpi/s002_2008/02_tcp_le/aaaaahpi_s002_t006.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaahux/s001_2009/02_tcp_le/aaaaahux_s001_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaagxr/s002_2009/02_tcp_le/aaaaagxr_s002_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaemu/s002_2006/02_tcp_le/aaaaaemu_s002_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaahux/s001_2009/02_tcp_le/aaaaahux_s001_t001.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaguu/s001_2008/02_tcp_le/aaaaaguu_s001_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaahpi/s002_2008/02_tcp_le/aaaaahpi_s002_t001.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaeij/s001_2006/02_tcp_le/aaaaaeij_s001_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaenl/s001_2006/02_tcp_le/aaaaaenl_s001_t001.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaftk/s002_2007/02_tcp_le/aaaaaftk_s002_t001.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaahxq/s004_2009/02_tcp_le/aaaaahxq_s004_t001.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaahxq/s004_2009/02_tcp_le/aaaaahxq_s004_t002.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaahxq/s004_2009/02_tcp_le/aaaaahxq_s004_t003.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaafoq/s001_2007/02_tcp_le/aaaaafoq_s001_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaahxq/s004_2009/02_tcp_le/aaaaahxq_s004_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaafef/s001_2006/02_tcp_le/aaaaafef_s001_t001.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaahof/s002_2008/02_tcp_le/aaaaahof_s002_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaafsb/s001_2007/02_tcp_le/aaaaafsb_s001_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaafli/s004_2007/02_tcp_le/aaaaafli_s004_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaafxk/s001_2007/02_tcp_le/aaaaafxk_s001_t001.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaftl/s001_2007/02_tcp_le/aaaaaftl_s001_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaafrv/s002_2007/02_tcp_le/aaaaafrv_s002_t001.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaflc/s001_2007/02_tcp_le/aaaaaflc_s001_t001.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaafwi/s001_2007/02_tcp_le/aaaaafwi_s001_t001.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaafzp/s001_2007/02_tcp_le/aaaaafzp_s001_t001.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaguu/s001_2008/02_tcp_le/aaaaaguu_s001_t001.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaahpi/s002_2008/02_tcp_le/aaaaahpi_s002_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaahbq/s001_2008/02_tcp_le/aaaaahbq_s001_t001.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaafzr/s001_2007/02_tcp_le/aaaaafzr_s001_t001.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaahpi/s002_2008/02_tcp_le/aaaaahpi_s002_t002.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaagcs/s001_2007/02_tcp_le/aaaaagcs_s001_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaheg/s001_2008/02_tcp_le/aaaaaheg_s001_t002.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaafzl/s001_2007/02_tcp_le/aaaaafzl_s001_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaadsz/s001_2006/02_tcp_le/aaaaadsz_s001_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaagfw/s001_2007/02_tcp_le/aaaaagfw_s001_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaafza/s001_2007/02_tcp_le/aaaaafza_s001_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaagdh/s001_2007/02_tcp_le/aaaaagdh_s001_t001.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaibs/s002_2009/02_tcp_le/aaaaaibs_s002_t006.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaibs/s002_2009/02_tcp_le/aaaaaibs_s002_t002.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaagcs/s002_2008/02_tcp_le/aaaaagcs_s002_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaahpi/s002_2008/02_tcp_le/aaaaahpi_s002_t005.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaimu/s005_2014/01_tcp_ar/aaaaaimu_s005_t010.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1', 'a1', 'a2']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaimu/s005_2014/01_tcp_ar/aaaaaimu_s005_t002.edf
+More than 1 contiguous second of the recording stays the same value: fp1 - fp2 1.046875 seconds.
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaafyv/s001_2007/02_tcp_le/aaaaafyv_s001_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaagje/s001_2007/02_tcp_le/aaaaagje_s001_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaagkw/s001_2007/02_tcp_le/aaaaagkw_s001_t001.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaahyp/s007_2009/02_tcp_le/aaaaahyp_s007_t001.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaahwt/s003_2009/02_tcp_le/aaaaahwt_s003_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaimu/s005_2014/01_tcp_ar/aaaaaimu_s005_t004.edf
+More than 1 contiguous second of the recording stays the same value: fp1 - fp2 1.02734375 seconds.
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaipg/s002_2008/02_tcp_le/aaaaaipg_s002_t006.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaagoo/s003_2008/02_tcp_le/aaaaagoo_s003_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaagmg/s001_2007/02_tcp_le/aaaaagmg_s001_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaahoh/s002_2009/02_tcp_le/aaaaahoh_s002_t001.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaggi/s002_2007/02_tcp_le/aaaaaggi_s002_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaahoa/s006_2008/02_tcp_le/aaaaahoa_s006_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaagqb/s004_2008/02_tcp_le/aaaaagqb_s004_t001.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaibs/s002_2009/02_tcp_le/aaaaaibs_s002_t004.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaagqb/s003_2008/02_tcp_le/aaaaagqb_s003_t002.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaagqb/s001_2008/02_tcp_le/aaaaagqb_s001_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaipg/s002_2008/02_tcp_le/aaaaaipg_s002_t003.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaipg/s002_2008/02_tcp_le/aaaaaipg_s002_t004.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaahoh/s002_2009/02_tcp_le/aaaaahoh_s002_t002.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaahyp/s001_2009/02_tcp_le/aaaaahyp_s001_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaagqb/s002_2008/02_tcp_le/aaaaagqb_s002_t001.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaipg/s002_2008/02_tcp_le/aaaaaipg_s002_t005.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaagsc/s002_2009/02_tcp_le/aaaaagsc_s002_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaipg/s002_2008/02_tcp_le/aaaaaipg_s002_t001.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaewg/s002_2006/03_tcp_ar_a/aaaaaewg_s002_t000.edf
+More than 1 contiguous second of the recording stays the same value: fp1 24.459999999999923 seconds.
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaimu/s005_2014/01_tcp_ar/aaaaaimu_s005_t008.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1', 'a1', 'a2']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaimu/s005_2014/01_tcp_ar/aaaaaimu_s005_t006.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1', 'a1', 'a2']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaimu/s005_2014/01_tcp_ar/aaaaaimu_s005_t007.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1', 'a1', 'a2']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaibs/s002_2009/02_tcp_le/aaaaaibs_s002_t003.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaibs/s002_2009/02_tcp_le/aaaaaibs_s002_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaimu/s005_2014/01_tcp_ar/aaaaaimu_s005_t009.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1', 'a1', 'a2']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaimu/s005_2014/01_tcp_ar/aaaaaimu_s005_t000.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1', 'a1', 'a2']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaibs/s002_2009/02_tcp_le/aaaaaibs_s002_t005.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaimu/s005_2014/01_tcp_ar/aaaaaimu_s005_t005.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1', 'a1', 'a2']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaipg/s002_2008/02_tcp_le/aaaaaipg_s002_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaahbq/s001_2008/02_tcp_le/aaaaahbq_s001_t002.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaent/s001_2006/02_tcp_le/aaaaaent_s001_t002.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaimu/s005_2014/01_tcp_ar/aaaaaimu_s005_t001.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1', 'a1', 'a2']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaheg/s001_2008/02_tcp_le/aaaaaheg_s001_t001.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaipg/s002_2008/02_tcp_le/aaaaaipg_s002_t002.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaagxd/s001_2008/02_tcp_le/aaaaagxd_s001_t001.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaibs/s002_2009/02_tcp_le/aaaaaibs_s002_t007.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaagrz/s001_2007/02_tcp_le/aaaaagrz_s001_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaint/s001_2009/02_tcp_le/aaaaaint_s001_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaahxr/s001_2008/02_tcp_le/aaaaahxr_s001_t001.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaagxr/s005_2010/02_tcp_le/aaaaagxr_s005_t001.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaagxr/s001_2008/02_tcp_le/aaaaagxr_s001_t001.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaahoa/s006_2008/02_tcp_le/aaaaahoa_s006_t001.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaimu/s005_2014/01_tcp_ar/aaaaaimu_s005_t003.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1', 'a1', 'a2']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaahnz/s001_2008/02_tcp_le/aaaaahnz_s001_t001.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaizz/s004_2010/02_tcp_le/aaaaaizz_s004_t001.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaajpi/s001_2010/02_tcp_le/aaaaajpi_s001_t003.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaahbb/s001_2008/02_tcp_le/aaaaahbb_s001_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaajpi/s001_2010/02_tcp_le/aaaaajpi_s001_t002.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaahef/s001_2008/02_tcp_le/aaaaahef_s001_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaajqo/s007_2010/02_tcp_le/aaaaajqo_s007_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaahct/s001_2007/02_tcp_le/aaaaahct_s001_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaahfd/s002_2009/02_tcp_le/aaaaahfd_s002_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaahrj/s001_2008/02_tcp_le/aaaaahrj_s001_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaagpk/s009_2010/02_tcp_le/aaaaagpk_s009_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaagym/s001_2008/02_tcp_le/aaaaagym_s001_t002.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaajqo/s010_2010/03_tcp_ar_a/aaaaajqo_s010_t007.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaahcr/s001_2008/02_tcp_le/aaaaahcr_s001_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaahrg/s001_2008/02_tcp_le/aaaaahrg_s001_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaahlh/s001_2008/02_tcp_le/aaaaahlh_s001_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaahun/s006_2009/02_tcp_le/aaaaahun_s006_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaajqo/s010_2010/03_tcp_ar_a/aaaaajqo_s010_t004.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaahvx/s001_2008/02_tcp_le/aaaaahvx_s001_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaahcp/s002_2009/02_tcp_le/aaaaahcp_s002_t001.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaahun/s012_2009/02_tcp_le/aaaaahun_s012_t001.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaajqo/s020_2010/02_tcp_le/aaaaajqo_s020_t006.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaajqo/s020_2010/02_tcp_le/aaaaajqo_s020_t002.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaahth/s001_2008/02_tcp_le/aaaaahth_s001_t001.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaizz/s004_2010/02_tcp_le/aaaaaizz_s004_t002.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaajqo/s008_2010/02_tcp_le/aaaaajqo_s008_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaahhh/s001_2008/02_tcp_le/aaaaahhh_s001_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaias/s001_2008/02_tcp_le/aaaaaias_s001_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaajqo/s020_2010/02_tcp_le/aaaaajqo_s020_t004.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaajqo/s020_2010/02_tcp_le/aaaaajqo_s020_t001.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaahea/s001_2007/02_tcp_le/aaaaahea_s001_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaajqo/s025_2010/02_tcp_le/aaaaajqo_s025_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaahux/s001_2009/02_tcp_le/aaaaahux_s001_t002.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaiat/s002_2009/02_tcp_le/aaaaaiat_s002_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaagzn/s002_2008/02_tcp_le/aaaaagzn_s002_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaajqo/s010_2010/03_tcp_ar_a/aaaaajqo_s010_t009.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaahux/s002_2009/02_tcp_le/aaaaahux_s002_t001.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaahvw/s001_2009/02_tcp_le/aaaaahvw_s001_t001.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaahge/s001_2008/02_tcp_le/aaaaahge_s001_t001.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaahao/s001_2008/02_tcp_le/aaaaahao_s001_t001.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaajqo/s010_2010/03_tcp_ar_a/aaaaajqo_s010_t003.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaajqo/s010_2010/03_tcp_ar_a/aaaaajqo_s010_t006.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaajqo/s010_2010/03_tcp_ar_a/aaaaajqo_s010_t008.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaajkh/s001_2009/02_tcp_le/aaaaajkh_s001_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaibs/s002_2009/02_tcp_le/aaaaaibs_s002_t001.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaajqo/s020_2010/02_tcp_le/aaaaajqo_s020_t003.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaajqo/s020_2010/02_tcp_le/aaaaajqo_s020_t005.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaajqo/s020_2010/02_tcp_le/aaaaajqo_s020_t007.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaifq/s004_2009/02_tcp_le/aaaaaifq_s004_t001.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaajqo/s020_2010/02_tcp_le/aaaaajqo_s020_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaajat/s006_2010/03_tcp_ar_a/aaaaajat_s006_t006.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaifq/s002_2009/02_tcp_le/aaaaaifq_s002_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaifq/s001_2009/02_tcp_le/aaaaaifq_s001_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaajqo/s020_2010/02_tcp_le/aaaaajqo_s020_t008.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaicq/s002_2008/02_tcp_le/aaaaaicq_s002_t001.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaajpi/s001_2010/02_tcp_le/aaaaajpi_s001_t001.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaigl/s001_2009/02_tcp_le/aaaaaigl_s001_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaajpi/s001_2010/02_tcp_le/aaaaajpi_s001_t004.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaipg/s001_2008/02_tcp_le/aaaaaipg_s001_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaike/s001_2009/02_tcp_le/aaaaaike_s001_t001.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaint/s006_2010/02_tcp_le/aaaaaint_s006_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaint/s002_2010/02_tcp_le/aaaaaint_s002_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaibs/s001_2009/02_tcp_le/aaaaaibs_s001_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaifq/s003_2009/02_tcp_le/aaaaaifq_s003_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaajad/s006_2011/02_tcp_le/aaaaajad_s006_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaajad/s005_2011/02_tcp_le/aaaaajad_s005_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaajby/s002_2009/02_tcp_le/aaaaajby_s002_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaieo/s001_2009/02_tcp_le/aaaaaieo_s001_t001.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaajcd/s001_2009/02_tcp_le/aaaaajcd_s001_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaainq/s001_2009/02_tcp_le/aaaaainq_s001_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/dev/aaaaamva/s003_2016/01_tcp_ar/aaaaamva_s003_t000.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'a1', 'a2', 'cz', 'ekg1']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaajqo/s007_2010/02_tcp_le/aaaaajqo_s007_t001.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaike/s004_2009/02_tcp_le/aaaaaike_s004_t001.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaajby/s001_2009/02_tcp_le/aaaaajby_s001_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaknk/s001_2010/02_tcp_le/aaaaaknk_s001_t001.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaknk/s001_2010/02_tcp_le/aaaaaknk_s001_t003.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaizz/s003_2010/02_tcp_le/aaaaaizz_s003_t001.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaajrs/s001_2010/02_tcp_le/aaaaajrs_s001_t001.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaknk/s001_2010/02_tcp_le/aaaaaknk_s001_t002.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaahlq/s001_2008/02_tcp_le/aaaaahlq_s001_t001.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaajrs/s001_2010/02_tcp_le/aaaaajrs_s001_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaakfo/s001_2010/02_tcp_le/aaaaakfo_s001_t001.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaicq/s001_2008/02_tcp_le/aaaaaicq_s001_t001.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaajmm/s001_2009/02_tcp_le/aaaaajmm_s001_t001.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaagro/s003_2009/02_tcp_le/aaaaagro_s003_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaajmr/s004_2010/02_tcp_le/aaaaajmr_s004_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaajqo/s008_2010/02_tcp_le/aaaaajqo_s008_t001.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaajqb/s001_2010/02_tcp_le/aaaaajqb_s001_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaajqh/s001_2010/02_tcp_le/aaaaajqh_s001_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaiad/s002_2009/02_tcp_le/aaaaaiad_s002_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaknk/s001_2010/02_tcp_le/aaaaaknk_s001_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaajqo/s019_2010/02_tcp_le/aaaaajqo_s019_t001.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaktb/s001_2010/02_tcp_le/aaaaaktb_s001_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaajqo/s022_2010/02_tcp_le/aaaaajqo_s022_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaajki/s001_2009/02_tcp_le/aaaaajki_s001_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaajqo/s025_2010/02_tcp_le/aaaaajqo_s025_t001.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaajqo/s023_2010/02_tcp_le/aaaaajqo_s023_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaajqo/s024_2010/02_tcp_le/aaaaajqo_s024_t001.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaalpc/s004_2014/03_tcp_ar_a/aaaaalpc_s004_t006.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaalpc/s004_2014/03_tcp_ar_a/aaaaalpc_s004_t005.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaalpc/s004_2014/03_tcp_ar_a/aaaaalpc_s004_t004.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaksg/s001_2010/02_tcp_le/aaaaaksg_s001_t001.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaamca/s004_2013/01_tcp_ar/aaaaamca_s004_t001.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1', 'a1', 'a2']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaalth/s003_2015/01_tcp_ar/aaaaalth_s003_t000.edf
+More than 1 contiguous second of the recording stays the same value: fp1 - fp2 2.34375 seconds.
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaksg/s001_2010/02_tcp_le/aaaaaksg_s001_t002.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaakal/s003_2010/02_tcp_le/aaaaakal_s003_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaakbz/s004_2010/02_tcp_le/aaaaakbz_s004_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaamca/s004_2013/01_tcp_ar/aaaaamca_s004_t000.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1', 'a1', 'a2']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaklv/s001_2010/02_tcp_le/aaaaaklv_s001_t001.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaakoe/s001_2010/02_tcp_le/aaaaakoe_s001_t001.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaakfo/s001_2010/02_tcp_le/aaaaakfo_s001_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaksy/s002_2010/02_tcp_le/aaaaaksy_s002_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaalak/s001_2010/02_tcp_le/aaaaalak_s001_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaakvb/s002_2010/02_tcp_le/aaaaakvb_s002_t001.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaalhf/s001_2011/02_tcp_le/aaaaalhf_s001_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaalsj/s001_2011/02_tcp_le/aaaaalsj_s001_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaalsg/s001_2011/02_tcp_le/aaaaalsg_s001_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaanok/s002_2012/03_tcp_ar_a/aaaaanok_s002_t003.edf
+More than 1 contiguous second of the recording stays the same value: fp1 7.024000000000001 seconds.
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaanme/s011_2014/01_tcp_ar/aaaaanme_s011_t000.edf
+More than 1 contiguous second of the recording stays the same value: fp1 1034.996 seconds.
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaltw/s001_2011/02_tcp_le/aaaaaltw_s001_t001.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaakvb/s001_2010/02_tcp_le/aaaaakvb_s001_t000.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaalpj/s002_2011/02_tcp_le/aaaaalpj_s002_t001.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaalrn/s001_2011/02_tcp_le/aaaaalrn_s001_t001.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaksy/s001_2010/02_tcp_le/aaaaaksy_s001_t001.edf
+Not in a referential montage: LE
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaanrp/s008_2013/01_tcp_ar/aaaaanrp_s008_t002.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1', 'a1', 'a2']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaogk/s002_2012/01_tcp_ar/aaaaaogk_s002_t003.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'a1', 'a2', 'cz', 'ekg1']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaanrp/s008_2013/01_tcp_ar/aaaaanrp_s008_t001.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1', 'a1', 'a2']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaogk/s002_2012/01_tcp_ar/aaaaaogk_s002_t002.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'a1', 'a2', 'cz', 'ekg1']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaogk/s002_2012/01_tcp_ar/aaaaaogk_s002_t001.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'a1', 'a2', 'cz', 'ekg1']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaapcr/s007_2013/01_tcp_ar/aaaaapcr_s007_t003.edf
+More than 1 contiguous second of the recording stays the same value: fp1 2.0234375 seconds.
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaapks/s013_2014/03_tcp_ar_a/aaaaapks_s013_t002.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaprj/s005_2013/01_tcp_ar/aaaaaprj_s005_t007.edf
+More than 1 contiguous second of the recording stays the same value: fp1 2.16015625 seconds.
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaqyo/s004_2014/01_tcp_ar/aaaaaqyo_s004_t009.edf
+More than 1 contiguous second of the recording stays the same value: fp1 1.9765625 seconds.
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaasdq/s002_2014/03_tcp_ar_a/aaaaasdq_s002_t002.edf
+More than 1 contiguous second of the recording stays the same value: fp1 1.75 seconds.
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaasut/s002_2015/01_tcp_ar/aaaaasut_s002_t001.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1', 'a1', 'a2']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaasrf/s001_2015/01_tcp_ar/aaaaasrf_s001_t001.edf
+More than 1 contiguous second of the recording stays the same value: fp1 - fp2 2.5390625 seconds.
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaaswt/s001_2015/01_tcp_ar/aaaaaswt_s001_t002.edf
+More than 1 contiguous second of the recording stays the same value: fp1 - fp2 33.30859375 seconds.
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaates/s007_2015/01_tcp_ar/aaaaates_s007_t004.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1', 'a1', 'a2']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaatem/s001_2015/01_tcp_ar/aaaaatem_s001_t001.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1', 'a1', 'a2']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaatez/s007_2015/01_tcp_ar/aaaaatez_s007_t003.edf
+More than 1 contiguous second of the recording stays the same value: fp1 - p3 1.4375 seconds.
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaasut/s002_2015/01_tcp_ar/aaaaasut_s002_t000.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1', 'a1', 'a2']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaatlp/s001_2015/03_tcp_ar_a/aaaaatlp_s001_t002.edf
+More than 1 contiguous second of the recording stays the same value: fp1 - fp2 5.5234375 seconds.
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaatem/s001_2015/01_tcp_ar/aaaaatem_s001_t000.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1', 'a1', 'a2']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaates/s007_2015/01_tcp_ar/aaaaates_s007_t002.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1', 'a1', 'a2']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaates/s007_2015/01_tcp_ar/aaaaates_s007_t001.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1', 'a1', 'a2']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaates/s007_2015/01_tcp_ar/aaaaates_s007_t003.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1', 'a1', 'a2']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaates/s007_2015/01_tcp_ar/aaaaates_s007_t000.edf
+Missing Channel: Channel fz not in ['fp1', 'fp2', 'f3', 'f4', 'c3', 'c4', 'p3', 'p4', 'o1', 'o2', 'f7', 'f8', 't3', 't4', 't5', 't6', 'cz', 'ekg1', 'a1', 'a2']
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaatvr/s005_2015/01_tcp_ar/aaaaatvr_s005_t004.edf
+More than 1 contiguous second of the recording stays the same value: fp1 1.28515625 seconds.
+/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaatjz/s001_2015/03_tcp_ar_a/aaaaatjz_s001_t000.edf
+More than 1 contiguous second of the recording stays the same value: fp1 - fp2 10.5390625 seconds.
