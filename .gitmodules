@@ -1,0 +1,3 @@
+[submodule "irregulars-neureka-codebase"]
+	path = irregulars-neureka-codebase
+	url = https://github.com/mabhijithn/irregulars-neureka-codebase.git
