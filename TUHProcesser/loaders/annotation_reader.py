@@ -1,65 +1,68 @@
-import os
-from typing import List, Tuple
-
+from typing import List
+import pandas as pd
+import csv
 
 class Annotation_Reader:
-    """ Class to store seizure annotations as read in the tsv annotation files from the SeizeIT2 BIDS dataset. """
+    """ Class to store seizure annotations as read in the csv annotation files from the TUH dataset. """
     def __init__(
         self,
-        events: List[Tuple[int, int]],
-        type: List[str],
-        lateralization: List[str],
-        localization: List[str],
-        vigilance: List[str],
-        rec_duration: float
+        events: List[List[int]],
+        annotation_path: str,
+        total_duration: float
     ):
         """Initiate an annotation instance
 
         Args:
-            events (List([int, int])): list of tuples where each element contains the start and stop times in seconds of the event
-            type (List[str]): list of event types according to the dataset's events dictionary (events.json).
-            lateralization (List[str]): list of lateralization characteristics of the events according to the dataset's events dictionary (events.json).
-            localization (List[str]): list of localization characteristics of the events according to the dataset's events dictionary (events.json).
-            vigilance (List[str]): list of vigilance characteristics of the events according to the dataset's events dictionary (events.json).
+            events (List([float,float])): list of tuples where each element contains the start and stop times in seconds of the event
+            total_duration (float): duration of the recording
 
         Returns:
             Annotation: returns an Annotation instance containing the events of the recording.
         """
         self.events = events
-        self.types = type
-        self.lateralization = lateralization
-        self.localization = localization
-        self.vigilance = vigilance
-        self.rec_duration = rec_duration
+        self.annotation_path = annotation_path
+        self.total_duration = total_duration
+
+    def getEvents(self):
+        return self.events
+    
+    def getDuration(self):
+        return self.total_duration
 
     @classmethod
     def loadAnnotation(
         cls,
         annotation_path: str,
-        recording: List[str],
     ):
         szEvents = list()
-        szTypes = list()
-        szLat = list()
-        szLoc = list()
-        szVig = list()
 
-        tsvFile = os.path.join(annotation_path)
-        df = pd.read_csv(tsvFile, delimiter="\t")
-        for i, e in df.iterrows():
-            if e['eventType'] != 'bckg' and e['eventType'] != 'impd':
-                szEvents.append([e['onset'], e['onset'] + e['duration']])
-                szTypes.append(e['eventType'])
-                szLat.append(e['lateralization'])
-                szLoc.append(e['localization'])
-                szVig.append(e['vigilance'])
-        durs = e['recordingDuration']
+        # If the recording path is given, convert it to the annotation path
+        if annotation_path[-3:] == "edf":
+            annotation_path = annotation_path[:-4] + ".csv_bi"
+        try:
+            csvFile = annotation_path
+            df = pd.read_csv(csvFile, header=5)
+            for i, e in df.iterrows():
+                if e['label'] != 'bckg':
+                    szEvents.append([e['start_time'], e['stop_time']])
+
+            with open(annotation_path, 'r', newline='') as csvfile:
+                reader = csv.reader(csvfile, delimiter=',', lineterminator='\n')
+                next(reader)
+                next(reader)
+                dur = float(next(reader)[0].split(' ')[-2])
+
+        except Exception as exc:
+            print(exc)
 
         return cls(
             szEvents,
-            szTypes,
-            szLat,
-            szLoc,
-            szVig,
-            durs,
+            annotation_path,
+            dur
         )
+
+    # def save_hdf5(self):
+    #     """ Save the annotation as an HDF5 file """
+    #     with h5py.File(self.annotation_path[:-7]+'_annotation.h5', 'w') as f:
+    #         f.create_dataset('events', data=self.events)
+    #         f.create_dataset('duration', data=self.total_duration)
