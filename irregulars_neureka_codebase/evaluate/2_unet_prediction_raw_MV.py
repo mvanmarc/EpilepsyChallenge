@@ -15,14 +15,14 @@ import tensorflow as tf
 # Import some utilities from the training folder
 import sys
 sys.path.insert(0, './irregulars-neureka-codebase/training/3-DNN/')
-from utils import build_windowfree_unet, setup_tf
+from irregulars_neureka_codebase.training.DNN.utils import build_windowfree_unet, setup_tf
 sys.path.insert(0, './irregulars-neureka-codebase/')
-from library import nedc
+from irregulars_neureka_codebase.library import nedc
 
 # All relevant files
 val_path = '/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaapks/s012_2014/01_tcp_ar/aaaaapks_s012_t001.h5' # Pre-processed data file
-saved_predictions = './irregulars-neureka-codebase/evaluate/evaluation/prediction_test_raw.h5' # File to store the prediction
-network_path = './irregulars-neureka-codebase/evaluate/attention_unet_raw.h5' # Path to trained weights
+saved_predictions = '/users/sista/kkontras/Documents/Epilepsy_Challenge/irregulars_neureka_codebase/evaluate/prediction_test_raw.h5' # File to store the prediction
+network_path = '/users/sista/kkontras/Documents/Epilepsy_Challenge/irregulars_neureka_codebase/evaluate/attention_unet_raw.h5' # Path to trained weights
 
 # Data settings
 fs = 200
@@ -46,7 +46,7 @@ with h5py.File(val_path, 'r') as f:
         sig.append(f[ch][()])
 
     # Put signals in a montage
-    (signals_ds, _) = nedc.rereferenceMV(sig, [x.upper() for x in ch_names])
+    (signals_ds, _) = nedc.rereference(sig, [x.upper() for x in ch_names])
     data = np.array(signals_ds).T
 
     mean = np.mean(data, axis=0)

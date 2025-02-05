@@ -15,9 +15,9 @@ import tensorflow as tf
 # Import some utilities from the training folder
 import sys
 sys.path.insert(0, './irregulars-neureka-codebase/training/3-DNN/')
-from utils import build_windowfree_unet, setup_tf
+from irregulars_neureka_codebase.training.DNN.utils import build_windowfree_unet, setup_tf
 sys.path.insert(0, './irregulars-neureka-codebase/')
-from library import nedc
+from irregulars_neureka_codebase.library import nedc
 
 # All relevant files
 val_path = '/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/edf/train/aaaaapks/s012_2014/01_tcp_ar/aaaaapks_s012_t001.h5' # Pre-processed data file
