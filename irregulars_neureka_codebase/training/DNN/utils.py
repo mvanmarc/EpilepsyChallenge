@@ -156,7 +156,7 @@ class BiasedConv(Conv2D):
         return outputs
     
 class AttentionPooling(object):
-    def __init__(self,filters, channels=18):
+    def __init__(self, filters, channels=18):
         self.filters = filters
         self.channels = channels
         
@@ -167,9 +167,11 @@ class AttentionPooling(object):
                       padding='same', activation=None, use_bias=False)(query)
         att_k = Conv2D(filters=self.filters, kernel_size=(1, 1), strides=(1, 1),
                       padding='same', activation=None, use_bias=False)(value)
+
         gate = BiasedConv(filters=self.filters, kernel_size=(1, 1), strides=(1, 1),
                          padding='same', activation='sigmoid',
                          kernel_initializer='zeros', bias_initializer='ones')(Add()([att_q, att_k]))
+
         att = Conv2D(filters=1, kernel_size=(1, 1), strides=(1, 1),
                     padding='same', activation='sigmoid',
                     kernel_initializer='ones', bias_initializer='zeros')(gate)
@@ -220,11 +222,17 @@ def build_unet(window_size=4096, n_channels=18, n_filters=8):
     x = BatchNormalization()(x)
     x = ELU()(x)
     x = Dropout(rate=0.5)(x)
-    
+
+
     out5 = Conv2D(filters=1, kernel_size=(3, 1), strides=(1, 1), padding='same', activation='sigmoid')(x)
     out5 = Reshape(target_shape=(window_size//1024,))(out5)
-    
+    # print(lvl5.shape)
+    # print(out5.shape)
+
     up4 = UpSampling2D(size=(4, 1))(x)
+    print(up4.shape)
+    print(lvl4.shape)
+
     att4 = AttentionPooling(filters=4*n_filters, channels=n_channels)([up4, lvl4])
     
     out4 = Conv2D(filters=1, kernel_size=(3, 1), strides=(1, 1), padding='same', activation='sigmoid')(att4)
@@ -320,8 +328,11 @@ def build_windowfree_unet(n_channels=18, n_filters=8):
     x = BatchNormalization()(x)
     x = ELU()(x)
     lvl5 = x
-    
+    # print(x.shape)
+
     x = MaxPooling2D(pool_size=(1, 20), padding='same')(lvl5)
+    # print(x.shape)
+
     x = Conv2D(filters=4*n_filters, kernel_size=(3, 1), strides=(1, 1), padding='same', activation=None)(x)
     x = BatchNormalization()(x)
     x = ELU()(x)
@@ -330,10 +341,16 @@ def build_windowfree_unet(n_channels=18, n_filters=8):
     x = BatchNormalization()(x)
     x = ELU()(x)
     x = Dropout(rate=0.5)(x)
-    
+
+    # print(x.shape)
+
     up4 = UpSampling2D(size=(4, 1))(x)
+    print(up4.shape)
+    print(lvl4.shape)
     att4 = AttentionPooling(filters=4*n_filters, channels=n_channels)([up4, lvl4])
-    
+
+    print(att4.shape)
+
     x = Concatenate(axis=-1)([up4, att4])
     x = Conv2D(filters=4*n_filters, kernel_size=(3, 1), strides=(1, 1), padding='same', activation=None)(x)
     x = BatchNormalization()(x)

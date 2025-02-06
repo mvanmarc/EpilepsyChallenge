@@ -55,8 +55,8 @@ with h5py.File(val_path, 'r') as f:
     signals_test.append((data-mean)/(std+1e-8))
         
 # Building a windowfree U-net and load trained weights
-unet = build_windowfree_unet(n_channels=n_channels, n_filters=n_filters)
-unet.load_weights(network_path)
+unet_raw = build_windowfree_unet(n_channels=n_channels, n_filters=n_filters)
+unet_raw.load_weights(network_path)
 
 # Predictions using the windowfree U-net on CPU, our GPU ran out of memory
 y_probas = []
@@ -64,8 +64,9 @@ reduction = 4096//4
 with tf.device('gpu:0'):
     for signal in signals_test:
         signal = signal[:len(signal)//reduction*reduction, :]
-        print(signal.shape)
-        prediction = unet.predict(signal[np.newaxis, :, :, np.newaxis])[0, :, 0, 0]
+        prediction = unet_raw.predict(signal[np.newaxis, :, :, np.newaxis])[0, :, 0, 0]
+        prediction = unet_wiener.predict(signal[np.newaxis, :, :, np.newaxis])[0, :, 0, 0]
+        prediction = unet_iclabel.predict(signal[np.newaxis, :, :, np.newaxis])[0, :, 0, 0]
         y_probas.append(prediction)
 
 # Saving predictions

@@ -28,7 +28,7 @@ class TUHDataset(Dataset):
         self.h5_file = h5py.File(data_path, 'r')
 
         #or load it from cumulated dict
-        with open("/users/sista/kkontras/Documents/Epilepsy_Challenge/irregulars_neureka_codebase/Dataloader/patient_dict.pkl", "rb") as f:
+        with open("/users/sista/kkontras/Documents/Epilepsy_Challenge/irregulars_neureka_codebase/Dataloader/tuh_patient_dict.pkl", "rb") as f:
             self.patient_dict = pickle.load(f)
 
         self._get_cumulative_lens()
@@ -252,7 +252,7 @@ class TUH_Dataloader():
                                                         num_workers=num_cores,
                                                         shuffle=True,
                                                         pin_memory=self.config.training_params.pin_memory,
-                                                        generator=g,
+                                                        # generator=g,
                                                         # collate_fn=collate_fn_padd,
                                                         # worker_init_fn=seed_worker
                                                         )
