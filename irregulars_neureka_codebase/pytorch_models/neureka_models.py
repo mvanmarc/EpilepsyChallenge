@@ -68,7 +68,7 @@ class AttentionPooling(nn.Module):
         att_k = self.att_k(value)
 
         # Compute the gate by adding the query and key
-        gated_output = torch.sigmoid(self.gate(att_q + att_k))  # Apply Sigmoid to the gate
+        gated_output = torch.sigmoid(att_q + att_k + self.gate.bias.unsqueeze(dim=-1).unsqueeze(dim=-1))  # Apply Sigmoid to the gate
 
         # Apply the attention weights
         att = torch.sigmoid(self.att(gated_output))  # Attention weights
@@ -119,34 +119,34 @@ class UNet1D(nn.Module):
         self.bn7 = nn.BatchNorm2d(4*n_filters)
         self.dropout1 = nn.Dropout(0.5)
 
-        # self.conv_out5 = nn.Conv2d(4*n_filters,1, (3, 1), stride=(1, 1), padding=(1,0), bias=True)
+        self.conv_out5 = nn.Conv2d(4*n_filters,1, (3, 1), stride=(1, 1), padding=(1,0), bias=True)
         self.upsample4 = nn.Upsample(scale_factor=(4,1), mode='nearest')  # up_sampling2d_2
         self.att4 = AttentionPooling(input_filters=[4*n_filters,8*n_filters], filters=4*n_filters, channels=n_channels)
         self.conv8 = nn.Conv2d(4*n_filters + 8*n_filters, 4*n_filters, (3, 1), padding=(1,0))  # conv2d_9
         self.bn8 = nn.BatchNorm2d(4*n_filters)
 
 
-        # self.conv_out4 = nn.Conv2d(8*n_filters,1, (3, 1), stride=(1, 1), padding=(1,0), bias=True)
+        self.conv_out4 = nn.Conv2d(8*n_filters,1, (3, 1), stride=(1, 1), padding=(1,0), bias=True)
         self.upsample3 = nn.Upsample(scale_factor=(4,1), mode='nearest')  # up_sampling2d_2
         self.att3 = AttentionPooling(input_filters=[4*n_filters,4*n_filters], filters=4*n_filters, channels=n_channels)
         self.conv9 = nn.Conv2d(8*n_filters, 4*n_filters, (7, 1), padding=(3,0))  # conv2d_9
         self.bn9 = nn.BatchNorm2d(4*n_filters)
 
 
-        # self.conv_out3 = nn.Conv2d(4*n_filters,1, (7, 1), stride=(1, 1), padding=(3,0), bias=True)
+        self.conv_out3 = nn.Conv2d(4*n_filters,1, (7, 1), stride=(1, 1), padding=(3,0), bias=True)
         self.upsample2 = nn.Upsample(scale_factor=(4,1), mode='nearest')  # up_sampling2d_2
         self.att2 = AttentionPooling(input_filters=[4*n_filters,4*n_filters], filters=4*n_filters, channels=n_channels)
         self.conv10 = nn.Conv2d(8*n_filters, 4*n_filters, (15, 1), padding=(7,0))  # conv2d_9
         self.bn10 = nn.BatchNorm2d(4*n_filters)
 
 
-        # self.conv_out2 = nn.Conv2d(4*n_filters,1, (15, 1), stride=(1, 1), padding=(7,0), bias=True)
+        self.conv_out2 = nn.Conv2d(4*n_filters,1, (15, 1), stride=(1, 1), padding=(7,0), bias=True)
         self.upsample1 = nn.Upsample(scale_factor=(4,1), mode='nearest')
         self.att1 = AttentionPooling(input_filters=[4*n_filters,2*n_filters], filters=4*n_filters, channels=n_channels)
         self.conv11 = nn.Conv2d(6*n_filters, 4*n_filters, (15, 1), padding=(7,0))  # conv2d_9
         self.bn11 = nn.BatchNorm2d(4*n_filters)
 
-        # self.conv_out1 = nn.Conv2d(2*n_filters,1, (15, 1), stride=(1, 1), padding=(7,0), bias=True)
+        self.conv_out1 = nn.Conv2d(2*n_filters,1, (15, 1), stride=(1, 1), padding=(7,0), bias=True)
         self.upsample0 = nn.Upsample(scale_factor=(4,1), mode='nearest')
         self.att0 = AttentionPooling(input_filters=[4*n_filters,n_filters], filters=4*n_filters, channels=n_channels)
         self.conv12 = nn.Conv2d(5 * n_filters, 4 * n_filters, (15, 1), padding=(7, 0))  # conv2d_9
@@ -178,14 +178,14 @@ class UNet1D(nn.Module):
         x6 = self.dropout(F.elu(self.bn6(self.conv6(x5))))
         x7 = self.dropout(F.elu(self.bn7(self.conv7(x6))))
 
-        # out5 = F.sigmoid(self.conv_out5(x7))
-        # out5 = out5.view(out5.shape[0], self.window_size//1024)  # Flatten to the required shape (batch_size, window_size//1024)
+        out5 = torch.sigmoid(self.conv_out5(x7))
+        out5 = out5.view(out5.shape[0], self.window_size//1024)  # Flatten to the required shape (batch_size, window_size//1024)
 
         up4 = self.upsample4(x7)
         att4 = self.att4(up4, lvl4)  # concatenate
 
-        # out4 = F.sigmoid(self.conv_out4(att4))
-        # out4 = out4.view(out4.shape[0], self.window_size//256)  # Flatten to the required shape (batch_size, window_size//1024)
+        out4 = torch.sigmoid(self.conv_out4(att4))
+        out4 = out4.view(out4.shape[0], self.window_size//256)  # Flatten to the required shape (batch_size, window_size//1024)
 
         #concat should give [96 1]
         x8 = F.elu(self.bn8(self.conv8(torch.cat([up4, att4], dim=1))))
@@ -193,24 +193,24 @@ class UNet1D(nn.Module):
         up3 = self.upsample3(x8)
         att3 = self.att3(up3, lvl3)  #concatenate
 
-        # out3 = F.sigmoid(self.conv_out3(att3))
-        # out3 = out3.view(out3.shape[0], self.window_size//64)  # Flatten to the required shape (batch_size, window_size//1024)
+        out3 = torch.sigmoid(self.conv_out3(att3))
+        out3 = out3.view(out3.shape[0], self.window_size//64)  # Flatten to the required shape (batch_size, window_size//1024)
         #concat should give [64 1]
         x9 = F.elu(self.bn9(self.conv9(torch.cat([up3, att3], dim=1))))
 
         up2 = self.upsample2(x9)
         att2 = self.att2(up2, lvl2)  # concatenate
 
-        # out2 = F.sigmoid(self.conv_out2(att2))
-        # out2 = out2.view(out2.shape[0], self.window_size//16)  # Flatten to the required shape (batch_size, window_size//1024)
+        out2 = torch.sigmoid(self.conv_out2(att2))
+        out2 = out2.view(out2.shape[0], self.window_size//16)  # Flatten to the required shape (batch_size, window_size//1024)
 
         #concat should give [64 1]
         x10 = F.elu(self.bn10(self.conv10(torch.cat([up2, att2], dim=1))))
 
         up1 = self.upsample1(x10)
         att1 = self.att1(up1, lvl1)  # concatenate
-        # out1 = F.sigmoid(self.conv_out1(att1))
-        # out1 = out1.view(out1.shape[0], self.window_size//4)  # Flatten to the required shape (batch_size, window_size//1024)
+        out1 = torch.sigmoid(self.conv_out1(att1))
+        out1 = out1.view(out1.shape[0], self.window_size//4)  # Flatten to the required shape (batch_size, window_size//1024)
         #concat should give [48 1]
         x11 = F.elu(self.bn11(self.conv11(torch.cat([up1, att1], dim=1))))
 
@@ -220,11 +220,61 @@ class UNet1D(nn.Module):
         x12 = F.elu(self.bn12(self.conv12(torch.cat([up0, att0], dim=1))))
         x13 = F.elu(self.bn13(self.conv13(x12)))
 
-        out0 = F.sigmoid(self.conv_out0(x13))
+        out0 = torch.sigmoid(self.conv_out0(x13))
         out0 = out0.view(out0.shape[0], self.window_size)  # Flatten to the required shape (batch_size, window_size//1024)
 
-        # return [out0, out1, out2, out3, out4, out5 ]
-        return out0
+        return [out0, out1, out2, out3, out4, out5 ]
+        # return out0
+
+
+
+class LSTM_Neureka(nn.Module):
+    def __init__(self):
+        super(LSTM_Neureka, self).__init__()
+
+        # Bidirectional LSTM layer (input size = 1, hidden size = 8, bidirectional = True)
+        self.lstm = nn.LSTM(input_size=3, hidden_size=4, num_layers=1,
+                            batch_first=True, bidirectional=True)
+
+        # Dense layer (input size = 16, output size = 9)
+        self.dense = nn.Linear(8, 1)  # 16 = 8 * 2 for bidirectional (forward + backward)
+
+    def forward(self, x):
+        # Pass through LSTM
+        lstm_out, (hn, cn) = self.lstm(x)
+
+        # Only the output of the last time step (optional depending on your use case)
+        out = lstm_out[:, :, :]  # Take the output from the last time step
+
+        # Pass through Dense layer
+        out = self.dense(out).squeeze()
+
+        return out
+
+class NeurekaNet(nn.Module):
+    def __init__(self, config):
+        super(NeurekaNet, self).__init__()
+
+        window_size = config.model.window_size
+        n_channels = config.model.n_channels
+        n_filters = config.model.n_filters
+
+        self.unet_raw = UNet1D(window_size, n_channels, n_filters)
+        self.unet_wiener = UNet1D(window_size, n_channels, n_filters)
+        self.unet_iclabel = UNet1D(window_size, n_channels, n_filters)
+        self.lstm = LSTM_Neureka()
+
+        self.unet_raw.load_state_dict(torch.load(config.model.pre_dir_raw),strict=False)
+        self.unet_wiener.load_state_dict(torch.load(config.model.pre_dir_wiener),strict=False)
+        self.unet_iclabel.load_state_dict(torch.load(config.model.pre_dir_iclabel),strict=False)
+        self.lstm.load_state_dict(torch.load(config.model.pre_dir_lstm),strict=False)
+
+    def forward(self, x):
+        raw = self.unet_raw(x)[0].unsqueeze(dim=-1)
+        wiener = self.unet_wiener(x)[0].unsqueeze(dim=-1)
+        iclabel = self.unet_iclabel(x)[0].unsqueeze(dim=-1)
+        x = torch.cat([raw, wiener, iclabel], dim=-1)
+        return self.lstm(x)
 
 if __name__ == "__main__":
     # Example Usage

@@ -226,7 +226,7 @@ def build_unet(window_size=4096, n_channels=18, n_filters=8):
     #
     out5 = Conv2D(filters=1, kernel_size=(3, 1), strides=(1, 1), padding='same', activation='sigmoid')(x)
     #
-    # out5 = Reshape(target_shape=(window_size//1024,))(out5)
+    out5 = Reshape(target_shape=(window_size//1024,))(out5)
     # # print(lvl5.shape)
     # # print(out5.shape)
     #
@@ -236,7 +236,7 @@ def build_unet(window_size=4096, n_channels=18, n_filters=8):
     att4 = AttentionPooling(filters=4*n_filters, channels=n_channels)([up4, lvl4])
     #
     out4 = Conv2D(filters=1, kernel_size=(3, 1), strides=(1, 1), padding='same', activation='sigmoid')(att4)
-    # out4 = Reshape(target_shape=(window_size//256,))(out4)
+    out4 = Reshape(target_shape=(window_size//256,))(out4)
     #
     x = Concatenate(axis=-1)([up4, att4])
     x = Conv2D(filters=4*n_filters, kernel_size=(3, 1), strides=(1, 1), padding='same', activation=None)(x)
@@ -247,7 +247,7 @@ def build_unet(window_size=4096, n_channels=18, n_filters=8):
     att3 = AttentionPooling(filters=4*n_filters, channels=n_channels)([up3, lvl3])
 
     out3 = Conv2D(filters=1, kernel_size=(7, 1), strides=(1, 1), padding='same', activation='sigmoid')(att3)
-    # out3 = Reshape(target_shape=(window_size//64,))(out3)
+    out3 = Reshape(target_shape=(window_size//64,))(out3)
     #
     x = Concatenate(axis=-1)([up3, att3])
     x = Conv2D(filters=4*n_filters, kernel_size=(7, 1), strides=(1, 1), padding='same', activation=None)(x)
@@ -258,7 +258,7 @@ def build_unet(window_size=4096, n_channels=18, n_filters=8):
     att2 = AttentionPooling(filters=4*n_filters, channels=n_channels)([up2, lvl2])
 
     out2 = Conv2D(filters=1, kernel_size=(15, 1), strides=(1, 1), padding='same', activation='sigmoid')(att2)
-    # out2 = Reshape(target_shape=(window_size//16,))(out2)
+    out2 = Reshape(target_shape=(window_size//16,))(out2)
 
     x = Concatenate(axis=-1)([up2, att2])
     x = Conv2D(filters=4*n_filters, kernel_size=(15, 1), strides=(1, 1), padding='same', activation=None)(x)
@@ -270,7 +270,7 @@ def build_unet(window_size=4096, n_channels=18, n_filters=8):
     att1 = AttentionPooling(filters=4*n_filters, channels=n_channels)([up1, lvl1])
     
     out1 = Conv2D(filters=1, kernel_size=(15, 1), strides=(1, 1), padding='same', activation='sigmoid')(att1)
-    # out1 = Reshape(target_shape=(window_size//4,))(out1)
+    out1 = Reshape(target_shape=(window_size//4,))(out1)
     
     x = Concatenate(axis=-1)([up1, att1])
     x = Conv2D(filters=4*n_filters, kernel_size=(15, 1), strides=(1, 1), padding='same', activation=None)(x)
@@ -286,9 +286,9 @@ def build_unet(window_size=4096, n_channels=18, n_filters=8):
     x = Conv2D(filters=4*n_filters, kernel_size=(15, 1), strides=(1, 1), padding='same', activation=None)(x)
     x = BatchNormalization()(x)
     x = ELU()(x)
-    output = Conv2D(filters=1, kernel_size=(15, 1), strides=(1, 1), padding='same', activation='sigmoid')(x)
+    x = Conv2D(filters=1, kernel_size=(15, 1), strides=(1, 1), padding='same', activation='sigmoid')(x)
 
-    # output = Reshape(target_shape=(window_size,))(x)
+    output = Reshape(target_shape=(window_size,))(x)
 
     unet = Model(input_seq, output)
     unet_train = Model(input_seq, [output, out1, out2, out3, out4, out5])

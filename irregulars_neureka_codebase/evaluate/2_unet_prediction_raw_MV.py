@@ -10,17 +10,17 @@ Produces a results HDF5 file with predictions for every file
 # Libraries
 import h5py
 import numpy as np
-import tensorflow as tf
+# import tensorflow as tf
 from irregulars_neureka_codebase.Dataloader.tuh_dataloader import TUH_Dataloader
 import sys
-from irregulars_neureka_codebase.training.DNN.utils import build_windowfree_unet, setup_tf, build_unet
+# from irregulars_neureka_codebase.training.DNN.utils import build_windowfree_unet, setup_tf, build_unet
 from tqdm import tqdm
 from easydict import EasyDict
 import einops
 import torch
-from keras.models import load_model
-from irregulars_neureka_codebase.pytorch_models.neureka_models import UNet1D
-setup_tf()
+# from keras.models import load_model
+from irregulars_neureka_codebase.pytorch_models.neureka_models import NeurekaNet
+# setup_tf()
 
 config = EasyDict()
 config.dataset = EasyDict()
@@ -36,80 +36,79 @@ config.training_params.pin_memory = False
 config.training_params.num_workers = 6
 config.training_params.seed = 0
 config.model = EasyDict()
+config.model.window_size = 4096
 config.model.n_channels = 18
 config.model.n_filters = 8
-config.model.pre_dir_raw = '/users/sista/kkontras/Documents/Epilepsy_Challenge/irregulars_neureka_codebase/evaluate/attention_unet_raw.h5'
-config.model.pre_dir_wiener = '/users/sista/kkontras/Documents/Epilepsy_Challenge/irregulars_neureka_codebase/evaluate/attention_unet_wiener.h5'
-config.model.pre_dir_iclabel = '/users/sista/kkontras/Documents/Epilepsy_Challenge/irregulars_neureka_codebase/evaluate/attention_unet_iclabel.h5'
-config.model.pre_dir_lstm = '/users/sista/kkontras/Documents/Epilepsy_Challenge/irregulars_neureka_codebase/evaluate/model-dnn-dnnw-dnnicalbl-lstm-4.h5'
+config.model.tf_pre_dir_raw = '/users/sista/kkontras/Documents/Epilepsy_Challenge/irregulars_neureka_codebase/evaluate/attention_unet_raw.h5'
+config.model.tf_pre_dir_wiener = '/users/sista/kkontras/Documents/Epilepsy_Challenge/irregulars_neureka_codebase/evaluate/attention_unet_wiener.h5'
+config.model.tf_pre_dir_iclabel = '/users/sista/kkontras/Documents/Epilepsy_Challenge/irregulars_neureka_codebase/evaluate/attention_unet_iclabel.h5'
+config.model.tf_pre_dir_lstm = '/users/sista/kkontras/Documents/Epilepsy_Challenge/irregulars_neureka_codebase/evaluate/model-dnn-dnnw-dnnicalbl-lstm-4.h5'
+
+config.model.pre_dir_raw = '/users/sista/kkontras/Documents/Epilepsy_Challenge/irregulars_neureka_codebase/pytorch_models/neureka_pytorch_raw.pth'
+config.model.pre_dir_wiener = '/users/sista/kkontras/Documents/Epilepsy_Challenge/irregulars_neureka_codebase/pytorch_models/neureka_pytorch_wiener.pth'
+config.model.pre_dir_iclabel = '/users/sista/kkontras/Documents/Epilepsy_Challenge/irregulars_neureka_codebase/pytorch_models/neureka_pytorch_iclabel.pth'
+config.model.pre_dir_lstm = '/users/sista/kkontras/Documents/Epilepsy_Challenge/irregulars_neureka_codebase/pytorch_models/neureka_pytorch_lstm.pth'
+
 config.model.save_preds = '/users/sista/kkontras/Documents/Epilepsy_Challenge/irregulars_neureka_codebase/evaluate/prediction_test_raw.h5'
 
 dl = TUH_Dataloader(config)
 
-unet_raw = build_unet(n_channels=config.model.n_channels, n_filters=config.model.n_filters)[1]
-unet_raw.load_weights(config.model.pre_dir_raw)
-
-unet_wiener = build_windowfree_unet(n_channels=config.model.n_channels, n_filters=config.model.n_filters)
-unet_wiener.load_weights(config.model.pre_dir_wiener)
-
-unet_iclabel = build_windowfree_unet(n_channels=config.model.n_channels, n_filters=config.model.n_filters)
-unet_iclabel.load_weights(config.model.pre_dir_iclabel)
-
-lstm_fusion_model = load_model(config.model.pre_dir_lstm)
-# print("Parameters loaded.")
-
-
-# test(model, modeltype, classifiers, filenames)
+# unet_raw = build_unet(n_channels=config.model.n_channels, n_filters=config.model.n_filters)[0]
+# unet_raw.load_weights(config.model.pre_dir_raw)
 #
-# f_nick = dict()
-# for classifier in classifiers:
-#     if classifier['format'] == 'nick':
-#         f_nick[classifier['name']] = h5py.File(classifier['file'], 'r')
+# unet_wiener = build_windowfree_unet(n_channels=config.model.n_channels, n_filters=config.model.n_filters)
+# unet_wiener.load_weights(config.model.pre_dir_wiener)
 #
-# # Predict probabilities
-# results = list()
-# for i, filename in enumerate(filenames):
-#     x = prepare_file(i, filename, classifiers, f_nick, modeltype)
-#     print(f_nick)
-#     u = model.predict(x, batch_size=1)
-#     model.reset_states()
-#     results.append(u)
-#
-# with open('./irregulars-neureka-codebase/evaluate/evaluation/lstm-results.pkl', 'wb') as filehandler:
-#     pickle.dump(results, filehandler)
-#
-# # Close Nick data
-# for key in f_nick:
-#     f_nick[key].close()
+# unet_iclabel = build_windowfree_unet(n_channels=config.model.n_channels, n_filters=config.model.n_filters)
+# unet_iclabel.load_weights(config.model.pre_dir_iclabel)
 
-unet_raw.summary()
-for layer in unet_raw.layers:
+# lstm_fusion_model = load_model(config.model.pre_dir_lstm)
+# lstm_fusion_model.summary()
 
-    print(f"{layer.count_params()}", end=",")
-model = UNet1D(4096)
-model.load_state_dict(torch.load('/users/sista/kkontras/Documents/Epilepsy_Challenge/irregulars_neureka_codebase/pytorch_models/neureka_pytorch_raw.pth'))
+pytorch_net = NeurekaNet(config)
+pytorch_net.cuda()
+pytorch_net.eval()
+
 
 agg_features, labels = [], []
-with tf.device('gpu:0'):
-    for i, batch in tqdm(enumerate(dl.valid_loader), total=len(dl.valid_loader)):
-        data = batch['data']['raw']
-        label = batch['label']
-        data = einops.rearrange(data, "b c t -> b t c").unsqueeze(dim=-1)
-        features_raw = torch.from_numpy(unet_raw.predict(data.numpy())).squeeze().unsqueeze(dim=0)
-        # break
-        output = model(data)
-        break
-        features_wiener = torch.from_numpy(unet_wiener.predict(data.numpy())).squeeze().unsqueeze(dim=0)
-        features_iclabel = torch.from_numpy(unet_iclabel.predict(data.numpy())).squeeze().unsqueeze(dim=0)
-        features = torch.concatenate([features_raw, features_wiener, features_iclabel], dim=0).unsqueeze(dim=0)
-        agg_features.append(features)
-        labels.append(label)
-        u = lstm_fusion_model.predict(features.numpy(), batch_size=1)
-        lstm_fusion_model.reset_states()
-        # print(u.shape)
 
-        # if i==2:
-        break
+for i, batch in tqdm(enumerate(dl.valid_loader), total=len(dl.valid_loader)):
+
+    data = batch['data']['raw']
+    label = batch['label']
+    data = einops.rearrange(data, "b c t -> b t c").unsqueeze(dim=1).cuda().float()
+
+    pred = pytorch_net(data)
+
+    print(pred.shape)
+
+    break
+
+#
+# with tf.device('gpu:0'):
+#     for i, batch in tqdm(enumerate(dl.valid_loader), total=len(dl.valid_loader)):
+#         data = batch['data']['raw']
+#         label = batch['label']
+#         # data = einops.rearrange(data, "b c t -> b t c").unsqueeze(dim=-1)
+#         # features_raw = torch.from_numpy(unet_raw.predict(data.numpy())).squeeze().unsqueeze(dim=0)
+#         # break
+#         features_raw = pytorch_unet_raw(data.unsqueeze(dim=-1))
+#         features_wiener = pytorch_unet_wiener(data.unsqueeze(dim=-1))
+#         features_iclabel = pytorch_unet_iclabel(data.unsqueeze(dim=-1))
+#         # print(features_raw- output)
+#         # print(features_raw- output)
+#         break
+#         features_wiener = torch.from_numpy(unet_wiener.predict(data.numpy())).squeeze().unsqueeze(dim=0)
+#         features_iclabel = torch.from_numpy(unet_iclabel.predict(data.numpy())).squeeze().unsqueeze(dim=0)
+#         features = torch.concatenate([features_raw, features_wiener, features_iclabel], dim=0).unsqueeze(dim=0)
+#         agg_features.append(features)
+#         labels.append(label)
+#         u = lstm_fusion_model.predict(features.numpy(), batch_size=1)
+#         lstm_fusion_model.reset_states()
+#         # print(u.shape)
+#
+#         # if i==2:
+#         break
 
 # preds = torch.concatenate(preds)
 # labels = torch.concatenate(labels)

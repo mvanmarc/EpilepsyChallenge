@@ -7,7 +7,9 @@ import tensorflow as tf
 import h5py
 import numpy as np
 import tensorflow as tf
-from neureka_models import UNet1D
+from neureka_models import UNet1D, LSTM_Neureka
+from keras.models import load_model
+
 # Import some utilities from the training folder
 import sys
 sys.path.insert(0, './irregulars-neureka-codebase/training/3-DNN/')
@@ -16,21 +18,24 @@ sys.path.insert(0, './irregulars-neureka-codebase/')
 from irregulars_neureka_codebase.library import nedc
 
 
-wpath = '/users/sista/kkontras/Documents/Epilepsy_Challenge/irregulars_neureka_codebase/evaluate/attention_unet_raw.h5'
+# wpath = '/users/sista/kkontras/Documents/Epilepsy_Challenge/irregulars_neureka_codebase/evaluate/attention_unet_raw.h5'
 # wpath = '/users/sista/kkontras/Documents/Epilepsy_Challenge/irregulars_neureka_codebase/evaluate/attention_unet_wiener.h5'
 # wpath = '/users/sista/kkontras/Documents/Epilepsy_Challenge/irregulars_neureka_codebase/evaluate/attention_unet_iclabel.h5'
+wpath = '/users/sista/kkontras/Documents/Epilepsy_Challenge/irregulars_neureka_codebase/evaluate/model-dnn-dnnw-dnnicalbl-lstm-4.h5'
 # wpath = ""
 # Load TensorFlow Model
 # tf_model = tf.keras.models.load_model(wpath)
 
-unet_raw = build_unet(n_channels=18, n_filters=8)[0]
-unet_raw.load_weights(wpath)
+# unet_raw = build_unet(n_channels=18, n_filters=8)[0]
+unet_raw = load_model(wpath)
+# unet_raw.load_weights(wpath)
 tf_weights = unet_raw.get_weights()
 import einops
 import torch
 from collections import defaultdict
 
-torch_model = UNet1D(4096)
+# torch_model = UNet1D(4096)
+torch_model = LSTM_Neureka()
 
 # model_parts = defaultdict(lambda: 0)
 # for name, p in torch_model.named_parameters():
@@ -90,12 +95,20 @@ correspondence_dict = {
 "bn" : "batch_normalization",
 "conv" : "conv2d"
 }
+correspondence_dict = {
+"lstm" : "bidirectional_1",
+"dense" : "dense_1"
+}
 
 
 def set_weights(torch_layer, tf_weight_name, f, tf_layers):
     """Helper function to assign weights from TensorFlow to PyTorch"""
 
+
+    if "model_weights" in f:
+        f = f["model_weights"]
     print(f[tf_weight_name][tf_weight_name].keys())
+    print(tf_weight_name)
 
     if "bias:0" in f[tf_weight_name][tf_weight_name].keys():
         bias = np.array(f[tf_weight_name][tf_weight_name]["bias:0"])
@@ -106,6 +119,8 @@ def set_weights(torch_layer, tf_weight_name, f, tf_layers):
         # Ensure we adjust for dimension mismatch between TF and PyTorch (transpose)
         if len(weight.shape) == 4:
             weight = einops.rearrange(weight, "a b c d -> d c a b")
+        if len(weight.shape) == 2 and tf_weight_name == "dense_1":
+            weight = einops.rearrange(weight, "a b -> b a")
         if torch_layer.weight.data.shape != weight.shape:
             raise ValueError(f"Dimension mismatch: {torch_layer.weight.data.shape} != {weight.shape}")
         torch_layer.weight.data = torch.tensor(weight, dtype=torch.float32)
@@ -123,7 +138,23 @@ def set_weights(torch_layer, tf_weight_name, f, tf_layers):
         moving_variance = np.array(f[tf_weight_name][tf_weight_name]["moving_variance:0"])
         torch_layer.running_var = torch.tensor(moving_variance, dtype=torch.float32)
 
+    if "backward_lstm_1" in f[tf_weight_name][tf_weight_name].keys():
+        backward_lstm_kernel = np.array(f[tf_weight_name][tf_weight_name]["backward_lstm_1"]["kernel:0"], dtype=np.float32)
+        backward_lstm_recurrent_kernel = np.array(f[tf_weight_name][tf_weight_name]["backward_lstm_1"]["recurrent_kernel:0"], dtype=np.float32)
+        backward_lstm_bias = np.array(f[tf_weight_name][tf_weight_name]["backward_lstm_1"]["bias:0"], dtype=np.float32)
+        torch_layer.weight_ih_l0 = torch.nn.Parameter(torch.tensor(einops.rearrange(backward_lstm_kernel, "a b -> b a"), dtype=torch.float32))
+        torch_layer.weight_hh_l0 = torch.nn.Parameter(torch.tensor(einops.rearrange(backward_lstm_recurrent_kernel, "a b -> b a"), dtype=torch.float32))
+        torch_layer.bias_ih_l0 = torch.nn.Parameter(torch.tensor(backward_lstm_bias, dtype=torch.float32))
+        torch_layer.bias_hh_l0 = torch.nn.Parameter(torch.tensor(backward_lstm_bias, dtype=torch.float32))
 
+    if "forward_lstm_1" in f[tf_weight_name][tf_weight_name].keys():
+        forward_lstm_kernel = np.array(f[tf_weight_name][tf_weight_name]["forward_lstm_1"]["kernel:0"], dtype=np.float32)
+        forward_lstm_recurrent_kernel = np.array(f[tf_weight_name][tf_weight_name]["forward_lstm_1"]["recurrent_kernel:0"], dtype=np.float32)
+        forward_lstm_bias = np.array(f[tf_weight_name][tf_weight_name]["forward_lstm_1"]["bias:0"], dtype=np.float32)
+        torch_layer.weight_ih_l0 = torch.nn.Parameter(torch.tensor(einops.rearrange(forward_lstm_kernel, "a b -> b a"), dtype=torch.float32))
+        torch_layer.weight_hh_l0 = torch.nn.Parameter(torch.tensor(einops.rearrange(forward_lstm_recurrent_kernel, "a b -> b a"), dtype=torch.float32))
+        torch_layer.bias_ih_l0 = torch.nn.Parameter(torch.tensor(forward_lstm_bias, dtype=torch.float32))
+        torch_layer.bias_hh_l0 = torch.nn.Parameter(torch.tensor(forward_lstm_bias, dtype=torch.float32))
 
 def get_nested_attr(model, attr_path):
     """Recursively retrieve nested attributes (layers) in PyTorch model."""
@@ -148,8 +179,6 @@ with h5py.File(wpath, "r") as f:
     # Iterate over the correspondence dictionary and assign weights
     for pytorch_name, tensorflow_name in correspondence_dict.items():
         try:
-            if pytorch_name == "att0.gate":
-                print("att0.gate")
             torch_layer = get_nested_attr(torch_model, pytorch_name)
             set_weights(torch_layer, tensorflow_name, f, tf_layers)
             processed_layers.add(pytorch_name)  # Mark this PyTorch layer as processed
@@ -175,6 +204,7 @@ with h5py.File(wpath, "r") as f:
         print("All PyTorch model parameters have been initialized successfully!")
 
 # Save the converted PyTorch model
-torch.save(torch_model.state_dict(), "neureka_pytorch_raw.pth")
+# torch.save(torch_model.state_dict(), "neureka_pytorch_raw.pth")
 # torch.save(torch_model.state_dict(), "neureka_pytorch_wiener.pth")
 # torch.save(torch_model.state_dict(), "neureka_pytorch_iclabel.pth")
+torch.save(torch_model.state_dict(), "neureka_pytorch_lstm.pth")
