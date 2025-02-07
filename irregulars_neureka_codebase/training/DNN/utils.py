@@ -162,7 +162,8 @@ class AttentionPooling(object):
         
     def __call__(self, inputs):
         query, value = inputs
-        
+
+
         att_q = Conv2D(filters=self.filters, kernel_size=(1, 1), strides=(1, 1),
                       padding='same', activation=None, use_bias=False)(query)
         att_k = Conv2D(filters=self.filters, kernel_size=(1, 1), strides=(1, 1),
@@ -175,7 +176,7 @@ class AttentionPooling(object):
         att = Conv2D(filters=1, kernel_size=(1, 1), strides=(1, 1),
                     padding='same', activation='sigmoid',
                     kernel_initializer='ones', bias_initializer='zeros')(gate)
-        
+
         return AveragePooling2D(pool_size=(1, self.channels), padding='same')(Multiply()([att, value]))
 
 def build_unet(window_size=4096, n_channels=18, n_filters=8):
@@ -186,33 +187,33 @@ def build_unet(window_size=4096, n_channels=18, n_filters=8):
     x = Conv2D(filters=n_filters, kernel_size=(15, 1), strides=(1, 1), padding='same', activation=None)(x)
     x = BatchNormalization()(x)
     lvl0 = ELU()(x)
-    
+
     x = MaxPooling2D(pool_size=(4, 1), padding='same')(lvl0)
     x = Conv2D(filters=2*n_filters, kernel_size=(15, 1), strides=(1, 1), padding='same', activation=None)(x)
     x = BatchNormalization()(x)
     lvl1 = ELU()(x)
-    
+
     x = MaxPooling2D(pool_size=(4, 1), padding='same')(lvl1)
     x = Conv2D(filters=4*n_filters, kernel_size=(15, 1), strides=(1, 1), padding='same', activation=None)(x)
     x = BatchNormalization()(x)
     lvl2 = ELU()(x)
-    
+
     x = MaxPooling2D(pool_size=(4, 1), padding='same')(lvl2)
     x = Conv2D(filters=4*n_filters, kernel_size=(7, 1), strides=(1, 1), padding='same', activation=None)(x)
     x = BatchNormalization()(x)
     lvl3 = ELU()(x)
-    
+
     x = MaxPooling2D(pool_size=(4, 1), padding='same')(lvl3)
     x = Conv2D(filters=8*n_filters, kernel_size=(3, 1), strides=(1, 1), padding='same', activation=None)(x)
     x = BatchNormalization()(x)
     lvl4 = ELU()(x)
-    
+
     x = MaxPooling2D(pool_size=(4, 1), padding='same')(lvl4)
     x = Conv2D(filters=8*n_filters, kernel_size=(3, 1), strides=(1, 1), padding='same', activation=None)(x)
     x = BatchNormalization()(x)
     x = ELU()(x)
     lvl5 = x
-    
+
     x = MaxPooling2D(pool_size=(1, 20), padding='same')(lvl5)
     x = Conv2D(filters=4*n_filters, kernel_size=(3, 1), strides=(1, 1), padding='same', activation=None)(x)
     x = BatchNormalization()(x)
@@ -222,55 +223,54 @@ def build_unet(window_size=4096, n_channels=18, n_filters=8):
     x = BatchNormalization()(x)
     x = ELU()(x)
     x = Dropout(rate=0.5)(x)
-
-
+    #
     out5 = Conv2D(filters=1, kernel_size=(3, 1), strides=(1, 1), padding='same', activation='sigmoid')(x)
-    out5 = Reshape(target_shape=(window_size//1024,))(out5)
-    # print(lvl5.shape)
-    # print(out5.shape)
-
+    #
+    # out5 = Reshape(target_shape=(window_size//1024,))(out5)
+    # # print(lvl5.shape)
+    # # print(out5.shape)
+    #
     up4 = UpSampling2D(size=(4, 1))(x)
-    print(up4.shape)
-    print(lvl4.shape)
-
+    #
+    #
     att4 = AttentionPooling(filters=4*n_filters, channels=n_channels)([up4, lvl4])
-    
+    #
     out4 = Conv2D(filters=1, kernel_size=(3, 1), strides=(1, 1), padding='same', activation='sigmoid')(att4)
-    out4 = Reshape(target_shape=(window_size//256,))(out4)
-    
+    # out4 = Reshape(target_shape=(window_size//256,))(out4)
+    #
     x = Concatenate(axis=-1)([up4, att4])
     x = Conv2D(filters=4*n_filters, kernel_size=(3, 1), strides=(1, 1), padding='same', activation=None)(x)
     x = BatchNormalization()(x)
     x = ELU()(x)
-    
+
     up3 = UpSampling2D(size=(4, 1))(x)
     att3 = AttentionPooling(filters=4*n_filters, channels=n_channels)([up3, lvl3])
-    
+
     out3 = Conv2D(filters=1, kernel_size=(7, 1), strides=(1, 1), padding='same', activation='sigmoid')(att3)
-    out3 = Reshape(target_shape=(window_size//64,))(out3)
-    
+    # out3 = Reshape(target_shape=(window_size//64,))(out3)
+    #
     x = Concatenate(axis=-1)([up3, att3])
     x = Conv2D(filters=4*n_filters, kernel_size=(7, 1), strides=(1, 1), padding='same', activation=None)(x)
     x = BatchNormalization()(x)
     x = ELU()(x)
-    
+
     up2 = UpSampling2D(size=(4, 1))(x)
     att2 = AttentionPooling(filters=4*n_filters, channels=n_channels)([up2, lvl2])
-    
+
     out2 = Conv2D(filters=1, kernel_size=(15, 1), strides=(1, 1), padding='same', activation='sigmoid')(att2)
-    out2 = Reshape(target_shape=(window_size//16,))(out2)
-    
+    # out2 = Reshape(target_shape=(window_size//16,))(out2)
+
     x = Concatenate(axis=-1)([up2, att2])
     x = Conv2D(filters=4*n_filters, kernel_size=(15, 1), strides=(1, 1), padding='same', activation=None)(x)
     x = BatchNormalization()(x)
     x = ELU()(x)
-    
-    
+    #
+    #
     up1 = UpSampling2D(size=(4, 1))(x)
     att1 = AttentionPooling(filters=4*n_filters, channels=n_channels)([up1, lvl1])
     
     out1 = Conv2D(filters=1, kernel_size=(15, 1), strides=(1, 1), padding='same', activation='sigmoid')(att1)
-    out1 = Reshape(target_shape=(window_size//4,))(out1)
+    # out1 = Reshape(target_shape=(window_size//4,))(out1)
     
     x = Concatenate(axis=-1)([up1, att1])
     x = Conv2D(filters=4*n_filters, kernel_size=(15, 1), strides=(1, 1), padding='same', activation=None)(x)
@@ -286,9 +286,9 @@ def build_unet(window_size=4096, n_channels=18, n_filters=8):
     x = Conv2D(filters=4*n_filters, kernel_size=(15, 1), strides=(1, 1), padding='same', activation=None)(x)
     x = BatchNormalization()(x)
     x = ELU()(x)
-    x = Conv2D(filters=1, kernel_size=(15, 1), strides=(1, 1), padding='same', activation='sigmoid')(x)
+    output = Conv2D(filters=1, kernel_size=(15, 1), strides=(1, 1), padding='same', activation='sigmoid')(x)
 
-    output = Reshape(target_shape=(window_size,))(x)
+    # output = Reshape(target_shape=(window_size,))(x)
 
     unet = Model(input_seq, output)
     unet_train = Model(input_seq, [output, out1, out2, out3, out4, out5])
@@ -345,11 +345,10 @@ def build_windowfree_unet(n_channels=18, n_filters=8):
     # print(x.shape)
 
     up4 = UpSampling2D(size=(4, 1))(x)
-    print(up4.shape)
-    print(lvl4.shape)
+
+
     att4 = AttentionPooling(filters=4*n_filters, channels=n_channels)([up4, lvl4])
 
-    print(att4.shape)
 
     x = Concatenate(axis=-1)([up4, att4])
     x = Conv2D(filters=4*n_filters, kernel_size=(3, 1), strides=(1, 1), padding='same', activation=None)(x)

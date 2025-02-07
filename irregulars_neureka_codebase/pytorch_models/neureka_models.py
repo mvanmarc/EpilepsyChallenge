@@ -19,24 +19,15 @@ class BiasedConv(nn.Module):
 
         # Initialize the convolution layer
         self.conv = nn.Conv2d(in_channels=filters, out_channels=filters, kernel_size=kernel_size,
-                              stride=strides, padding=padding, bias=False)  # no bias in conv
+                              stride=strides, padding=padding, bias=True)  # no bias in conv
 
-        # Add custom bias if required
-        if self.use_bias:
-            self.bias = nn.Parameter(torch.zeros(filters))  # Default to zeros for bias
-
-            if self.bias_initializer == 'ones':
-                self.bias.data.fill_(1)  # Bias initializer as ones
+        nn.init.ones_(self.conv.weight)  # Initialize the weights to ones
+        nn.init.zeros_(self.conv.bias)  # Initialize the weights to ones
 
     def forward(self, x):
         # Apply convolution operation
         x = self.conv(x)
 
-        # Manually add the bias
-        if self.use_bias:
-            x += self.bias.view(1, self.filters, 1, 1)  # Expand bias to match the shape of output (N, filters, H, W)
-
-        # Apply activation function if specified
         if self.activation:
             x = self.activation(x)
 
@@ -54,29 +45,33 @@ class AttentionPooling(nn.Module):
         self.att_k = nn.Conv2d(in_channels=input_filters[1], out_channels=filters,
                                kernel_size=1, stride=1, padding=0, bias=False)
 
-        self.gate = BiasedConv(filters=self.filters, kernel_size=(1, 1), strides=(1, 1),
-                          padding=0, activation=F.sigmoid,
-                          kernel_initializer='zeros', bias_initializer='ones')
+        self.gate = nn.Conv2d(in_channels=filters, out_channels=filters, kernel_size=(1, 1),
+                              stride=(1, 1), padding=0, bias=True)  # no bias in conv
+
+        nn.init.ones_(self.gate.weight)  # Initialize the weights to ones
+        self.gate.weight.requires_grad = False
+        nn.init.zeros_(self.gate.bias)  # Initialize the weights to ones
 
         # Final attention convolution
-        self.att = nn.Conv2d(in_channels=filters, out_channels=1, kernel_size=(1, 1), stride=1, padding=0, bias=False)
+        self.att = nn.Conv2d(in_channels=filters, out_channels=1, kernel_size=(1, 1), stride=1, padding=0, bias=True)
+
         nn.init.ones_(self.att.weight)  # Initialize the weights to ones
+        nn.init.zeros_(self.att.bias)  # Initialize the weights to ones
 
         # Average Pooling layer
         self.pool = nn.AvgPool2d(kernel_size=(1, channels), padding=0)
 
-    def forward(self, inputs):
-        query, value = inputs
+    def forward(self, query, value):
 
-        # Apply convolutions to get the query and key
+        # Apply convolutions to get the query and key*
         att_q = self.att_q(query)
         att_k = self.att_k(value)
 
         # Compute the gate by adding the query and key
-        gated_output = F.sigmoid(self.gate(att_q + att_k))  # Apply Sigmoid to the gate
+        gated_output = torch.sigmoid(self.gate(att_q + att_k))  # Apply Sigmoid to the gate
 
         # Apply the attention weights
-        att = F.sigmoid(self.att(gated_output))  # Attention weights
+        att = torch.sigmoid(self.att(gated_output))  # Attention weights
 
         # Apply average pooling
         output = self.pool(att * value)
@@ -91,8 +86,8 @@ class UNet1D(nn.Module):
         self.window_size = window_size
 
         # Encoding Path
-        self.conv0 = nn.Conv2d(1, n_filters, (15, 1), padding=(7, 0))
-        self.bn0 = nn.BatchNorm2d(n_filters)
+        self.conv = nn.Conv2d(1, n_filters, (15, 1), padding=(7, 0))
+        self.bn = nn.BatchNorm2d(n_filters)
         self.maxpool0 = nn.MaxPool2d(kernel_size=(4, 1), stride=(4, 1), padding=(1, 0))
 
         self.conv1 = nn.Conv2d(n_filters, 2*n_filters, (15, 1), padding=(7, 0))
@@ -103,16 +98,17 @@ class UNet1D(nn.Module):
         self.bn2 = nn.BatchNorm2d(4*n_filters)
         self.maxpool2 = nn.MaxPool2d(kernel_size=(4, 1), stride=(4, 1), padding=(1, 0))
 
-        self.conv3 = nn.Conv2d(4*n_filters, 4*n_filters, (15, 1), padding=(7, 0))
+        self.conv3 = nn.Conv2d(4*n_filters, 4*n_filters, (7, 1), padding=(3, 0))
         self.bn3 = nn.BatchNorm2d(4*n_filters)
         self.maxpool3 = nn.MaxPool2d(kernel_size=(4, 1), stride=(4, 1), padding=(1, 0))
 
-        self.conv4 = nn.Conv2d(4*n_filters, 8*n_filters, (7, 1), padding=(3, 0))
+        self.conv4 = nn.Conv2d(4*n_filters, 8*n_filters, (3, 1), padding=(1, 0))
         self.bn4 = nn.BatchNorm2d(8*n_filters)
         self.maxpool4 = nn.MaxPool2d(kernel_size=(4, 1), stride=(4, 1), padding=(1, 0))
 
         self.conv5 = nn.Conv2d(8*n_filters, 8*n_filters, (3, 1), padding=(1, 0))
         self.bn5 = nn.BatchNorm2d(8*n_filters)
+
         self.maxpool5 = nn.MaxPool2d(kernel_size=(1, n_channels), stride=(1, n_channels), padding=0)
 
         self.conv6 = nn.Conv2d(8*n_filters, 4*n_filters, (3, 1), padding=(1, 0))
@@ -123,109 +119,51 @@ class UNet1D(nn.Module):
         self.bn7 = nn.BatchNorm2d(4*n_filters)
         self.dropout1 = nn.Dropout(0.5)
 
-        self.conv_out5 = nn.Conv2d(4*n_filters,1, (3, 1), stride=(1, 1), bias=False)
-        self.conv_out4 = nn.Conv2d(8*n_filters,1, (3, 1), stride=(1, 1), bias=False)
-        self.conv_out3 = nn.Conv2d(4*n_filters,1, (7, 1), stride=(1, 1), bias=False)
-        self.conv_out2 = nn.Conv2d(4*n_filters,1, (15, 1), stride=(1, 1), bias=False)
-        self.conv_out1 = nn.Conv2d(4*n_filters,1, (15, 1), stride=(1, 1), bias=False)
+        # self.conv_out5 = nn.Conv2d(4*n_filters,1, (3, 1), stride=(1, 1), padding=(1,0), bias=True)
+        self.upsample4 = nn.Upsample(scale_factor=(4,1), mode='nearest')  # up_sampling2d_2
+        self.att4 = AttentionPooling(input_filters=[4*n_filters,8*n_filters], filters=4*n_filters, channels=n_channels)
+        self.conv8 = nn.Conv2d(4*n_filters + 8*n_filters, 4*n_filters, (3, 1), padding=(1,0))  # conv2d_9
+        self.bn8 = nn.BatchNorm2d(4*n_filters)
+
+
+        # self.conv_out4 = nn.Conv2d(8*n_filters,1, (3, 1), stride=(1, 1), padding=(1,0), bias=True)
+        self.upsample3 = nn.Upsample(scale_factor=(4,1), mode='nearest')  # up_sampling2d_2
+        self.att3 = AttentionPooling(input_filters=[4*n_filters,4*n_filters], filters=4*n_filters, channels=n_channels)
+        self.conv9 = nn.Conv2d(8*n_filters, 4*n_filters, (7, 1), padding=(3,0))  # conv2d_9
+        self.bn9 = nn.BatchNorm2d(4*n_filters)
+
+
+        # self.conv_out3 = nn.Conv2d(4*n_filters,1, (7, 1), stride=(1, 1), padding=(3,0), bias=True)
+        self.upsample2 = nn.Upsample(scale_factor=(4,1), mode='nearest')  # up_sampling2d_2
+        self.att2 = AttentionPooling(input_filters=[4*n_filters,4*n_filters], filters=4*n_filters, channels=n_channels)
+        self.conv10 = nn.Conv2d(8*n_filters, 4*n_filters, (15, 1), padding=(7,0))  # conv2d_9
+        self.bn10 = nn.BatchNorm2d(4*n_filters)
+
+
+        # self.conv_out2 = nn.Conv2d(4*n_filters,1, (15, 1), stride=(1, 1), padding=(7,0), bias=True)
+        self.upsample1 = nn.Upsample(scale_factor=(4,1), mode='nearest')
+        self.att1 = AttentionPooling(input_filters=[4*n_filters,2*n_filters], filters=4*n_filters, channels=n_channels)
+        self.conv11 = nn.Conv2d(6*n_filters, 4*n_filters, (15, 1), padding=(7,0))  # conv2d_9
+        self.bn11 = nn.BatchNorm2d(4*n_filters)
+
+        # self.conv_out1 = nn.Conv2d(2*n_filters,1, (15, 1), stride=(1, 1), padding=(7,0), bias=True)
+        self.upsample0 = nn.Upsample(scale_factor=(4,1), mode='nearest')
+        self.att0 = AttentionPooling(input_filters=[4*n_filters,n_filters], filters=4*n_filters, channels=n_channels)
+        self.conv12 = nn.Conv2d(5 * n_filters, 4 * n_filters, (15, 1), padding=(7, 0))  # conv2d_9
+        self.bn12 = nn.BatchNorm2d(4 * n_filters)
+        self.conv13 = nn.Conv2d(4 * n_filters, 4 * n_filters, (15, 1), padding=(7, 0))  # conv2d_9
+        self.bn13 = nn.BatchNorm2d(4 * n_filters)
+
+
+        self.conv_out0 = nn.Conv2d(4*n_filters,1, (15, 1), stride=(1, 1), padding=(7,0), bias=True)
 
 
         # Dropout Layers
         self.dropout2 = nn.Dropout(0.5)
 
-        self.upsample1 = nn.Upsample(scale_factor=(4,1), mode='nearest')
-        self.upsample2 = nn.Upsample(scale_factor=(4,1), mode='nearest')  # up_sampling2d_2
-        self.upsample3 = nn.Upsample(scale_factor=(4,1), mode='nearest')  # up_sampling2d_2
-        self.upsample4 = nn.Upsample(scale_factor=(4,1), mode='nearest')  # up_sampling2d_2
-
-        self.att0 = AttentionPooling(input_filters=[4*n_filters,8*n_filters], filters=4*n_filters, channels=n_channels)
-        self.att1 = AttentionPooling(input_filters=[4*n_filters,8*n_filters], filters=4*n_filters, channels=n_channels)
-        self.att2 = AttentionPooling(input_filters=[4*n_filters,8*n_filters], filters=4*n_filters, channels=n_channels)
-        self.att3 = AttentionPooling(input_filters=[4*n_filters,8*n_filters], filters=4*n_filters, channels=n_channels)
-        self.att4 = AttentionPooling(input_filters=[4*n_filters,8*n_filters], filters=4*n_filters, channels=n_channels)
-
-        self.conv8 = nn.Conv2d(64, 32, (1, 1), bias=False)  # conv2d_9
-        self.conv9 = nn.Conv2d(64, 32, (1, 1), bias=False)  # conv2d_9
-        self.bias_conv = nn.Conv2d(32, 1, (1, 1), bias=False)  # biased_conv
-
-        self.conv10 = nn.Conv2d(32, 1, (1, 1))  # conv2d_10
-        self.avg_pool = nn.AvgPool2d((2, 1))  # equivalent to average_pooling2d
-
-        self.conv11 = nn.Conv2d(96, 32, (3, 1))  # conv2d_11
-        self.bn8 = nn.BatchNorm2d(32)
-        self.conv12 = nn.Conv2d(32, 32, (1, 1), bias=False)  # conv2d_12
-        self.conv13 = nn.Conv2d(32, 32, (1, 1), bias=False)  # conv2d_13
-        self.bias_conv1 = nn.Conv2d(32, 1, (1, 1), bias=False)  # biased_conv_1
-
-
-
-    # up_sampling2d []
-    # conv2d_8 [(1, 1, 32, 32)]
-    # conv2d_9 [(1, 1, 64, 32)]
-    # add []
-    # biased_conv [(32,)]
-    # conv2d_10 [(1, 1, 32, 1), (1,)]
-    # multiply []
-    # average_pooling2d []
-    # concatenate []
-    # conv2d_11 [(3, 1, 96, 32), (32,)]
-    # batch_normalization_8 [(32,), (32,), (32,), (32,)]
-    # elu_8 []
-    # up_sampling2d_1 []
-    # conv2d_12 [(1, 1, 32, 32)]
-    # conv2d_13 [(1, 1, 32, 32)]
-    # add_1 []
-    # biased_conv_1 [(32,)]
-    # conv2d_14 [(1, 1, 32, 1), (1,)]
-    # multiply_1 []
-    # average_pooling2d_1 []
-    # concatenate_1 []
-    # conv2d_15 [(7, 1, 64, 32), (32,)]
-    # batch_normalization_9 [(32,), (32,), (32,), (32,)]
-    # elu_9 []
-    # up_sampling2d_2 []
-    # conv2d_16 [(1, 1, 32, 32)]
-    # conv2d_17 [(1, 1, 32, 32)]
-    # add_2 []
-    # biased_conv_2 [(32,)]
-    # conv2d_18 [(1, 1, 32, 1), (1,)]
-    # multiply_2 []
-    # average_pooling2d_2 []
-    # concatenate_2 []
-    # conv2d_19 [(15, 1, 64, 32), (32,)]
-    # batch_normalization_10 [(32,), (32,), (32,), (32,)]
-    # elu_10 []
-    # up_sampling2d_3 []
-    # conv2d_20 [(1, 1, 32, 32)]
-    # conv2d_21 [(1, 1, 16, 32)]
-    # add_3 []
-    # biased_conv_3 [(32,)]
-    # conv2d_22 [(1, 1, 32, 1), (1,)]
-    # multiply_3 []
-    # average_pooling2d_3 []
-    # concatenate_3 []
-    # conv2d_23 [(15, 1, 48, 32), (32,)]
-    # batch_normalization_11 [(32,), (32,), (32,), (32,)]
-    # elu_11 []
-    # up_sampling2d_4 []
-    # conv2d_24 [(1, 1, 32, 32)]
-    # conv2d_25 [(1, 1, 8, 32)]
-    # add_4 []
-    # biased_conv_4 [(32,)]
-    # conv2d_26 [(1, 1, 32, 1), (1,)]
-    # multiply_4 []
-    # average_pooling2d_4 []
-    # concatenate_4 []
-    # conv2d_27 [(15, 1, 40, 32), (32,)]
-    # batch_normalization_12 [(32,), (32,), (32,), (32,)]
-    # elu_12 []
-    # conv2d_28 [(15, 1, 32, 32), (32,)]
-    # batch_normalization_13 [(32,), (32,), (32,), (32,)]
-    # elu_13 []
-    # conv2d_29 [(15, 1, 32, 1), (1,)]
     def forward(self, x):
 
-        lvl0 = F.elu(self.bn0(self.conv0(x)))
+        lvl0 = F.elu(self.bn(self.conv(x)))
         x1_pool = self.maxpool0(lvl0)
         lvl1 = F.elu(self.bn1(self.conv1(x1_pool)))
         x2_pool = self.maxpool1(lvl1)
@@ -240,56 +178,87 @@ class UNet1D(nn.Module):
         x6 = self.dropout(F.elu(self.bn6(self.conv6(x5))))
         x7 = self.dropout(F.elu(self.bn7(self.conv7(x6))))
 
-        out5 = F.sigmoid(self.conv_out5(x7))
+        # out5 = F.sigmoid(self.conv_out5(x7))
         # out5 = out5.view(out5.shape[0], self.window_size//1024)  # Flatten to the required shape (batch_size, window_size//1024)
 
         up4 = self.upsample4(x7)
-        att4 = self.att4([up4, lvl4])  # concatenate
+        att4 = self.att4(up4, lvl4)  # concatenate
 
-        out4 = F.sigmoid(self.conv_out4(att4))
+        # out4 = F.sigmoid(self.conv_out4(att4))
         # out4 = out4.view(out4.shape[0], self.window_size//256)  # Flatten to the required shape (batch_size, window_size//1024)
 
-        x8 = F.elu(self.bn8(self.conv8(torch.concatenate([up4, att4], dim=1))))
+        #concat should give [96 1]
+        x8 = F.elu(self.bn8(self.conv8(torch.cat([up4, att4], dim=1))))
 
         up3 = self.upsample3(x8)
-        att3 = self.att3([up3, lvl3])  # concatenate
+        att3 = self.att3(up3, lvl3)  #concatenate
 
-        out3 = F.sigmoid(self.conv_out3(att3))
+        # out3 = F.sigmoid(self.conv_out3(att3))
         # out3 = out3.view(out3.shape[0], self.window_size//64)  # Flatten to the required shape (batch_size, window_size//1024)
-
-        x9 = F.elu(self.bn9(self.conv9(torch.concatenate([up3, att3], dim=1))))
+        #concat should give [64 1]
+        x9 = F.elu(self.bn9(self.conv9(torch.cat([up3, att3], dim=1))))
 
         up2 = self.upsample2(x9)
-        att2 = self.att2([up2, lvl2])  # concatenate
+        att2 = self.att2(up2, lvl2)  # concatenate
 
-        out2 = F.sigmoid(self.conv_out2(att2))
+        # out2 = F.sigmoid(self.conv_out2(att2))
         # out2 = out2.view(out2.shape[0], self.window_size//16)  # Flatten to the required shape (batch_size, window_size//1024)
 
-        x10 = F.elu(self.bn10(self.conv10(torch.concatenate([up2, att2], dim=1))))
+        #concat should give [64 1]
+        x10 = F.elu(self.bn10(self.conv10(torch.cat([up2, att2], dim=1))))
 
         up1 = self.upsample1(x10)
-        att1 = self.att1([up2, lvl2])  # concatenate
-
-        out1 = F.sigmoid(self.conv_out1(att1))
+        att1 = self.att1(up1, lvl1)  # concatenate
+        # out1 = F.sigmoid(self.conv_out1(att1))
         # out1 = out1.view(out1.shape[0], self.window_size//4)  # Flatten to the required shape (batch_size, window_size//1024)
-
-        x11 = F.elu(self.bn(self.conv11([up1, att1])))
+        #concat should give [48 1]
+        x11 = F.elu(self.bn11(self.conv11(torch.cat([up1, att1], dim=1))))
 
         up0 = self.upsample0(x11)
-        att0 = self.att0([up0, lvl0])
-        x12 = F.elu(self.bn(self.conv12([up0, att0])))
-        x13 = F.elu(self.bn(self.conv13(x12)))
+        att0 = self.att0(up0, lvl0)
+        #concat should give [40 1]
+        x12 = F.elu(self.bn12(self.conv12(torch.cat([up0, att0], dim=1))))
+        x13 = F.elu(self.bn13(self.conv13(x12)))
 
         out0 = F.sigmoid(self.conv_out0(x13))
-        out0 = out1.view(out0.shape[0], self.window_size)  # Flatten to the required shape (batch_size, window_size//1024)
+        out0 = out0.view(out0.shape[0], self.window_size)  # Flatten to the required shape (batch_size, window_size//1024)
 
-
-        return [out0, out1, out2, out3, out4, out5 ]
-
+        # return [out0, out1, out2, out3, out4, out5 ]
+        return out0
 
 if __name__ == "__main__":
     # Example Usage
     model = UNet1D(window_size=4096)
     x = torch.randn(32, 1, 4096, 18)  # Batch of 8, 1 channel, 4096 features
     output = model(x)
-    print(output.shape)  # Expected Output Shape: (8, 1, 4096)
+    pytorch_total_params = sum(p.numel() for p in model.parameters())
+    print(pytorch_total_params)
+    # for out_i in output:
+    #     print(out_i.shape)
+    from torchsummary import summary
+    summary(model.cuda(), (1, 4096, 18))
+
+    total_tf = [  128, 32,   1936, 64,   7712, 128,   7200, 128,   6208, 256,
+             12352, 256,   6176, 128,   3104, 128,    1024, 2048,  32, 33,
+             9248, 128,   1024, 1024,  32, 33,    14368, 128,   1024,
+             1024,  32, 33,    30752, 128,   1024, 512,  32, 33,
+             23072, 128,   1024, 256,  32, 33,    19232, 128,  15392,
+             128,  481, 241, 481, 225, 193, 97]
+
+    # print([  128, 32,   1936, 64,   7712, 128,   7200, 128,   6208, 256,
+    #          12352, 256,   6176, 128,   3104, 128,    1024, 2048,  32, 33,
+    #          9248, 128,   1024, 1024,  32, 33,    14368, 128,   1024,
+    #          1024,  32, 33,    30752, 128,   1024, 512,  32, 33,
+    #          23072, 128,   1024, 256,  32, 33,    19232, 128,  15392,
+    #          128,  481, 241, 481, 225, 193, 97])
+
+    print(total_tf)
+    import numpy as np
+    print(np.array(total_tf).sum())
+    print([p.numel() for p in model.parameters()])
+
+    print(np.array([p.numel() for p in model.parameters()]).sum())
+    for name, p in model.named_parameters():
+        if p.requires_grad:
+            print(name, p.shape)
+    # print(output.shape)  # Expected Output Shape: (8, 1, 4096)

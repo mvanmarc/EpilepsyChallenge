@@ -13,13 +13,13 @@ import numpy as np
 import tensorflow as tf
 from irregulars_neureka_codebase.Dataloader.tuh_dataloader import TUH_Dataloader
 import sys
-from irregulars_neureka_codebase.training.DNN.utils import build_windowfree_unet, setup_tf
+from irregulars_neureka_codebase.training.DNN.utils import build_windowfree_unet, setup_tf, build_unet
 from tqdm import tqdm
 from easydict import EasyDict
 import einops
 import torch
 from keras.models import load_model
-
+from irregulars_neureka_codebase.pytorch_models.neureka_models import UNet1D
 setup_tf()
 
 config = EasyDict()
@@ -46,7 +46,7 @@ config.model.save_preds = '/users/sista/kkontras/Documents/Epilepsy_Challenge/ir
 
 dl = TUH_Dataloader(config)
 
-unet_raw = build_windowfree_unet(n_channels=config.model.n_channels, n_filters=config.model.n_filters)
+unet_raw = build_unet(n_channels=config.model.n_channels, n_filters=config.model.n_filters)[1]
 unet_raw.load_weights(config.model.pre_dir_raw)
 
 unet_wiener = build_windowfree_unet(n_channels=config.model.n_channels, n_filters=config.model.n_filters)
@@ -82,6 +82,13 @@ lstm_fusion_model = load_model(config.model.pre_dir_lstm)
 # for key in f_nick:
 #     f_nick[key].close()
 
+unet_raw.summary()
+for layer in unet_raw.layers:
+
+    print(f"{layer.count_params()}", end=",")
+model = UNet1D(4096)
+model.load_state_dict(torch.load('/users/sista/kkontras/Documents/Epilepsy_Challenge/irregulars_neureka_codebase/pytorch_models/neureka_pytorch_raw.pth'))
+
 agg_features, labels = [], []
 with tf.device('gpu:0'):
     for i, batch in tqdm(enumerate(dl.valid_loader), total=len(dl.valid_loader)):
@@ -90,6 +97,8 @@ with tf.device('gpu:0'):
         data = einops.rearrange(data, "b c t -> b t c").unsqueeze(dim=-1)
         features_raw = torch.from_numpy(unet_raw.predict(data.numpy())).squeeze().unsqueeze(dim=0)
         # break
+        output = model(data)
+        break
         features_wiener = torch.from_numpy(unet_wiener.predict(data.numpy())).squeeze().unsqueeze(dim=0)
         features_iclabel = torch.from_numpy(unet_iclabel.predict(data.numpy())).squeeze().unsqueeze(dim=0)
         features = torch.concatenate([features_raw, features_wiener, features_iclabel], dim=0).unsqueeze(dim=0)

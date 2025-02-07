@@ -105,16 +105,10 @@ class TUHDataset(Dataset):
             window_end = len_to/self.config.training_params.fs
             for event in events:
                 if event[0] <= window_start and event[1] >= window_end:
-                    print("Found a seizure event {} and window {}".format(event, [window_start, window_end]))
-
                     return 1
                 elif event[0] <= window_start and event[1] > window_start:
-                    print("Found a seizure event {} and window {}".format(event, [window_start, window_end]))
-
                     return 1
                 elif event[0] < window_end and event[1] >= window_end:
-                    print("Found a seizure event {} and window {}".format(event, [window_start, window_end]))
-
                     return 1
             return 0
 
