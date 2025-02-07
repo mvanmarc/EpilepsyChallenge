@@ -105,7 +105,7 @@ for epoch in range(config.training_params.total_num_epochs):
     logs[epoch] = {"train": defaultdict(list), "val": defaultdict(list)}
     #Training loop
     pytorch_net.train()
-    for i, batch in tqdm(enumerate(dataloaders.train_loader), total=len(dataloaders.train_loader)):
+    for current_step, batch in tqdm(enumerate(dataloaders.train_loader), total=len(dataloaders.train_loader)):
         optimizer.zero_grad()
         data = batch['data']['raw'].cuda().float()
         label = batch['label'].cuda()
@@ -130,6 +130,10 @@ for epoch in range(config.training_params.total_num_epochs):
         losses = {key: loss.item() for key, loss in losses.items()}
         logs[epoch]["train"]["losses"].append(total_loss.item())
 
+        message = "Train Epoch {0:d} step {1:d} with ".format(epoch, current_step)
+        for i, v in losses.items(): message += "{} : {:.6f} ".format(i, v)
+        print(message)
+
         threshold = 0.5
         binary_preds = (preds[0] > threshold)
         binary_preds = torch.nn.functional.one_hot(binary_preds.long().cuda().flatten(), num_classes=2).float()
@@ -139,7 +143,7 @@ for epoch in range(config.training_params.total_num_epochs):
 
     #Validation loop
     pytorch_net.eval()
-    for i, batch in tqdm(enumerate(dataloaders.valid_loader), total=len(dataloaders.valid_loader)):
+    for current_step, batch in tqdm(enumerate(dataloaders.valid_loader), total=len(dataloaders.valid_loader)):
         data = batch['data']['raw'].cuda().float()
         label = batch['label'].cuda()
         data = einops.rearrange(data, "b c t -> b t c").unsqueeze(dim=1)
@@ -157,8 +161,14 @@ for epoch in range(config.training_params.total_num_epochs):
 
         total_loss = losses[0] + 0.2*(torch.tensor([v for k, v in losses.items() if k!=0]).sum())
 
+
         losses["total"] = total_loss
         losses = {key: loss.item() for key, loss in losses.items()}
+
+        message = "Val Epoch {0:d} step {1:d} with ".format(epoch, current_step)
+        for i, v in losses.items(): message += "{} : {:.6f} ".format(i, v)
+        print(message)
+
         logs[epoch]["val"]["losses"].append(total_loss.item())
         if i == 10:
             break
