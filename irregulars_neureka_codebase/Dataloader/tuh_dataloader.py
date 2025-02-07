@@ -99,18 +99,18 @@ class TUHDataset(Dataset):
 
         #find the label of the corresponding segment
         if len(events) == 0:
-            return 0
+            return torch.zeros(len_to-len_from)
         else:
-            window_start = len_from/self.config.training_params.fs
-            window_end = len_to/self.config.training_params.fs
+            window_start = len_from
+            window_end = len_to
+            duration = self.h5_file[patient][session][recording]['duration'][()]
+            total_label = torch.zeros(int(duration*self.config.training_params.fs))
+
             for event in events:
-                if event[0] <= window_start and event[1] >= window_end:
-                    return 1
-                elif event[0] <= window_start and event[1] > window_start:
-                    return 1
-                elif event[0] < window_end and event[1] >= window_end:
-                    return 1
-            return 0
+                event[0] = event[0]*self.config.training_params.fs
+                event[1] = event[1]*self.config.training_params.fs
+                total_label[int(event[0]):int(event[1])] = 1
+            return total_label[window_start:window_end]
 
     def __getitem__(self, idx):
 
