@@ -138,7 +138,7 @@ for epoch in range(config.training_params.total_num_epochs):
         binary_preds = (preds[0] > threshold)
         binary_preds = torch.nn.functional.one_hot(binary_preds.long().cuda().flatten(), num_classes=2).float()
 
-        if i == 10:
+        if current_step == 10:
             break
 
     #Validation loop
@@ -170,7 +170,7 @@ for epoch in range(config.training_params.total_num_epochs):
         print(message)
 
         logs[epoch]["val"]["losses"].append(total_loss.item())
-        if i == 10:
+        if current_step == 10:
             break
 
     this_epoch_val_loss = torch.tensor(logs[epoch]["val"]["losses"]).mean()
