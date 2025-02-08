@@ -31,10 +31,31 @@ class TUHDataset(Dataset):
         with open("/users/sista/kkontras/Documents/Epilepsy_Challenge/irregulars_neureka_codebase/Dataloader/tuh_patient_dict.pkl", "rb") as f:
             self.patient_dict = pickle.load(f)
 
+        self._subselect_patients(mode=mode)
+
         self._get_cumulative_lens()
 
     def __len__(self):
         return int(list(self.cumulated_dict.keys())[-1])
+
+    def _subselect_patients(self, mode):
+        #get all patient_names from self.patient_dict
+        patient_names = list(self.patient_dict.keys())
+        #split the patient_names into train, val, test
+        train_patients, test_patients = train_test_split(patient_names, test_size=0.2, random_state=42)
+        train_patients, val_patients = train_test_split(train_patients, test_size=0.2, random_state=42)
+
+        #change patient_dict to only contain the selected patients
+        if mode == "train":
+            for patient in val_patients+test_patients:
+                self.patient_dict.pop(patient)
+        elif mode == "val":
+            for patient in train_patients+test_patients:
+                self.patient_dict.pop(patient)
+        elif mode == "test":
+            for patient in train_patients+val_patients:
+                self.patient_dict.pop(patient)
+
 
     def _get_cumulative_lens(self):
 
