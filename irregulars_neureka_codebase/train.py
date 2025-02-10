@@ -10,9 +10,13 @@ from collections import defaultdict
 import os
 from colorama import Fore
 
-def save_model(model_save, is_best_model, file_name, unwrapped_model, optimizer, scheduler, logs, config, dataloaders, post_test_results=None, verbose=True):
+import numpy as np
+from sklearn.metrics import f1_score, roc_auc_score, confusion_matrix, accuracy_score, precision_score, recall_score
+
+def save_model(model_save, is_best_model, unwrapped_model, optimizer, scheduler, logs, config, dataloaders, post_test_results=None, verbose=True):
     save_dict = {}
     savior = {}
+    file_name = config.model.save_dir
     savior["optimizer_state_dict"] = optimizer.state_dict()
     savior["scheduler_state_dict"] = scheduler.state_dict()
     savior["logs"] = logs
@@ -65,6 +69,7 @@ def load_dir(file_name, model, optimizer, scheduler, dataloaders):
         dataloaders.train_loader.generator.set_state(checkpoint["training_dataloder_generator_state"])
     if "metrics" in checkpoint:
         dataloaders.metrics = checkpoint["metrics"]
+    print(Fore.WHITE + "Model has loaded successfully from {}".format(file_name))
     return model, optimizer, scheduler, logs, config, dataloaders
 
 def load_encoder(enc_args, config):
@@ -124,105 +129,172 @@ def load_optimizer_and_scheduler(config, model):
 
     return optimizer, scheduler
 
+def specificity_score(y_true, y_pred):
+    tn, fp, fn, tp = confusion_matrix(y_true, y_pred).ravel()
+    specificity = tn / (tn + fp)
+    return specificity
+
+def validate(model, dataloaders, logs, epoch, loss, config, set_name="val"):
+
+    # Validation loop
+    model.eval()
+
+    total_preds = defaultdict(list)
+    pbar = tqdm(enumerate(dataloaders), total=len(dataloaders))
+    for current_step, batch in pbar:
+        data = batch['data']['raw'].cuda().float()
+        label = batch['label'].cuda()
+        data = einops.rearrange(data, "b c t -> b t c").unsqueeze(dim=1)
+
+        preds = model(data)
+        losses = {}
+        for key_pred, pred in preds.items():
+            this_label = einops.rearrange(label, "b t -> b 1 t")
+            this_label = torch.nn.functional.interpolate(this_label, size=(pred.shape[1]), mode='nearest').squeeze()
+            total_preds[key_pred].append(pred.detach().cpu().numpy())
+            total_preds["{}_label".format(key_pred)].append(this_label.detach().cpu().numpy())
+
+            this_pred_loss = loss(pred, this_label)
+            losses[key_pred] = this_pred_loss
+
+        total_loss = losses[0] + 0.2 * (torch.tensor([v for k, v in losses.items() if k != 0]).sum())
+
+        losses["total"] = total_loss
+        losses = {key: loss.item() for key, loss in losses.items()}
+
+
+        logs[epoch][set_name]["losses"].append(total_loss.item())
+        if set_name == "test":
+            logs["best"]["test_loss"] = logs[epoch][set_name]["losses"]
+
+        aggr_loss = {key: torch.tensor(val).mean().item() for key, val in losses.items()}
+        message = "{0:} Epoch {1:d} step {2:d} with ".format(set_name, epoch, current_step)
+        for i, v in aggr_loss.items(): message += "{} : {:.6f} ".format(i, v)
+        pbar.set_description(message)
+        pbar.refresh()
+
+        if current_step == 10:
+            break
+
+    metrics = defaultdict(dict)
+    for total_size in [1000, 400, 200, 100]: #fs=200 so 5, 2, 1, 0.5 seconds
+        this_label = np.concatenate(total_preds["{}_label".format(0)]).flatten()
+        this_pred = np.concatenate(total_preds[0], axis=0).flatten()
+        this_pred = (this_pred > 0.5).astype(int)
+        #TODO: Remove this necessity to transform to torch Tensor and back in numpy
+        this_label = torch.nn.functional.interpolate(torch.from_numpy(this_label), size=(total_size), mode='nearest').squeeze().numpy()
+        this_pred = torch.nn.functional.interpolate(torch.from_numpy(this_pred), size=(total_size), mode='nearest').squeeze().numpy()
+
+        metrics[total_size]["f1"] = f1_score(this_label, this_pred, average="weighted")
+        metrics[total_size]["auc"] = roc_auc_score(this_label, this_pred, average="weighted")
+        metrics[total_size]["confusion_matrix"] = confusion_matrix(this_label, this_pred)
+        metrics[total_size]["accuracy"] = accuracy_score(this_label, this_pred)
+        metrics[total_size]["precision"] = precision_score(this_label, this_pred, average="weighted")
+        metrics[total_size]["recall"] = recall_score(this_label, this_pred, average="weighted")
+        metrics[total_size]["specificity"] = specificity_score(this_label, this_pred)
+        metrics[total_size]["sensitivity"] = recall_score(this_label, this_pred, average="weighted")
+        metrics[total_size]["false_alarm_rate"] = 1 - metrics[total_size]["specificity"]
+
+    message = "{0:} Epoch {1:d} step {2:d} with \n ".format(set_name, epoch, current_step)
+    for i, v in metrics.items():
+        message += "Total size: {} \n".format(i)
+        for key, val in v.items():
+            message += "{} : {:.6f} ".format(key, val)
+        message += "\n"
+    print(message)
+
+
+    return logs
+
+def is_best(logs, epoch):
+    this_epoch_val_loss = torch.tensor(logs[epoch]["val"]["losses"]).mean()
+    is_best_model = False
+    if this_epoch_val_loss < logs["best"]["loss"]:
+        logs["best"]["loss"] = this_epoch_val_loss
+        is_best_model = True
+    return is_best_model
+
+def train_loop(epoch, model, optimizer, scheduler, loss, dataloader, logs, config):
+    # Training loop
+    model.train()
+    pbar = tqdm(enumerate(dataloader), total=len(dataloader), desc="Training", leave=None, )
+    for current_step, batch in pbar:
+        optimizer.zero_grad()
+        data = batch['data']['raw'].cuda().float()
+        label = batch['label'].cuda()
+        data = einops.rearrange(data, "b c t -> b t c").unsqueeze(dim=1)
+
+        preds = model(data)
+        losses = {}
+        for key_pred, pred in preds.items():
+            this_label = einops.rearrange(label, "b t -> b 1 t")
+            this_label = torch.nn.functional.interpolate(this_label, size=(pred.shape[1]), mode='nearest').squeeze()
+
+            this_pred_loss = loss(pred, this_label)
+            losses[key_pred] = this_pred_loss
+
+        total_loss = losses[0] + 0.2 * (torch.tensor([v for k, v in losses.items() if k != 0]).sum())
+
+        total_loss.backward()
+        optimizer.step()
+        scheduler.step()
+
+        losses["total"] = total_loss
+        losses = {key: loss.item() for key, loss in losses.items()}
+        logs[epoch]["train"]["losses"].append(total_loss.item())
+
+
+        aggr_loss = {key: torch.tensor(val).mean().item() for key, val in losses.items()}
+        message = "Train Epoch {0:d} step {1:d} with ".format(epoch, current_step)
+        for i, v in aggr_loss.items(): message += "{} : {:.6f} ".format(i, v)
+        pbar.set_description(message)
+        pbar.refresh()
+
+        # threshold = 0.5
+        # binary_preds = (preds[0] > threshold)
+        # binary_preds = torch.nn.functional.one_hot(binary_preds.long().cuda().flatten(), num_classes=2).float()
+
+        if current_step == 10:
+            break
+
+    return logs
+
+def load_best_model(model, config):
+    if os.path.exists(config.model.save_dir):
+        checkpoint = torch.load(config.model.save_dir, map_location="cpu")
+        model.load_state_dict(checkpoint["best_model_state_dict"])
+    return model
+
+
 def train(config):
 
     dataloaders = TUH_Dataloader(config)
 
-    pytorch_net = load_model(config)
-    optimizer, scheduler = load_optimizer_and_scheduler(config, pytorch_net)
+    model = load_model(config)
+    optimizer, scheduler = load_optimizer_and_scheduler(config, model)
 
     loss = BinaryCrossEntropyWithLabelSmoothingAndWeights()
 
     if os.path.exists(config.model.save_dir) and config.model.get("load_ongoing", True):
-        model, optimizer, scheduler, logs, config, dataloaders = load_dir(config.model.save_dir, pytorch_net, optimizer, scheduler, dataloaders)
+        model, optimizer, scheduler, logs, config, dataloaders = load_dir(config.model.save_dir, model, optimizer, scheduler, dataloaders)
     else:
         logs = {"best": {"loss": 1e20}}
 
     for epoch in range(config.early_stopping.max_epoch):
         if epoch not in logs:
-            logs[epoch] = {"train": defaultdict(list), "val": defaultdict(list)}
-        #Training loop
-        pytorch_net.train()
-        pbar = tqdm(enumerate(dataloaders.train_loader), total=len(dataloaders.train_loader), desc="Training", leave=None,)
-        for current_step, batch in pbar :
-            optimizer.zero_grad()
-            data = batch['data']['raw'].cuda().float()
-            label = batch['label'].cuda()
-            data = einops.rearrange(data, "b c t -> b t c").unsqueeze(dim=1)
+            logs[epoch] = {"train": defaultdict(list), "val": defaultdict(list), "test": defaultdict(list)}
 
-            preds = pytorch_net(data)
-            losses = {}
-            for key_pred, pred in preds.items():
+        logs = train_loop(epoch, model, optimizer, scheduler, loss, dataloaders.train_loader, logs, config)
 
-                this_label = einops.rearrange(label, "b t -> b 1 t")
-                this_label = torch.nn.functional.interpolate(this_label, size=(pred.shape[1]), mode='nearest').squeeze()
+        logs = validate(model, dataloaders.valid_loader, logs, epoch, loss, config, "val")
 
-                this_pred_loss = loss(pred, this_label)
-                losses[key_pred] = this_pred_loss
+        save_model(True if epoch == 0 else False,
+                   is_best(logs, epoch),
+                   model, optimizer, scheduler, logs, config, dataloaders)
 
-            total_loss = losses[0] + 0.2*(torch.tensor([v for k, v in losses.items() if k!=0]).sum())
-
-            total_loss.backward()
-            optimizer.step()
-            scheduler.step()
-            losses["total"] = total_loss
-            losses = {key: loss.item() for key, loss in losses.items()}
-            logs[epoch]["train"]["losses"].append(total_loss.item())
-
-            message = "Train Epoch {0:d} step {1:d} with ".format(epoch, current_step)
-            for i, v in losses.items(): message += "{} : {:.6f} ".format(i, v)
-            pbar.set_description(message)
-            pbar.refresh()
-            # print(message)
-
-            threshold = 0.5
-            binary_preds = (preds[0] > threshold)
-            binary_preds = torch.nn.functional.one_hot(binary_preds.long().cuda().flatten(), num_classes=2).float()
-
-            if current_step == 10:
-                break
-
-        #Validation loop
-        pytorch_net.eval()
-        pbar = tqdm(enumerate(dataloaders.valid_loader), total=len(dataloaders.valid_loader))
-        for current_step, batch in pbar:
-            data = batch['data']['raw'].cuda().float()
-            label = batch['label'].cuda()
-            data = einops.rearrange(data, "b c t -> b t c").unsqueeze(dim=1)
-
-            preds = pytorch_net(data)
-            losses = {}
-            for key_pred, pred in preds.items():
-
-                this_label = einops.rearrange(label, "b t -> b 1 t")
-                this_label = torch.nn.functional.interpolate(this_label, size=(pred.shape[1]), mode='nearest').squeeze()
-
-                this_pred_loss = loss(pred, this_label)
-                losses[key_pred] = this_pred_loss
-
-
-            total_loss = losses[0] + 0.2*(torch.tensor([v for k, v in losses.items() if k!=0]).sum())
-
-
-            losses["total"] = total_loss
-            losses = {key: loss.item() for key, loss in losses.items()}
-
-            message = "Val Epoch {0:d} step {1:d} with ".format(epoch, current_step)
-            for i, v in losses.items(): message += "{} : {:.6f} ".format(i, v)
-            pbar.set_description(message)
-            pbar.refresh()
-
-            logs[epoch]["val"]["losses"].append(total_loss.item())
-            if current_step == 10:
-                break
-
-        this_epoch_val_loss = torch.tensor(logs[epoch]["val"]["losses"]).mean()
-
-        is_best_model = False
-        if this_epoch_val_loss < logs["best"]["loss"]:
-            logs["best"]["loss"] = this_epoch_val_loss
-            is_best_model = True
-        model_save = True if epoch == 0 else False
-        save_model(model_save, is_best_model, config.model.save_dir, pytorch_net, optimizer, scheduler, logs, config, dataloaders)
-
+    model = load_best_model(model, config)
+    logs = validate(model, dataloaders.test_loader, logs, epoch, loss, config, "test")
+    save_model(True if epoch == 0 else False,
+               is_best(logs, epoch),
+               model, optimizer, scheduler, logs, config, dataloaders)
 

@@ -1,7 +1,11 @@
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
+import pickle
 
+from mne.preprocessing import ICA
+from mne import io
+from mne import create_info
 
 class BiasedConv(nn.Module):
     def __init__(self, filters, kernel_size, strides=(1, 1), padding=0, activation=None, use_bias=True,
@@ -78,11 +82,28 @@ class AttentionPooling(nn.Module):
 
         return output
 
-def wiener_preproc(x):
-    return x
+def wiener_preproc(data, filters):
 
-def iclabel_preproc(x):
-    return x
+    #TODO: Verify that wiener filter is applied correctly according to Neureka paper
+
+    data = data.squeeze().permute(0, 2, 1)
+    batch, channels, samples = data.shape
+    lag = filters.shape[0] // channels  # Compute lag size
+    # Reshape v into (num_filters, channels, lag) for convolution
+    filters_shaped = filters.view(channels, lag, -1).permute(2, 0, 1)  # Shape (num_filters, channels, lag)
+    conv_out = F.conv1d(data, filters_shaped, padding=int((lag - 1) / 2))
+    t = torch.arange(0, filters.shape[0], step=lag, dtype=torch.long, device=data.device)
+    filtered = torch.matmul(filters[t, :], conv_out)  # Apply Wiener transformation
+
+    return filtered[:, :, :samples].permute(0, 2, 1).unsqueeze(dim=1)
+
+
+def iclabel_preproc(raw_data, n_components=20, threshold=0.8):
+    #TODO: ICA Preprocessing remains to be implemented
+
+    return raw_data
+
+
 
 class UNet1D(nn.Module):
     def __init__(self, args, encs=None):
@@ -93,6 +114,13 @@ class UNet1D(nn.Module):
         n_channels = args.n_channels
         self.window_size = args.window_size
         self.preproc = args.preproc
+
+        if self.preproc == "wiener":
+            with open('./library/filters.pickle', 'rb') as handle:
+                self.wiener_filter = pickle.load(handle)
+                #select the first set of filters
+                self.wiener_filter = torch.tensor(self.wiener_filter[0], dtype=torch.float32).cuda()    #TODO: Search what is the second set of filters
+
 
         # Encoding Path
         self.conv = nn.Conv2d(1, n_filters, (15, 1), padding=(7, 0))
@@ -173,7 +201,7 @@ class UNet1D(nn.Module):
     def forward(self, x):
 
         if self.preproc == "wiener":
-            x = wiener_preproc(x)
+            x = wiener_preproc(x, self.wiener_filter)
         elif self.preproc == "iclabel":
             x = iclabel_preproc(x)
 

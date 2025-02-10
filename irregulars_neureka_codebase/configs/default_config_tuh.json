@@ -23,7 +23,7 @@
     "beta2": 0.999
   },
   "early_stopping": {
-    "max_epoch": 1500,
+    "max_epoch": 1,
     "n_steps_stop": 50,
     "n_steps_stop_after": 0
   },

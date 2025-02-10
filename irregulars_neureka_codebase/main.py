@@ -33,10 +33,6 @@ def main(config_path, default_config_path, args):
             config.model.encoders[i].pretrainedEncoder.dir = config.model.encoders[i].pretrainedEncoder.dir.format(enc_m)
 
     train(config)
-    agent_class = globals()[config.agent]
-    agent = agent_class(config)
-    agent.run()
-    agent.finalize()
 
 
 parser = argparse.ArgumentParser(description="My Command Line Program")
