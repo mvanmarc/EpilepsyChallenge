@@ -178,12 +178,16 @@ def validate(model, dataloaders, logs, epoch, loss, config, set_name="val"):
 
     metrics = defaultdict(dict)
     for total_size in [1000, 400, 200, 100]: #fs=200 so 5, 2, 1, 0.5 seconds
-        this_label = np.concatenate(total_preds["{}_label".format(0)]).flatten()
-        this_pred = np.concatenate(total_preds[0], axis=0).flatten()
-        this_pred = (this_pred > 0.5).astype(int)
+        this_label = np.concatenate(total_preds["{}_label".format(0)])
+        this_pred = np.concatenate(total_preds[0], axis=0)
+        this_pred = (this_pred > 0.5)
         #TODO: Remove this necessity to transform to torch Tensor and back in numpy
-        this_label = torch.nn.functional.interpolate(torch.from_numpy(this_label), size=(total_size), mode='nearest').squeeze().numpy()
-        this_pred = torch.nn.functional.interpolate(torch.from_numpy(this_pred), size=(total_size), mode='nearest').squeeze().numpy()
+        this_label = torch.nn.functional.interpolate(torch.from_numpy(this_label).unsqueeze(dim=1), size=(total_size), mode='nearest').flatten().numpy()
+        this_pred = torch.nn.functional.interpolate(torch.from_numpy(this_pred).unsqueeze(dim=1).float(), size=(total_size), mode='nearest').flatten().numpy().astype(int)
+
+        #print unique label count in percentage with 2 decimal points
+        unique, counts = np.unique(this_label, return_counts=True)
+        print("Label percentage 0: {:.2f}% 1: {:.2f}%".format(counts[0]/len(this_label), counts[1]/len(this_label)))
 
         metrics[total_size]["f1"] = f1_score(this_label, this_pred, average="weighted")
         metrics[total_size]["auc"] = roc_auc_score(this_label, this_pred, average="weighted")
@@ -195,14 +199,21 @@ def validate(model, dataloaders, logs, epoch, loss, config, set_name="val"):
         metrics[total_size]["sensitivity"] = recall_score(this_label, this_pred, average="weighted")
         metrics[total_size]["false_alarm_rate"] = 1 - metrics[total_size]["specificity"]
 
-    message = "{0:} Epoch {1:d} step {2:d} with \n ".format(set_name, epoch, current_step)
+    message = "{0:} Epoch {1:d} step {2:d} with \n".format(set_name, epoch, current_step)
     for i, v in metrics.items():
-        message += "Total size: {} \n".format(i)
+        message += "Window size: {0:.1f}sec \n".format(i/200)
         for key, val in v.items():
-            message += "{} : {:.6f} ".format(key, val)
+            #do sth for the confusion in one line
+            if key == "confusion_matrix":
+                message += "{} : [".format(key)
+                for row in val:
+                    message += " ".join([str(i) for i in row]) + ","
+                message += "] ".format(key)
+
+            else:
+                message += "{} : {:.3f} ".format(key, val)
         message += "\n"
     print(message)
-
 
     return logs
 
