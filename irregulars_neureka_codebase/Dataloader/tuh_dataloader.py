@@ -1,4 +1,4 @@
-import copy
+
 import csv
 import os
 import pickle
@@ -15,7 +15,7 @@ import multiprocessing
 from tqdm import tqdm
 from collections import defaultdict
 import h5py
-from irregulars_neureka_codebase.library import nedc
+from library import nedc
 
 class TUHDataset(Dataset):
 
@@ -125,11 +125,11 @@ class TUHDataset(Dataset):
             window_start = len_from
             window_end = len_to
             duration = self.h5_file[patient][session][recording]['duration'][()]
-            total_label = torch.zeros(int(duration*self.config.training_params.fs))
+            total_label = torch.zeros(int(duration*self.config.dataset.fs))
 
             for event in events:
-                event[0] = event[0]*self.config.training_params.fs
-                event[1] = event[1]*self.config.training_params.fs
+                event[0] = event[0]*self.config.dataset.fs
+                event[1] = event[1]*self.config.dataset.fs
                 total_label[int(event[0]):int(event[1])] = 1
             return total_label[window_start:window_end]
 

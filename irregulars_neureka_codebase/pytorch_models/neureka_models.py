@@ -78,12 +78,21 @@ class AttentionPooling(nn.Module):
 
         return output
 
+def wiener_preproc(x):
+    return x
+
+def iclabel_preproc(x):
+    return x
 
 class UNet1D(nn.Module):
-    def __init__(self, window_size, n_channels=18, n_filters=8):
+    def __init__(self, args, encs=None):
         super(UNet1D, self).__init__()
 
-        self.window_size = window_size
+        self.args = args
+        n_filters = args.n_filters
+        n_channels = args.n_channels
+        self.window_size = args.window_size
+        self.preproc = args.preproc
 
         # Encoding Path
         self.conv = nn.Conv2d(1, n_filters, (15, 1), padding=(7, 0))
@@ -163,6 +172,11 @@ class UNet1D(nn.Module):
 
     def forward(self, x):
 
+        if self.preproc == "wiener":
+            x = wiener_preproc(x)
+        elif self.preproc == "iclabel":
+            x = iclabel_preproc(x)
+
         lvl0 = F.elu(self.bn(self.conv(x)))
         x1_pool = self.maxpool0(lvl0)
         lvl1 = F.elu(self.bn1(self.conv1(x1_pool)))
@@ -229,7 +243,7 @@ class UNet1D(nn.Module):
 
 
 class LSTM_Neureka(nn.Module):
-    def __init__(self):
+    def __init__(self, args=None, encs=None):
         super(LSTM_Neureka, self).__init__()
 
         # Bidirectional LSTM layer (input size = 1, hidden size = 8, bidirectional = True)
@@ -249,32 +263,22 @@ class LSTM_Neureka(nn.Module):
         return out
 
 class NeurekaNet(nn.Module):
-    def __init__(self, config):
+    def __init__(self, args, encs):
         super(NeurekaNet, self).__init__()
 
-        window_size = config.model.window_size
-        n_channels = config.model.n_channels
-        n_filters = config.model.n_filters
-
-        self.unet_raw = UNet1D(window_size, n_channels, n_filters)
-        self.unet_wiener = UNet1D(window_size, n_channels, n_filters)
-        self.unet_iclabel = UNet1D(window_size, n_channels, n_filters)
-        self.lstm = LSTM_Neureka()
-        self.softmax = nn.Softmax(dim=-1)
-
-        self.unet_raw.load_state_dict(torch.load(config.model.pre_dir_raw),strict=False)
-        self.unet_wiener.load_state_dict(torch.load(config.model.pre_dir_wiener),strict=False)
-        self.unet_iclabel.load_state_dict(torch.load(config.model.pre_dir_iclabel),strict=False)
-        self.lstm.load_state_dict(torch.load(config.model.pre_dir_lstm),strict=False)
+        self.enc_0 = encs[0]
+        self.enc_1 = encs[1]
+        self.enc_2 = encs[2]
+        self.enc_3 = encs[3]
 
     def forward(self, x):
-        raw = self.unet_raw(x)
-        wiener = self.unet_wiener(x)
-        iclabel = self.unet_iclabel(x)
+        raw = self.enc_0(x)
+        wiener = self.enc_1(x)
+        iclabel = self.enc_2(x)
         pred_dict = {}
         for dim in range(len(raw)):
             feat = torch.cat([raw[dim], wiener[dim], iclabel[dim]], dim=-1)
-            pred_dict[dim] = self.lstm(feat)
+            pred_dict[dim] = self.enc_3(feat)
         return pred_dict
 
 if __name__ == "__main__":
