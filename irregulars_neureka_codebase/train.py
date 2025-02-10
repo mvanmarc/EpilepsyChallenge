@@ -99,7 +99,6 @@ def load_encoder(enc_args, config):
                         print(f"Unexpected keys in state_dict: {unexpected_keys}")
 
                 elif "best_model_state_dict" in checkpoint:
-                    logging.info("Loading enc best model state dict from {}".format(file_path))
                     print(enc_args[num_enc]["model"])
                     missing_keys, unexpected_keys =  enc.load_state_dict(checkpoint["best_model_state_dict"], strict=False)
                     if missing_keys:
@@ -164,10 +163,10 @@ def validate(model, dataloaders, logs, epoch, loss, config, set_name="val"):
         losses["total"] = total_loss
         losses = {key: loss.item() for key, loss in losses.items()}
 
-
-        logs[epoch][set_name]["losses"].append(total_loss.item())
-        if set_name == "test":
-            logs["best"]["test_loss"] = logs[epoch][set_name]["losses"]
+        if epoch in logs:
+            logs[epoch][set_name]["losses"].append(total_loss.item())
+            if set_name == "test":
+                logs["best"]["test_loss"] = logs[epoch][set_name]["losses"]
 
         aggr_loss = {key: torch.tensor(val).mean().item() for key, val in losses.items()}
         message = "{0:} Epoch {1:d} step {2:d} with ".format(set_name, epoch, current_step)
@@ -175,8 +174,8 @@ def validate(model, dataloaders, logs, epoch, loss, config, set_name="val"):
         pbar.set_description(message)
         pbar.refresh()
 
-        if current_step == 1000:
-            break
+        # if current_step == 1000:
+        #     break
 
     metrics = defaultdict(dict)
     for total_size in [1000, 400, 200, 100]: #fs=200 so 5, 2, 1, 0.5 seconds
@@ -269,8 +268,8 @@ def train_loop(epoch, model, optimizer, scheduler, loss, dataloader, logs, confi
         # binary_preds = (preds[0] > threshold)
         # binary_preds = torch.nn.functional.one_hot(binary_preds.long().cuda().flatten(), num_classes=2).float()
 
-        if current_step == 10:
-            break
+        # if current_step == 10:
+        #     break
 
     return logs
 
@@ -296,17 +295,24 @@ def train(config):
     else:
         logs = {"best": {"loss": 1e20}}
 
-    for epoch in range(config.early_stopping.max_epoch):
-        if epoch not in logs:
-            logs[epoch] = {"train": defaultdict(list), "val": defaultdict(list), "test": defaultdict(list)}
+    try:
+        _ = validate(model, dataloaders.valid_loader, logs, -1, loss, config, "val")
 
-        logs = train_loop(epoch, model, optimizer, scheduler, loss, dataloaders.train_loader, logs, config)
+        for epoch in range(config.early_stopping.max_epoch):
+            if epoch not in logs:
+                logs[epoch] = {"train": defaultdict(list), "val": defaultdict(list), "test": defaultdict(list)}
 
-        logs = validate(model, dataloaders.valid_loader, logs, epoch, loss, config, "val")
+            logs = train_loop(epoch, model, optimizer, scheduler, loss, dataloaders.train_loader, logs, config)
 
-        save_model(True if epoch == 0 else False,
-                   is_best(logs, epoch),
-                   model, optimizer, scheduler, logs, config, dataloaders)
+            logs = validate(model, dataloaders.valid_loader, logs, epoch, loss, config, "val")
+
+            save_model(True if epoch == 0 else False,
+                       is_best(logs, epoch),
+                       model, optimizer, scheduler, logs, config, dataloaders)
+    #catch a control c and save the model
+    except KeyboardInterrupt:
+        save_model(False, False, model, optimizer, scheduler, logs, config, dataloaders)
+        raise KeyboardInterrupt
 
     model = load_best_model(model, config)
     logs = validate(model, dataloaders.test_loader, logs, epoch, loss, config, "test")

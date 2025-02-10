@@ -308,6 +308,16 @@ class NeurekaNet(nn.Module):
             feat = torch.cat([raw[dim], wiener[dim], iclabel[dim]], dim=-1)
             pred_dict[dim] = self.enc_3(feat)
         return pred_dict
+class Unimodal(nn.Module):
+    def __init__(self, args, encs):
+        super(Unimodal, self).__init__()
+
+        self.enc_0 = encs[0]
+
+    def forward(self, x):
+        raw = self.enc_0(x)
+        pred_dict = {i: r.squeeze() for i, r in enumerate(raw)}
+        return pred_dict
 
 if __name__ == "__main__":
     # Example Usage
