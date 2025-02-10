@@ -4,8 +4,8 @@
     "cuda": true,
     "gpu_device": [0],
     "seed": 109,
-    "batch_size": 32,
-    "test_batch_size": 32,
+    "batch_size": 128,
+    "test_batch_size": 128,
     "pin_memory": true,
     "data_loader_workers": 8,
     "tdqm_disable": true,
@@ -32,9 +32,10 @@
       "window_size": 4096,
       "fs": 200,
       "stride": 4096,
-      "data_path": "/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/TUH.h5"
+      "data_path": {"sz2": "/esat/biomeddata/mbhaguba/seizeit2.h5",
+                    "tuh": "/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/TUH.h5"}
   },
   "model": {
-    "save_base_dir": "/esat/smcdata/users/kkontras/Image_Dataset/no_backup/data/2023_data/TUH_models/"
+    "save_base_dir": "/esat/smcdata/users/kkontras/Image_Dataset/no_backup/data/2023_data/TUH_SZ2_models/"
   }
 }

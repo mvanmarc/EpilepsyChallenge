@@ -15,7 +15,7 @@ import multiprocessing
 from tqdm import tqdm
 from collections import defaultdict
 import h5py
-from irregulars_neureka_codebase.library import nedc
+from library import nedc
 
 class TUHSeizIT2Dataset(Dataset):
 
@@ -72,8 +72,9 @@ class TUHSeizIT2Dataset(Dataset):
         for patient in self.patient_dict.keys():
             for session in self.patient_dict[patient].keys():
                 if self.patient_dataset[patient] == "sz2":
-                    self.cumulated_dict[cum_idx] = {"patient": patient, "session": session, "recording": 0, "len": self.patient_dict[patient][session][0]}
-                    cum_idx += self.patient_dict[patient][session][0]//self.config.dataset.window_size
+                    patient_len = self.patient_dict[patient][session][0] * self.config.dataset.fs
+                    self.cumulated_dict[cum_idx] = {"patient": patient, "session": session, "recording": 0, "len": patient_len}
+                    cum_idx += patient_len//self.config.dataset.window_size
                 elif self.patient_dataset[patient] == "tuh":
                     for recording in self.patient_dict[patient][session].keys():
                         self.cumulated_dict[cum_idx] = {"patient": patient, "session": session, "recording": recording, "len": self.patient_dict[patient][session][recording]}

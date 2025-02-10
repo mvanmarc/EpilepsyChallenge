@@ -15,7 +15,7 @@ import multiprocessing
 from tqdm import tqdm
 from collections import defaultdict
 import h5py
-from irregulars_neureka_codebase.library import nedc
+from library import nedc
 
 class SeizIT2Dataset(Dataset):
 
@@ -70,11 +70,12 @@ class SeizIT2Dataset(Dataset):
 
         self.cumulated_dict = {}
         cum_idx = 0
-        recording = 0
         for patient in self.patient_dict.keys():
             for session in self.patient_dict[patient].keys():
-                self.cumulated_dict[cum_idx] = {"patient": patient, "session": session, "recording": recording, "len": self.patient_dict[patient][session][recording]}
-                cum_idx += self.patient_dict[patient][session][recording]//self.config.dataset.window_size
+                patient_len = self.patient_dict[patient][session][0] * self.config.dataset.fs
+                self.cumulated_dict[cum_idx] = {"patient": patient, "session": session, "recording": 0,
+                                                "len": patient_len}
+                cum_idx += patient_len // self.config.dataset.window_size
 
     def _choose_patient_session_recording_len(self, idx):
         #find the cumulative idx that is right smaller than the idx

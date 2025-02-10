@@ -1,5 +1,7 @@
 
 from Dataloader.tuh_dataloader import TUH_Dataloader
+from Dataloader.seizit2_dataloader import SeizIT2_Dataloader
+from Dataloader.tuhseizit2_dataloader import TUHSeizIT2_Dataloader
 from tqdm import tqdm
 from easydict import EasyDict
 import einops
@@ -9,7 +11,7 @@ from utils.bce_labelsmooth import BinaryCrossEntropyWithLabelSmoothingAndWeights
 from collections import defaultdict
 import os
 from colorama import Fore
-
+from utils.deterministic_pytorch import deterministic
 import numpy as np
 from sklearn.metrics import f1_score, roc_auc_score, confusion_matrix, accuracy_score, precision_score, recall_score
 
@@ -52,7 +54,7 @@ def save_model(model_save, is_best_model, unwrapped_model, optimizer, scheduler,
 
     try:
         # accelerator.save(save_dict, file_name)
-        # torch.save(save_dict, file_name)
+        torch.save(save_dict, file_name)
         if verbose:
             print(Fore.WHITE + "Models has saved successfully in {}".format(file_name))
     except:
@@ -173,7 +175,7 @@ def validate(model, dataloaders, logs, epoch, loss, config, set_name="val"):
         pbar.set_description(message)
         pbar.refresh()
 
-        if current_step == 10:
+        if current_step == 1000:
             break
 
     metrics = defaultdict(dict)
@@ -187,17 +189,19 @@ def validate(model, dataloaders, logs, epoch, loss, config, set_name="val"):
 
         #print unique label count in percentage with 2 decimal points
         unique, counts = np.unique(this_label, return_counts=True)
-        print("Label percentage 0: {:.2f}% 1: {:.2f}%".format(counts[0]/len(this_label), counts[1]/len(this_label)))
+        if len(unique) == 1:
+            print("Label percentage 0: {:.2f}% 1: {:.2f}%".format(1, 0))
+        else:
+            print("Label percentage 0: {:.2f}% 1: {:.2f}%".format(counts[0]/len(this_label), counts[1]/len(this_label)))
 
-        metrics[total_size]["f1"] = f1_score(this_label, this_pred, average="weighted")
-        metrics[total_size]["auc"] = roc_auc_score(this_label, this_pred, average="weighted")
+        metrics[total_size]["f1"] = f1_score(this_label, this_pred)
+        metrics[total_size]["auc"] = roc_auc_score(this_label, this_pred) if len(np.unique(this_label)) > 1 else 0
         metrics[total_size]["confusion_matrix"] = confusion_matrix(this_label, this_pred)
         metrics[total_size]["accuracy"] = accuracy_score(this_label, this_pred)
-        metrics[total_size]["precision"] = precision_score(this_label, this_pred, average="weighted")
-        metrics[total_size]["recall"] = recall_score(this_label, this_pred, average="weighted")
-        metrics[total_size]["specificity"] = specificity_score(this_label, this_pred)
-        metrics[total_size]["sensitivity"] = recall_score(this_label, this_pred, average="weighted")
-        metrics[total_size]["false_alarm_rate"] = 1 - metrics[total_size]["specificity"]
+        metrics[total_size]["precision"] = precision_score(this_label, this_pred)
+        metrics[total_size]["recall"] = recall_score(this_label, this_pred)
+        metrics[total_size]["specificity"] = specificity_score(this_label, this_pred) if len(np.unique(this_label)) > 1 else 0
+        metrics[total_size]["false_alarm_rate"] = 1 - metrics[total_size]["specificity"] if len(np.unique(this_label)) > 1 else 0
 
     message = "{0:} Epoch {1:d} step {2:d} with \n".format(set_name, epoch, current_step)
     for i, v in metrics.items():
@@ -278,8 +282,9 @@ def load_best_model(model, config):
 
 
 def train(config):
-
-    dataloaders = TUH_Dataloader(config)
+    deterministic(config.training_params.seed)
+    dataloader_class = globals()[config.dataset.dataloader_class]
+    dataloaders = dataloader_class(config)
 
     model = load_model(config)
     optimizer, scheduler = load_optimizer_and_scheduler(config, model)
