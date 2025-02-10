@@ -1,5 +1,5 @@
 {
-  "exp_name": "TUH Experiment",
+  "exp_name": "TUH + SeizIT2 Experiment",
   "training_params": {
     "cuda": true,
     "gpu_device": [0],
@@ -28,7 +28,7 @@
     "n_steps_stop_after": 0
   },
   "dataset": {
-    "dataloader_class": "TUH_Dataloader",
+      "dataloader_class": "TUHSeizIT2_Dataloader",
       "window_size": 4096,
       "fs": 200,
       "stride": 4096,
