@@ -1,21 +1,15 @@
 
-import csv
 import os
 import pickle
 import numpy as np
 import torch
-from PIL import Image
 from torch.utils.data import Dataset
-from torchvision import transforms
-import pdb
 import random
-import json
 from sklearn.model_selection import train_test_split
-import multiprocessing
 from tqdm import tqdm
-from collections import defaultdict
 import h5py
 from library import nedc
+from utils.iaaft import surrogates
 
 class TUHSeizIT2Dataset(Dataset):
 
@@ -24,8 +18,14 @@ class TUHSeizIT2Dataset(Dataset):
         self.config = config
         self.mode = mode
 
-        self.h5_file_sz2 = h5py.File(config.dataset.data_path["sz2"], 'r')
-        self.h5_file_tuh = h5py.File(config.dataset.data_path["tuh"], 'r')
+        if "sz2" in config.dataset.data_path.keys():
+            self.h5_file_sz2 = h5py.File(config.dataset.data_path["sz2"], 'r')
+        else:
+            self.h5_file_sz2 = False
+        if "tuh" in config.dataset.data_path.keys():
+            self.h5_file_tuh = h5py.File(config.dataset.data_path["tuh"], 'r')
+        else:
+            self.h5_file_tuh = False
 
         #or load it from cumulated dict
         with open("/users/sista/kkontras/Documents/Epilepsy_Challenge/irregulars_neureka_codebase/Dataloader/seizit2_compatible_patient_dict.pkl", "rb") as f:
@@ -34,7 +34,12 @@ class TUHSeizIT2Dataset(Dataset):
         with open("/users/sista/kkontras/Documents/Epilepsy_Challenge/irregulars_neureka_codebase/Dataloader/tuh_patient_dict.pkl", "rb") as f:
             self.patient_dict_tuh = pickle.load(f)
 
-        self.patient_dict = {**self.patient_dict_sz2, **self.patient_dict_tuh}
+        if self.h5_file_sz2 and self.h5_file_tuh:
+            self.patient_dict = {**self.patient_dict_sz2, **self.patient_dict_tuh}
+        elif self.h5_file_sz2:
+            self.patient_dict = self.patient_dict_sz2
+        elif self.h5_file_tuh:
+            self.patient_dict = self.patient_dict_tuh
         #merge the two patient_dicts and on each key add the "sz2" or "tuh" as value
         self.patient_dataset = {patient:"sz2" if patient in self.patient_dict_sz2 else "tuh" for patient in self.patient_dict.keys()}
 
@@ -178,15 +183,19 @@ class TUHSeizIT2Dataset(Dataset):
         data = data.reshape(-1, window_size)
         return data
 
-    def _get_signals_seizit2(self, demographics):
+    def _get_signals_seizit2(self, demographics, label):
         patient = demographics["patient"]
         session = demographics["session"]
         len_from, len_to = demographics["len_from"], demographics["len_to"]
 
+        augment_flag = label.sum() > 0 and self.mode == "train" and self.config.model.args.augment_with_surrogates
         ch_names = [x.decode() for x in self.h5_file_sz2['sz2'][patient][session]['channel_names'][()]]
         sig = []
         for ch in ch_names:
-            sig.append(self.h5_file_sz2['sz2'][patient][session][ch][len_from:len_to])
+            if augment_flag:
+                sig.append(surrogates(self.h5_file_sz2['sz2'][patient][session][ch][len_from:len_to], 1).squeeze(axis=0))
+            else:
+                sig.append(self.h5_file_sz2['sz2'][patient][session][ch][len_from:len_to])
 
         # Put signals in a montage
         (signals_ds, _) = nedc.rereference(sig, [x.upper() for x in ch_names])
@@ -219,16 +228,20 @@ class TUHSeizIT2Dataset(Dataset):
                 total_label[int(event[0]):int(event[1])] = 1
             return total_label[window_start:window_end]
 
-    def _get_signals_tuh(self, demographics):
+    def _get_signals_tuh(self, demographics, label):
         patient = demographics["patient"]
         session = demographics["session"]
         recording = demographics["recording"]
         len_from, len_to = demographics["len_from"], demographics["len_to"]
 
+        augment_flag = label.sum() > 0 and self.mode == "train" and self.config.model.args.augment_with_surrogates
         ch_names = [x.decode() for x in self.h5_file_tuh[patient][session][recording]['channel_names'][()]]
         sig = []
         for ch in ch_names:
-            sig.append(self.h5_file_tuh[patient][session][recording][ch][len_from:len_to])
+            if augment_flag:
+                sig.append(surrogates(self.h5_file_tuh[patient][session][recording][ch][len_from:len_to], 1).squeeze(axis=0))
+            else:
+                sig.append(self.h5_file_tuh[patient][session][recording][ch][len_from:len_to])
 
         # Put signals in a montage
         (signals_ds, _) = nedc.rereference(sig, [x.upper() for x in ch_names])
@@ -266,13 +279,13 @@ class TUHSeizIT2Dataset(Dataset):
 
         demographics = self._choose_patient_session_recording_len(idx)
         if self.patient_dataset[demographics["patient"]] == "sz2":
-            signal = self._get_signals_seizit2(demographics)
-            signal = self._windowize(signal, self.config.dataset.window_size, self.config.dataset.stride)
             label = self._get_label_seizit2(demographics)
-        elif self.patient_dataset[demographics["patient"]] == "tuh":
-            signal = self._get_signals_tuh(demographics)
+            signal = self._get_signals_seizit2(demographics, label)
             signal = self._windowize(signal, self.config.dataset.window_size, self.config.dataset.stride)
+        elif self.patient_dataset[demographics["patient"]] == "tuh":
             label = self._get_label_tuh(demographics)
+            signal = self._get_signals_tuh(demographics, label)
+            signal = self._windowize(signal, self.config.dataset.window_size, self.config.dataset.stride)
 
         return {"data":{"raw":signal},"label": label, "idx": idx}
 
