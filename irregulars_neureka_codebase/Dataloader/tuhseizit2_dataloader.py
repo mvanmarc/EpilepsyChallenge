@@ -274,7 +274,7 @@ class TUHSeizIT2Dataset(Dataset):
             signal = self._windowize(signal, self.config.dataset.window_size, self.config.dataset.stride)
             label = self._get_label_tuh(demographics)
 
-        return {"data":{"raw":signal},"label": label, "idx": idx}
+        return {"data":{"raw":signal},"label": label, "idx": idx, "patient":demographics["patient"]}
 
 class TUHSeizIT2_Dataloader():
 
