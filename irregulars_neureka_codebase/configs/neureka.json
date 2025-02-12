@@ -2,9 +2,7 @@
   "model": {
     "model_class": "NeurekaNet",
     "args": {
-      "window_size": 4096,
-      "n_channels": 18,
-      "n_filters": 8
+      "augment_with_surrogates": false
     },
     "encoders": [
         {

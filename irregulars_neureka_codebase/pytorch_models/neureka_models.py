@@ -3,10 +3,6 @@ import torch.nn as nn
 import torch.nn.functional as F
 import pickle
 
-from mne.preprocessing import ICA
-from mne import io
-from mne import create_info
-
 class BiasedConv(nn.Module):
     def __init__(self, filters, kernel_size, strides=(1, 1), padding=0, activation=None, use_bias=True,
                  kernel_initializer='glorot_uniform', bias_initializer='zeros'):
