@@ -14,6 +14,10 @@ from colorama import Fore
 from utils.deterministic_pytorch import deterministic
 import numpy as np
 from sklearn.metrics import f1_score, roc_auc_score, confusion_matrix, accuracy_score, precision_score, recall_score
+import sys
+import pathlib
+sys.path.insert(0, './')
+from SzcoreEvaluation import MetricsStore
 
 def save_model(model_save, is_best_model, unwrapped_model, optimizer, scheduler, logs, config, dataloaders, post_test_results=None, verbose=True):
     save_dict = {}
@@ -140,6 +144,8 @@ def specificity_score(y_true, y_pred):
 
 def validate(model, dataloaders, logs, epoch, loss, config, set_name="val"):
 
+    metricsStore = MetricsStore(config)
+    
     # Validation loop
     model.eval()
 
@@ -147,14 +153,16 @@ def validate(model, dataloaders, logs, epoch, loss, config, set_name="val"):
     pbar = tqdm(enumerate(dataloaders), total=len(dataloaders))
     for current_step, batch in pbar:
         data = batch['data']['raw'].cuda().float()
-        label = batch['label'].cuda()
-        data = einops.rearrange(data, "b c t -> b t c").unsqueeze(dim=1)
-
-        preds = model(data)
+                label = batch['label'].cuda() # 128 x 4096
+        data = einops.rearrange(data, "b c t -> b t c").unsqueeze(dim=1) # 128 x 1 x 4096 x 18
+        preds = model(data) # dictionary with keys [0,1,2,3,4,5] and values [128x4096,128x1024,128x256,128x64,128x16,128x4]
         losses = {}
+
+        metricsStore.evaluate_multiple_predictions(label, preds[0]>.5, batch['patient'])
+
         for key_pred, pred in preds.items():
             this_label = einops.rearrange(label, "b t -> b 1 t")
-            this_label = torch.nn.functional.interpolate(this_label, size=(pred.shape[1]), mode='nearest').squeeze()
+            this_label = torch.nn.functional.interpolate(this_label, size=(pred.shape[1]), mode='nearest').squeeze() # 128 x 4096
             total_preds[key_pred].append(pred.detach().cpu().numpy())
             total_preds["{}_label".format(key_pred)].append(this_label.detach().cpu().numpy())
 
@@ -181,6 +189,11 @@ def validate(model, dataloaders, logs, epoch, loss, config, set_name="val"):
         #     break
 
     metrics = defaultdict(dict)
+
+    outDir = pathlib.Path("./irregulars_neureka_codebase/predictions/"+set_name)
+    metricsStore.store_scores(outDir)
+    metricsStore.store_metrics(outDir, outDir)
+
     for total_size in [1000, 400, 200, 100]: #fs=200 so 5, 2, 1, 0.5 seconds
         this_label = np.concatenate(total_preds["{}_label".format(0)])
         this_pred = np.concatenate(total_preds[0], axis=0)
@@ -232,6 +245,9 @@ def is_best(logs, epoch):
     return is_best_model
 
 def train_loop(epoch, model, optimizer, scheduler, loss, dataloader, logs, config):
+    
+    metricsStoreTrain = MetricsStore(config)
+    
     # Training loop
     model.train()
     pbar = tqdm(enumerate(dataloader), total=len(dataloader), desc="Training", leave=None, )
@@ -243,6 +259,9 @@ def train_loop(epoch, model, optimizer, scheduler, loss, dataloader, logs, confi
 
         preds = model(data)
         losses = {}
+
+        metricsStoreTrain.evaluate_multiple_predictions(label, preds[0]>.5, batch['patient'])
+
         for key_pred, pred in preds.items():
             this_label = einops.rearrange(label, "b t -> b 1 t")
             this_label = torch.nn.functional.interpolate(this_label, size=(pred.shape[1]), mode='nearest').squeeze()
@@ -273,6 +292,14 @@ def train_loop(epoch, model, optimizer, scheduler, loss, dataloader, logs, confi
 
         # if current_step == 10:
         #     break
+
+    outDir = pathlib.Path("./irregulars_neureka_codebase/predictions/train/epoch_"+epoch)
+    try:
+        os.mkdir(outDir)
+    except Exception as exc:
+        pass
+    metricsStoreTrain.store_scores(outDir)
+    metricsStoreTrain.store_metrics(outDir, outDir)
 
     return logs
 
