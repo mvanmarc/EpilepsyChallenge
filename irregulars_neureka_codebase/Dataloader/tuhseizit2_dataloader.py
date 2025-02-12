@@ -201,8 +201,6 @@ class TUHSeizIT2Dataset(Dataset):
 
         return {"data":{"raw":signal},"label": label, "idx": idx}
 
-
-
 class TUHSeizIT2_Dataloader():
 
     def __init__(self, config):

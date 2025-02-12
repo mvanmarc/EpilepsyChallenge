@@ -30,22 +30,119 @@ class TUHDataset(Dataset):
         #or load it from cumulated dict
         with open("/users/sista/kkontras/Documents/Epilepsy_Challenge/irregulars_neureka_codebase/Dataloader/tuh_patient_dict.pkl", "rb") as f:
             self.patient_dict = pickle.load(f)
+        #
+
+        # count = {"non_seizure": 0, "seizure": 0}
+        # self.patient_dict = {}
+        # percentages = []
+        # for dataset in tqdm(self.h5_file.keys()):
+        #     self.patient_dict[dataset] = {}
+        #     for patient in self.h5_file[dataset].keys():
+        #         self.patient_dict[dataset][patient] = {}
+        #         for session in self.h5_file[dataset][patient].keys():
+        #             # for rec in self.h5_file[dataset][patient][session].keys():
+        #             duration = self.h5_file[dataset][patient][session]["duration"][()]
+        #             events = self.h5_file[dataset][patient][session]["events"][()]
+        #             if len(events) > 0:
+        #                 count["seizure"] += 1
+        #             else:
+        #                 count["non_seizure"] += 1
+        #
+        #             labels_per_window, perc = self.estimate_labels_per_window(events, duration)
+        #             percentages.append(perc)
+        #             self.patient_dict[dataset][patient][session] = {"duration": duration, "events": events, "labels_per_window": labels_per_window}
+        # print(np.mean(percentages))
+        # #remove zero from the percentages
+        # percentages = [x for x in percentages if x != 0]
+        # print("Average seizure percentage in seconds: ", np.mean(percentages))
+        #
+        # with open("/users/sista/kkontras/Documents/Epilepsy_Challenge/irregulars_neureka_codebase/Dataloader/tuh_patient_dict.pkl", "wb") as f:
+        #     pickle.dump(self.patient_dict, f)
 
         self._subselect_patients(mode=mode)
 
         self._get_cumulative_lens()
 
+    def estimate_labels_per_window(self, events, duration):
+        labels_per_window = np.zeros(int(duration)*self.config.dataset.fs//self.config.dataset.window_size)
+        total_sz_duration = 0
+        for event in events:
+            start = event[0]*self.config.dataset.fs/self.config.dataset.window_size
+            end = event[1]*self.config.dataset.fs/self.config.dataset.window_size
+            start = int(np.floor(start))
+            end = int(np.ceil(end))
+            labels_per_window[start:end] = 1
+            total_sz_duration += event[1]-event[0]
+
+        #estimate percentage of seizure windows lengths
+        # print("Percentage of seizure windows lengths: {0:.2f}".format(total_sz_duration / (int(duration))))
+
+        return labels_per_window, total_sz_duration/(int(duration))
+
     def __len__(self):
         return int(list(self.cumulated_dict.keys())[-1])
 
+    def _discard_non_seizure(self):
+        new_patient_dict = {}
+        for dataset in self.patient_dict.keys():
+            for patient in self.patient_dict[dataset].keys():
+                for session in self.patient_dict[dataset][patient].keys():
+                    if len(self.patient_dict[dataset][patient][session]["events"]) > 0:
+                        if dataset not in new_patient_dict.keys():
+                            new_patient_dict[dataset] = {}
+                        if patient not in new_patient_dict[dataset].keys():
+                            new_patient_dict[dataset][patient] = {}
+                        new_patient_dict[dataset][patient][session] = self.patient_dict[dataset][patient][session]
+        print("We discard non-seizure recordings")
+        self.patient_dict = new_patient_dict
+
+    def _discard_non_seizure_windows(self):
+        #estimate current ratio of seizure to non-seizure windows
+        count = {"non_seizure": 0, "seizure": 0}
+        for dataset in self.patient_dict.keys():
+            for patient in self.patient_dict[dataset].keys():
+                for session in self.patient_dict[dataset][patient].keys():
+                    count["non_seizure"] += self.patient_dict[dataset][patient][session]["labels_per_window"].shape[0] - self.patient_dict[dataset][patient][session]["labels_per_window"].sum()
+                    count["seizure"] += self.patient_dict[dataset][patient][session]["labels_per_window"].sum()
+        current_ratio = count["seizure"]/count["non_seizure"]
+        if current_ratio > self.config.dataset.ratio_sz_nsz:
+            print("Current ratio is {} and desired ratio is {} so we discard nothing".format(current_ratio, self.config.dataset.ratio_sz_nsz))
+            return
+        #how many non seizure should we discard?
+        to_discard = int((self.config.dataset.ratio_sz_nsz-current_ratio)*count["non_seizure"])
+        discard_ratio = to_discard/count["non_seizure"]
+        print("We discard randomly further {} non-seizure windows".format(to_discard))
+
+        #discard non-seizure windows
+        new_patient_dict = {}
+        for dataset in self.patient_dict.keys():
+            for patient in self.patient_dict[dataset].keys():
+                for session in self.patient_dict[dataset][patient].keys():
+                    if len(self.patient_dict[dataset][patient][session]["events"]) > 0:
+                        if dataset not in new_patient_dict.keys():
+                            new_patient_dict[dataset] = {}
+                        if patient not in new_patient_dict[dataset].keys():
+                            new_patient_dict[dataset][patient] = {}
+                        new_patient_dict[dataset][patient][session] = self.patient_dict[dataset][patient][session]
+                        discard_idx = np.zeros(len(new_patient_dict[dataset][patient][session]["labels_per_window"]))
+                        for i in range(len(new_patient_dict[dataset][patient][session]["labels_per_window"])):
+                            #check if previous or after are not seizures
+                            if i > 0 and i < len(new_patient_dict[dataset][patient][session]["labels_per_window"])-1:
+                                if new_patient_dict[dataset][patient][session]["labels_per_window"][i-1] == 0 and new_patient_dict[dataset][patient][session]["labels_per_window"][i+1] == 0:
+                                    if random.random() < discard_ratio:
+                                        discard_idx[i] = 1
+                        new_patient_dict[dataset][patient][session]["discard_idx"] = discard_idx
+                        new_duration = len(new_patient_dict[dataset][patient][session]["labels_per_window"]) - discard_idx.sum()
+
+                        new_patient_dict[dataset][patient][session]["duration"] = (new_duration * self.config.dataset.window_size)/self.config.dataset.fs
+        self.patient_dict = new_patient_dict
+
     def _subselect_patients(self, mode):
-        #get all patient_names from self.patient_dict
+
         patient_names = list(self.patient_dict.keys())
-        #split the patient_names into train, val, test
         train_patients, test_patients = train_test_split(patient_names, test_size=0.2, random_state=42)
         train_patients, val_patients = train_test_split(train_patients, test_size=0.2, random_state=42)
 
-        #change patient_dict to only contain the selected patients
         if mode == "train":
             for patient in val_patients+test_patients:
                 self.patient_dict.pop(patient)
@@ -56,16 +153,27 @@ class TUHDataset(Dataset):
             for patient in train_patients+val_patients:
                 self.patient_dict.pop(patient)
 
+        self._discard_non_seizure()
+        if mode == "train":
+            self._discard_non_seizure_windows()
+
+
+    def check_for_discard(self, patient, session, recording):
+        if len(self.patient_dict[patient][session][recording]["events"]) == 0:
+            return True
+        else:
+            return False
 
     def _get_cumulative_lens(self):
 
         self.cumulated_dict = {}
-        cum_idx = 0
+        cum_idx = 0 #number of windows per patient
         for patient in self.patient_dict.keys():
             for session in self.patient_dict[patient].keys():
                 for recording in self.patient_dict[patient][session].keys():
-                    self.cumulated_dict[cum_idx] = {"patient": patient, "session": session, "recording": recording, "len": self.patient_dict[patient][session][recording]}
-                    cum_idx += self.patient_dict[patient][session][recording]//self.config.dataset.window_size
+                    self.cumulated_dict[cum_idx] = {"patient": patient, "session": session, "recording": recording, "len": self.patient_dict[patient][session][recording]["duration"]*self.config.dataset.fs}
+                    cum_idx += self.patient_dict[patient][session][recording]["duration"]*self.config.dataset.fs//self.config.dataset.window_size
+
 
     def _choose_patient_session_recording_len(self, idx):
         #find the cumulative idx that is right smaller than the idx
@@ -78,11 +186,22 @@ class TUHDataset(Dataset):
         session = self.cumulated_dict[cum_idx]["session"]
         recording = self.cumulated_dict[cum_idx]["recording"]
 
-        len_from = (idx-cum_idx)*self.config.dataset.window_size
-        len_to = (idx-cum_idx+1)*self.config.dataset.window_size
-        if len_to > self.cumulated_dict[cum_idx]["len"]:
-            len_to = self.cumulated_dict[cum_idx]["len"]
-        return {"patient": patient, "session": session, "recording": recording, "len_from": len_from, "len_to": len_to}
+        window_idx = idx-cum_idx
+        #find the id of the window_idx in the discarding list that is zero
+        if "discard_idx" in self.patient_dict[patient][session][recording].keys():
+            okay_windows = 0
+            for disc_id, v in enumerate(self.patient_dict[patient][session][recording]["discard_idx"]):
+                if v == 0:
+                    if okay_windows == window_idx:
+                        break
+                    okay_windows += 1
+            window_idx = disc_id
+
+        len_from = window_idx*self.config.dataset.window_size
+        len_to = (window_idx+1)*self.config.dataset.window_size
+        # if len_to > self.cumulated_dict[cum_idx]["len"]:
+        #     len_to = self.cumulated_dict[cum_idx]["len"]
+        return {"patient": patient, "session": session, "recording": recording, "len_from": int(len_from), "len_to": int(len_to)}
 
     def _windowize(self, data, window_size, stride):
         data = np.array(data)
@@ -298,6 +417,8 @@ if __name__ == "__main__":
     config.dataset = EasyDict()
     config.training_params = EasyDict()
     config.dataset.window_size = 4096
+    config.dataset.fs = 200
+    config.dataset.ratio_sz_nsz = 0.2
     config.dataset.stride = 4096
     config.dataset.data_path = "/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/TUH.h5"
     config.training_params.len_sample = 4096*30

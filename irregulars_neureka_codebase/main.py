@@ -24,6 +24,10 @@ def main(config_path, default_config_path, args):
         config.optimizer.momentum = float(args.mm)
         m += "_mm{}".format(args.mm)
         enc_m += "_mm{}".format(args.mm)
+    if "rsz" in args and args.rsz is not None:
+        config.dataset.ratio_sz_nsz = float(args.rsz)
+        m += "_rsz{}".format(args.rsz)
+        enc_m += "_rsz{}".format(args.rsz)
 
     config.model.save_dir = config.model.save_dir.format(m)
 
@@ -41,6 +45,7 @@ parser.add_argument('--default_config', help="Number of config file")
 parser.add_argument('--lr', required=False, help="Learning Rate", default=None)
 parser.add_argument('--wd', required=False, help="Weight Decay", default=None)
 parser.add_argument('--mm', required=False, help="Optimizer Momentum", default=None)
+parser.add_argument('--rsz', required=False, help="ratio_sz_nsz", default=None)
 args = parser.parse_args()
 
 for var_name in vars(args):

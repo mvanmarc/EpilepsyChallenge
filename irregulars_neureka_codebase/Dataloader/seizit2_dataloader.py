@@ -27,18 +27,53 @@ class SeizIT2Dataset(Dataset):
         data_path = config.dataset.get("data_path", "/esat/biomeddata/mbhaguba/seizeit2.h5")
         self.h5_file = h5py.File(data_path, 'r')
 
-        # self.patient_dict = {}
-        # for dataset in self.h5_file.keys():
-        #     for patient in tqdm(self.h5_file[dataset].keys(), total=len(self.h5_file[dataset].keys())):
-        #         self.patient_dict[patient] = {}
-        #         for session in self.h5_file[dataset][patient].keys():
-        #                 self.patient_dict[patient][session] = self.patient_dict[patient][session]
-        # with open("/users/sista/kkontras/Documents/Epilepsy_Challenge/irregulars_neureka_codebase/Dataloader/seizit2_patient_dict.pkl", "wb") as f:
-        #     pickle.dump(self.patient_dict, f)
-
-        #or load it from cumulated dict
+        # load patient dict with length, label and events
         with open("/users/sista/kkontras/Documents/Epilepsy_Challenge/irregulars_neureka_codebase/Dataloader/seizit2_patient_dict.pkl", "rb") as f:
             self.patient_dict = pickle.load(f)
+
+        # count = {"non_seizure": 0, "seizure": 0}
+        # self.patient_dict = {}
+        # percentages = []
+        # durations = []
+        # ev_durations = []
+        # for dataset in self.h5_file.keys():
+        #     for patient in tqdm(self.h5_file[dataset].keys()):
+        #         self.patient_dict[patient] = {}
+        #         for session in self.h5_file[dataset][patient].keys():
+        #             # for rec in self.h5_file[dataset][patient][session].keys():
+        #             duration = self.h5_file[dataset][patient][session]["duration"][()]
+        #             events = self.h5_file[dataset][patient][session]["events"][()]
+        #             if len(events) > 0:
+        #                 count["seizure"] += 1
+        #             else:
+        #                 count["non_seizure"] += 1
+        #
+        #             # estimate events duration
+        #             ev_dur = 0
+        #             for event in events:
+        #                 ev_dur += event[1]-event[0]
+        #             ev_durations.append(ev_dur)
+        #
+        #             labels_per_window, perc = self.estimate_labels_per_window(events, duration)
+        #             percentages.append(perc)
+        #             durations.append(duration)
+        #
+        #             self.patient_dict[patient][session] = {"duration": duration, "events": events, "labels_per_window": labels_per_window}
+        #
+        # print(np.mean(duration))
+        # print(np.mean(percentages))
+        # print(count)
+        # #remove zero from the percentages
+        # dur_seiz = [durations[i] for i, x in enumerate(percentages) if x != 0]
+        # print("Average seizure duration in seconds: ", np.mean(ev_durations))
+        # print("Average seizure duration in seconds: ", np.mean(dur_seiz))
+        # percentages = [x for x in percentages if x != 0]
+        # ev_durations = [x for x in ev_durations if x != 0]
+        # print("Average seizure percentage in seconds: ", np.mean(percentages))
+
+        # #
+        # with open("/users/sista/kkontras/Documents/Epilepsy_Challenge/irregulars_neureka_codebase/Dataloader/seizit2_patient_dict.pkl", "wb") as f:
+        #     pickle.dump(self.patient_dict, f)
 
         self._subselect_patients(mode=mode)
 
@@ -47,10 +82,22 @@ class SeizIT2Dataset(Dataset):
     def __len__(self):
         return int(list(self.cumulated_dict.keys())[-1])
 
+    def estimate_labels_per_window(self, events, duration):
+        labels_per_window = np.zeros(int(duration)*self.config.dataset.fs//self.config.dataset.window_size)
+        total_sz_duration = 0
+        for event in events:
+            start = event[0]*self.config.dataset.fs/self.config.dataset.window_size
+            end = event[1]*self.config.dataset.fs/self.config.dataset.window_size
+            start = int(np.floor(start))
+            end = int(np.ceil(end))
+            labels_per_window[start:end] = 1
+            total_sz_duration += event[1]-event[0]
+
+        return labels_per_window, total_sz_duration/(int(duration))
+
     def _subselect_patients(self, mode):
-        #get all patient_names from self.patient_dict
+
         patient_names = list(self.patient_dict.keys())
-        #split the patient_names into train, val, test
         train_patients, test_patients = train_test_split(patient_names, test_size=0.2, random_state=42)
         train_patients, val_patients = train_test_split(train_patients, test_size=0.2, random_state=42)
 
@@ -65,6 +112,63 @@ class SeizIT2Dataset(Dataset):
             for patient in train_patients+val_patients:
                 self.patient_dict.pop(patient)
 
+        self._discard_non_seizure_seizit2()
+        if mode == "train":
+            self._discard_non_seizure_windows_seizit2()
+
+    def _discard_non_seizure_seizit2(self):
+        new_patient_dict = {}
+        for patient in self.patient_dict.keys():
+            for session in self.patient_dict[patient].keys():
+                if len(self.patient_dict[patient][session]["events"]) > 0:
+                    if patient not in new_patient_dict.keys():
+                        new_patient_dict[patient] = {}
+                    new_patient_dict[patient][session] = self.patient_dict[patient][session]
+        print("We discard non-seizure recordings")
+        self.patient_dict = new_patient_dict
+
+    def _discard_non_seizure_windows_seizit2(self):
+
+        #estimate current ratio of seizure to non-seizure windows
+        count = {"non_seizure": 0, "seizure": 0}
+        for patient in self.patient_dict.keys():
+            for session in self.patient_dict[patient].keys():
+                count["non_seizure"] += self.patient_dict[patient][session]["labels_per_window"].shape[0] - self.patient_dict[patient][session]["labels_per_window"].sum()
+                count["seizure"] += self.patient_dict[patient][session]["labels_per_window"].sum()
+        current_ratio = count["seizure"]/count["non_seizure"]
+        if current_ratio > self.config.dataset.ratio_sz_nsz:
+            return
+
+        #how many non seizure should we discard?
+        to_discard = int((self.config.dataset.ratio_sz_nsz-current_ratio)*count["non_seizure"])
+        discard_ratio = to_discard/count["non_seizure"]
+        print("We discard randomly further {} non-seizure windows".format(to_discard))
+        #discard non-seizure windows
+        new_patient_dict = {}
+        for patient in self.patient_dict.keys():
+            for session in self.patient_dict[patient].keys():
+                if len(self.patient_dict[patient][session]["events"]) > 0:
+                    if patient not in new_patient_dict.keys():
+                        new_patient_dict[patient] = {}
+                    new_patient_dict[patient][session] = self.patient_dict[patient][session]
+                    discard_idx = np.zeros(len(new_patient_dict[patient][session]["labels_per_window"]))
+                    for i in range(len(new_patient_dict[patient][session]["labels_per_window"])):
+                        #check if previous or after are not seizures
+                        if i > 0 and i < len(new_patient_dict[patient][session]["labels_per_window"])-1:
+                            if new_patient_dict[patient][session]["labels_per_window"][i-1] == 0 and new_patient_dict[patient][session]["labels_per_window"][i+1] == 0:
+                                if random.random() < discard_ratio:
+                                    discard_idx[i] = 1
+                    new_patient_dict[patient][session]["discard_idx"] = discard_idx
+                    new_duration = len(new_patient_dict[patient][session]["labels_per_window"]) - discard_idx.sum()
+
+                    new_patient_dict[patient][session]["duration"] = (new_duration * self.config.dataset.window_size)/self.config.dataset.fs
+        self.patient_dict = new_patient_dict
+
+    def check_for_discard(self, patient, session, recording):
+        if len(self.patient_dict[patient][session][recording]["events"]) == 0:
+            return True
+        else:
+            return False
 
     def _get_cumulative_lens(self):
 
@@ -72,7 +176,7 @@ class SeizIT2Dataset(Dataset):
         cum_idx = 0
         for patient in self.patient_dict.keys():
             for session in self.patient_dict[patient].keys():
-                patient_len = self.patient_dict[patient][session][0] * self.config.dataset.fs
+                patient_len = self.patient_dict[patient][session]["duration"] * self.config.dataset.fs
                 self.cumulated_dict[cum_idx] = {"patient": patient, "session": session, "recording": 0,
                                                 "len": patient_len}
                 cum_idx += patient_len // self.config.dataset.window_size
@@ -212,6 +316,7 @@ if __name__ == "__main__":
     config.dataset = EasyDict()
     config.training_params = EasyDict()
     config.dataset.window_size = 4096
+    config.dataset.ratio_sz_nsz = 0.2
     config.dataset.stride = 4096
     config.dataset.fs = 200
     config.dataset.data_path = "/esat/biomeddata/mbhaguba/seizeit2.h5"

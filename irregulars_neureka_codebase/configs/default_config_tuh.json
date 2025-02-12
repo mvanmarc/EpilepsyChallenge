@@ -4,8 +4,8 @@
     "cuda": true,
     "gpu_device": [0],
     "seed": 109,
-    "batch_size": 32,
-    "test_batch_size": 32,
+    "batch_size": 128,
+    "test_batch_size": 128,
     "pin_memory": true,
     "data_loader_workers": 8,
     "tdqm_disable": true,
@@ -23,7 +23,7 @@
     "beta2": 0.999
   },
   "early_stopping": {
-    "max_epoch": 1,
+    "max_epoch": 150,
     "n_steps_stop": 50,
     "n_steps_stop_after": 0
   },
@@ -32,6 +32,7 @@
       "window_size": 4096,
       "fs": 200,
       "stride": 4096,
+      "ratio_sz_nsz": 0.5,
       "data_path": "/esat/biomeddata/kkontras/TUH/tuh_eeg/tuh_eeg_seizure/v2.0.3/TUH.h5"
   },
   "model": {

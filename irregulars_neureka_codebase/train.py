@@ -19,12 +19,14 @@ def save_model(model_save, is_best_model, unwrapped_model, optimizer, scheduler,
     save_dict = {}
     savior = {}
     file_name = config.model.save_dir
+    if "save_base_dir" in config.model:
+        file_name = os.path.join(config.model.save_base_dir, file_name)
     savior["optimizer_state_dict"] = optimizer.state_dict()
     savior["scheduler_state_dict"] = scheduler.state_dict()
     savior["logs"] = logs
     savior["configs"] = config
-    if hasattr(dataloaders.train_loader, "generator"):
-        savior["training_dataloder_generator_state"] = dataloaders.train_loader.generator.get_state()
+    # if hasattr(dataloaders.train_loader, "generator"):
+    #     savior["training_dataloder_generator_state"] = dataloaders.train_loader.generator.get_state()
 
     if not model_save:
         if os.path.exists(file_name):
@@ -60,15 +62,21 @@ def save_model(model_save, is_best_model, unwrapped_model, optimizer, scheduler,
     except:
         raise Exception("Problem in model saving")
 
-def load_dir(file_name, model, optimizer, scheduler, dataloaders):
+def load_dir(config, model, optimizer, scheduler, dataloaders):
+
+    file_name = config.model.save_dir
+    if "save_base_dir" in config.model:
+        file_name = os.path.join(config.model.save_base_dir, file_name)
+
     checkpoint = torch.load(file_name, map_location="cpu")
+    print(checkpoint.keys())
     model.load_state_dict(checkpoint["model_state_dict"])
     optimizer.load_state_dict(checkpoint["optimizer_state_dict"])
     scheduler.load_state_dict(checkpoint["scheduler_state_dict"])
     logs = checkpoint["logs"]
     config = checkpoint["configs"]
-    if hasattr(dataloaders.train_loader, "generator"):
-        dataloaders.train_loader.generator.set_state(checkpoint["training_dataloder_generator_state"])
+    # if hasattr(dataloaders.train_loader, "generator"):
+    #     dataloaders.train_loader.generator.set_state(checkpoint["training_dataloder_generator_state"])
     if "metrics" in checkpoint:
         dataloaders.metrics = checkpoint["metrics"]
     print(Fore.WHITE + "Model has loaded successfully from {}".format(file_name))
@@ -178,7 +186,7 @@ def validate(model, dataloaders, logs, epoch, loss, config, set_name="val"):
         #     break
 
     metrics = defaultdict(dict)
-    for total_size in [1000, 400, 200, 100]: #fs=200 so 5, 2, 1, 0.5 seconds
+    for total_size in [200]: #fs=200 so 5, 2, 1, 0.5 seconds
         this_label = np.concatenate(total_preds["{}_label".format(0)])
         this_pred = np.concatenate(total_preds[0], axis=0)
         this_pred = (this_pred > 0.5)
@@ -200,7 +208,11 @@ def validate(model, dataloaders, logs, epoch, loss, config, set_name="val"):
         metrics[total_size]["precision"] = precision_score(this_label, this_pred)
         metrics[total_size]["recall"] = recall_score(this_label, this_pred)
         metrics[total_size]["specificity"] = specificity_score(this_label, this_pred) if len(np.unique(this_label)) > 1 else 0
-        metrics[total_size]["false_alarm_rate"] = 1 - metrics[total_size]["specificity"] if len(np.unique(this_label)) > 1 else 0
+
+        #estimate False positives per 24 hours
+        false_positives = metrics[total_size]["confusion_matrix"][0][1]
+        false_positives_per_second = false_positives / (len(this_label)*config.dataset.fs/total_size)
+        metrics[total_size]["FAs/24Hr"] = false_positives_per_second * (24*3600*config.dataset.fs/total_size)
 
     message = "{0:} Epoch {1:d} step {2:d} with \n".format(set_name, epoch, current_step)
     for i, v in metrics.items():
@@ -267,7 +279,7 @@ def train_loop(epoch, model, optimizer, scheduler, loss, dataloader, logs, confi
         # threshold = 0.5
         # binary_preds = (preds[0] > threshold)
         # binary_preds = torch.nn.functional.one_hot(binary_preds.long().cuda().flatten(), num_classes=2).float()
-
+        #
         # if current_step == 10:
         #     break
 
@@ -291,32 +303,32 @@ def train(config):
     loss = BinaryCrossEntropyWithLabelSmoothingAndWeights()
 
     if os.path.exists(config.model.save_dir) and config.model.get("load_ongoing", True):
-        model, optimizer, scheduler, logs, config, dataloaders = load_dir(config.model.save_dir, model, optimizer, scheduler, dataloaders)
+        model, optimizer, scheduler, logs, config, dataloaders = load_dir(config, model, optimizer, scheduler, dataloaders)
     else:
-        logs = {"best": {"loss": 1e20}}
+        logs = {"best": {"loss": 1e20}, "epoch":0}
 
     try:
-        _ = validate(model, dataloaders.valid_loader, logs, -1, loss, config, "val")
+        # _ = validate(model, dataloaders.valid_loader, logs, -1, loss, config, "val")
 
-        for epoch in range(config.early_stopping.max_epoch):
-            if epoch not in logs:
-                logs[epoch] = {"train": defaultdict(list), "val": defaultdict(list), "test": defaultdict(list)}
+        for logs["epoch"] in range(logs["epoch"], config.early_stopping.max_epoch):
+            if logs["epoch"] not in logs:
+                logs[logs["epoch"]] = {"train": defaultdict(list), "val": defaultdict(list), "test": defaultdict(list)}
 
-            logs = train_loop(epoch, model, optimizer, scheduler, loss, dataloaders.train_loader, logs, config)
+            logs = train_loop(logs["epoch"], model, optimizer, scheduler, loss, dataloaders.train_loader, logs, config)
 
-            logs = validate(model, dataloaders.valid_loader, logs, epoch, loss, config, "val")
+            logs = validate(model, dataloaders.valid_loader, logs, logs["epoch"], loss, config, "val")
 
-            save_model(True if epoch == 0 else False,
-                       is_best(logs, epoch),
+            save_model(True,
+                       is_best(logs, logs["epoch"]),
                        model, optimizer, scheduler, logs, config, dataloaders)
     #catch a control c and save the model
     except KeyboardInterrupt:
-        save_model(False, False, model, optimizer, scheduler, logs, config, dataloaders)
+        save_model(True, False, model, optimizer, scheduler, logs, config, dataloaders)
         raise KeyboardInterrupt
 
     model = load_best_model(model, config)
-    logs = validate(model, dataloaders.test_loader, logs, epoch, loss, config, "test")
-    save_model(True if epoch == 0 else False,
-               is_best(logs, epoch),
+    logs = validate(model, dataloaders.test_loader, logs, logs["epoch"], loss, config, "test")
+    save_model(False,
+               is_best(logs, logs["epoch"]),
                model, optimizer, scheduler, logs, config, dataloaders)
 
