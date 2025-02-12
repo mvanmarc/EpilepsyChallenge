@@ -262,7 +262,7 @@ class SeizIT2Dataset(Dataset):
         signal = self._get_signals_seizit2(demographics, label)
         signal = self._windowize(signal, self.config.dataset.window_size, self.config.dataset.stride)
 
-        return {"data":{"raw":signal},"label": label, "idx": idx, "patient":demographics["patient"]}
+        return {"data":{"raw":signal},"label": label, "idx": idx}
 
 
 

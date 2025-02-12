@@ -260,7 +260,7 @@ class TUHDataset(Dataset):
 
         label = self._get_label(demographics)
 
-        return {"data":{"raw":signal},"label": label, "idx": idx, "patient":demographics["patient"]}
+        return {"data":{"raw":signal},"label": label, "idx": idx}
 
 
 def collate_fn_padd(batch):
