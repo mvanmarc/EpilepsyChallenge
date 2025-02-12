@@ -253,7 +253,7 @@ class SeizIT2Dataset(Dataset):
 
         label = self._get_label_seizit2(demographics)
 
-        return {"data":{"raw":signal},"label": label, "idx": idx}
+        return {"data":{"raw":signal},"label": label, "idx": idx, "patient":demographics["patient"]}
 
 
 
