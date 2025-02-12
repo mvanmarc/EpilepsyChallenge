@@ -28,13 +28,13 @@
     "n_steps_stop_after": 0
   },
   "dataset": {
-    "dataloader_class": "SeizIT2_Dataloader",
+    "dataloader_class": "TUHSeizIT2_Dataloader",
       "window_size": 4096,
       "fs": 200,
       "stride": 4096,
       "ratio_sz_nsz": 0.5,
-      "data_path": "/esat/biomeddata/mbhaguba/seizeit2.h5"
-  },
+      "data_path": {"sz2": "/esat/biomeddata/mbhaguba/seizeit2.h5"}
+      },
   "model": {
     "save_base_dir": "/esat/smcdata/users/kkontras/Image_Dataset/no_backup/data/2023_data/SZ2_models/"
   }
