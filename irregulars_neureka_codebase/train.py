@@ -1,6 +1,4 @@
 
-from Dataloader.tuh_dataloader import TUH_Dataloader
-from Dataloader.seizit2_dataloader import SeizIT2_Dataloader
 from Dataloader.tuhseizit2_dataloader import TUHSeizIT2_Dataloader
 from tqdm import tqdm
 from easydict import EasyDict
@@ -308,7 +306,7 @@ def train(config):
         logs = {"best": {"loss": 1e20}, "epoch":0}
 
     try:
-        _ = validate(model, dataloaders.valid_loader, logs, -1, loss, config, "val")
+        # _ = validate(model, dataloaders.valid_loader, logs, -1, loss, config, "val")
 
         for logs["epoch"] in range(logs["epoch"], config.early_stopping.max_epoch):
             if logs["epoch"] not in logs:
