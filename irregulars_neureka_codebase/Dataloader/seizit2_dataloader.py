@@ -16,6 +16,8 @@ from tqdm import tqdm
 from collections import defaultdict
 import h5py
 from library import nedc
+from utils.iaaft import surrogates
+
 
 class SeizIT2Dataset(Dataset):
 
@@ -125,6 +127,8 @@ class SeizIT2Dataset(Dataset):
                         new_patient_dict[patient] = {}
                     new_patient_dict[patient][session] = self.patient_dict[patient][session]
         print("We discard non-seizure recordings")
+        print("Number of patients before: ", len(self.patient_dict.keys()))
+        print("Number of patients after: ", len(new_patient_dict.keys()))
         self.patient_dict = new_patient_dict
 
     def _discard_non_seizure_windows_seizit2(self):
@@ -204,15 +208,19 @@ class SeizIT2Dataset(Dataset):
         data = data.reshape(-1, window_size)
         return data
 
-    def _get_signals_seizit2(self, demographics):
+    def _get_signals_seizit2(self, demographics, label):
         patient = demographics["patient"]
         session = demographics["session"]
         len_from, len_to = demographics["len_from"], demographics["len_to"]
 
+        augment_flag = label.sum() > 0 and self.mode == "train"
         ch_names = [x.decode() for x in self.h5_file['sz2'][patient][session]['channel_names'][()]]
         sig = []
         for ch in ch_names:
-            sig.append(self.h5_file['sz2'][patient][session][ch][len_from:len_to])
+            if augment_flag:
+                sig.append(surrogates(self.h5_file['sz2'][patient][session][ch][len_from:len_to], 1).squeeze(axis=0))
+            else:
+                sig.append(self.h5_file['sz2'][patient][session][ch][len_from:len_to])
 
         # Put signals in a montage
         (signals_ds, _) = nedc.rereference(sig, [x.upper() for x in ch_names])
@@ -248,10 +256,11 @@ class SeizIT2Dataset(Dataset):
     def __getitem__(self, idx):
 
         demographics = self._choose_patient_session_recording_len(idx)
-        signal = self._get_signals_seizit2(demographics)
-        signal = self._windowize(signal, self.config.dataset.window_size, self.config.dataset.stride)
 
         label = self._get_label_seizit2(demographics)
+
+        signal = self._get_signals_seizit2(demographics, label)
+        signal = self._windowize(signal, self.config.dataset.window_size, self.config.dataset.stride)
 
         return {"data":{"raw":signal},"label": label, "idx": idx, "patient":demographics["patient"]}
 
@@ -275,7 +284,8 @@ class SeizIT2_Dataloader():
         g = torch.Generator()
         g.manual_seed(0)
 
-        num_cores = len(os.sched_getaffinity(0))-1
+        # num_cores = len(os.sched_getaffinity(0))-1
+        num_cores = 0
 
         print("Available cores {}".format(len(os.sched_getaffinity(0))))
         print("We are changing dataloader workers to num of cores {}".format(num_cores))

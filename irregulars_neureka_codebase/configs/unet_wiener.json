@@ -1,0 +1,24 @@
+{
+  "model": {
+    "model_class": "Unimodal",
+    "args": {
+      "window_size": 4096,
+      "n_channels": 18,
+      "n_filters": 8
+    },
+    "encoders": [
+        {
+            "model_class": "UNet1D",
+            "args": {
+              "n_filters": 8,
+              "n_channels": 18,
+              "window_size": 4096,
+              "preproc": "wiener"
+            },
+          "pretrainedEncoder": {"use": true, "dir": "neureka_pytorch_wiener.pth"}
+        }
+        ],
+    "load_ongoing": true,
+    "save_dir": "unet_wiener{}.pth"
+  }
+}
