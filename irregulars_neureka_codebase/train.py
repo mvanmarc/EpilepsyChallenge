@@ -308,7 +308,7 @@ def train(config):
         logs = {"best": {"loss": 1e20}, "epoch":0}
 
     try:
-        # _ = validate(model, dataloaders.valid_loader, logs, -1, loss, config, "val")
+        _ = validate(model, dataloaders.valid_loader, logs, -1, loss, config, "val")
 
         for logs["epoch"] in range(logs["epoch"], config.early_stopping.max_epoch):
             if logs["epoch"] not in logs:

@@ -28,6 +28,11 @@ def main(config_path, default_config_path, args):
         config.dataset.ratio_sz_nsz = float(args.rsz)
         m += "_rsz{}".format(args.rsz)
         enc_m += "_rsz{}".format(args.rsz)
+    if "bs" in args and args.bs is not None:
+        config.training_params.batch_size = int(args.bs)
+        config.training_params.test_batch_size = int(args.bs)
+        m += "_rsz{}".format(args.bs)
+        enc_m += "_rsz{}".format(args.bs)
 
     config.model.save_dir = config.model.save_dir.format(m)
 
@@ -46,6 +51,7 @@ parser.add_argument('--lr', required=False, help="Learning Rate", default=None)
 parser.add_argument('--wd', required=False, help="Weight Decay", default=None)
 parser.add_argument('--mm', required=False, help="Optimizer Momentum", default=None)
 parser.add_argument('--rsz', required=False, help="ratio_sz_nsz", default=None)
+parser.add_argument('--bs', required=False, help="batch size", default=None)
 args = parser.parse_args()
 
 for var_name in vars(args):
