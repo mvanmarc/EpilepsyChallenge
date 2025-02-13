@@ -222,20 +222,22 @@ def validate(model, dataloaders, logs, epoch, loss, config, set_name="val"):
     res_1 = metricsStoreTest.store_scores()
     metrics = metricsStoreTest.store_metrics()
 
-    # for total_size in [200]: #fs=200 so 5, 2, 1, 0.5 seconds
-    #     this_label = np.concatenate(total_preds["{}_label".format(0)])
-    #     this_pred = np.concatenate(total_preds[0], axis=0)
-    #     this_pred = (this_pred > 0.5)
-    #     #TODO: Remove this necessity to transform to torch Tensor and back in numpy
-    #     this_label = torch.nn.functional.interpolate(torch.from_numpy(this_label).unsqueeze(dim=1), size=(total_size), mode='nearest').flatten().numpy()
-    #     this_pred = torch.nn.functional.interpolate(torch.from_numpy(this_pred).unsqueeze(dim=1).float(), size=(total_size), mode='nearest').flatten().numpy().astype(int)
-    #
-    #     #print unique label count in percentage with 2 decimal points
-    #     unique, counts = np.unique(this_label, return_counts=True)
-    #     if len(unique) == 1:
-    #         print("Label percentage 0: {:.2f}% 1: {:.2f}%".format(1, 0))
-    #     else:
-    #         print("Label percentage 0: {:.2f}% 1: {:.2f}%".format(counts[0]/len(this_label), counts[1]/len(this_label)))
+    for total_size in [200]: #fs=200 so 5, 2, 1, 0.5 seconds
+        this_label = np.concatenate(total_preds["{}_label".format(0)])
+
+        #TODO: Remove this necessity to transform to torch Tensor and back in numpy
+        this_label = torch.nn.functional.interpolate(torch.from_numpy(this_label).unsqueeze(dim=1), size=(total_size), mode='nearest').flatten().numpy()
+
+        # this_pred = np.concatenate(total_preds[0], axis=0)
+        # this_pred = (this_pred > 0.5)
+        # this_pred = torch.nn.functional.interpolate(torch.from_numpy(this_pred).unsqueeze(dim=1).float(), size=(total_size), mode='nearest').flatten().numpy().astype(int)
+
+        #print unique label count in percentage with 2 decimal points
+        unique, counts = np.unique(this_label, return_counts=True)
+        if len(unique) == 1:
+            print("Label percentage 0: {:.2f}% 1: {:.2f}%".format(1, 0))
+        else:
+            print("Label percentage 0: {:.2f}% 1: {:.2f}%".format(counts[0]/len(this_label), counts[1]/len(this_label)))
     #
     #     metrics[total_size]["f1"] = f1_score(this_label, this_pred)
     #     metrics[total_size]["auc"] = roc_auc_score(this_label, this_pred) if len(np.unique(this_label)) > 1 else 0
