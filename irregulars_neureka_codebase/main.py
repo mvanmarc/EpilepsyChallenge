@@ -3,7 +3,7 @@ from utils.config import process_config, setup_logger, process_config_default
 import argparse
 import shutil
 shutil._USE_CP_SENDFILE = False
-from train import train
+from train import main_train, main_validate
 
 def main(config_path, default_config_path, args):
     setup_logger()
@@ -41,7 +41,12 @@ def main(config_path, default_config_path, args):
         for i in range(len(config.model.encoders)):
             config.model.encoders[i].pretrainedEncoder.dir = config.model.encoders[i].pretrainedEncoder.dir.format(enc_m)
 
-    train(config)
+    if args.post_validate:
+        main_validate(config)
+    else:
+        main_train(config)
+    # main_train(config)
+
 
 
 parser = argparse.ArgumentParser(description="My Command Line Program")
@@ -52,6 +57,7 @@ parser.add_argument('--wd', required=False, help="Weight Decay", default=None)
 parser.add_argument('--mm', required=False, help="Optimizer Momentum", default=None)
 parser.add_argument('--rsz', required=False, help="ratio_sz_nsz", default=None)
 parser.add_argument('--bs', required=False, help="batch size", default=None)
+parser.add_argument('--post_validate', required=False, help="batch size", default=False, action="store_true")
 args = parser.parse_args()
 
 for var_name in vars(args):

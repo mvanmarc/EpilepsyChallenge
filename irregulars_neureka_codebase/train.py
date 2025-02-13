@@ -17,7 +17,7 @@ import pathlib
 sys.path.insert(0, './')
 from utils.SzcoreEvaluation import MetricsStore
 import os
-
+from os import path
 def save_model(model_save, is_best_model, unwrapped_model, optimizer, scheduler, logs, config, dataloaders, post_test_results=None, verbose=True):
     save_dict = {}
     savior = {}
@@ -33,7 +33,7 @@ def save_model(model_save, is_best_model, unwrapped_model, optimizer, scheduler,
 
     if not model_save:
         if os.path.exists(file_name):
-            prev_checkpoint = torch.load(file_name, map_location="cpu")
+            prev_checkpoint = torch.load(file_name, map_location="cpu", weights_only=False)
             if "best_model_state_dict" in prev_checkpoint:
                 savior["best_model_state_dict"] = prev_checkpoint["best_model_state_dict"]
             if "model_state_dict" in prev_checkpoint:
@@ -43,9 +43,11 @@ def save_model(model_save, is_best_model, unwrapped_model, optimizer, scheduler,
 
     if is_best_model:
         savior["best_model_state_dict"] = unwrapped_model.state_dict()
+        if verbose:
+            print(Fore.WHITE + "New best model found!")
     else:
         if os.path.exists(file_name):
-            prev_checkpoint = torch.load(file_name, map_location="cpu")
+            prev_checkpoint = torch.load(file_name, map_location="cpu", weights_only=False)
             if "best_model_state_dict" in prev_checkpoint:
                 savior["best_model_state_dict"] = prev_checkpoint["best_model_state_dict"]
         else:
@@ -71,15 +73,15 @@ def load_dir(config, model, optimizer, scheduler, dataloaders):
     if "save_base_dir" in config.model:
         file_name = os.path.join(config.model.save_base_dir, file_name)
 
-    checkpoint = torch.load(file_name, map_location="cpu")
-    print(checkpoint.keys())
+    checkpoint = torch.load(file_name, map_location="cpu", weights_only=False)
+
     model.load_state_dict(checkpoint["model_state_dict"])
     optimizer.load_state_dict(checkpoint["optimizer_state_dict"])
     scheduler.load_state_dict(checkpoint["scheduler_state_dict"])
     logs = checkpoint["logs"]
     config = checkpoint["configs"]
-    if hasattr(dataloaders.train_loader, "generator"):
-        dataloaders.train_loader.generator.set_state(checkpoint["training_dataloder_generator_state"])
+    # if hasattr(dataloaders.train_loader, "generator"):
+    #     dataloaders.train_loader.generator.set_state(checkpoint["training_dataloder_generator_state"])
     if "metrics" in checkpoint:
         dataloaders.metrics = checkpoint["metrics"]
     print(Fore.WHITE + "Model has loaded successfully from {}".format(file_name))
@@ -97,8 +99,9 @@ def load_encoder(enc_args, config):
                 enc = enc_class(args = args, encs=[])
             pretrained_encoder_args =  enc_args[num_enc].get("pretrainedEncoder", {"use":False})
             if pretrained_encoder_args["use"]:
-                # print("Loading encoder from {}".format(enc_args[num_enc]["pretrainedEncoder"]["dir"]))
-                file_path = pretrained_encoder_args.get("dir","")
+                config.model.save_base_dir = config.model.get("save_base_dir", "")
+                file_path = path.join(config.model.save_base_dir, pretrained_encoder_args.get("dir",""))
+                print("Loading encoder from {}".format(file_path))
                 if "save_base_dir" in config.model:
                     file_path = os.path.join(config.model.save_base_dir, file_path)
                 checkpoint = torch.load(file_path)
@@ -110,7 +113,6 @@ def load_encoder(enc_args, config):
                         print(f"Unexpected keys in state_dict: {unexpected_keys}")
 
                 elif "best_model_state_dict" in checkpoint:
-                    print(enc_args[num_enc]["model"])
                     missing_keys, unexpected_keys =  enc.load_state_dict(checkpoint["best_model_state_dict"], strict=False)
                     if missing_keys:
                         print(f"Missing keys in state_dict: {missing_keys}")
@@ -185,7 +187,7 @@ def validate(model, dataloaders, logs, epoch, loss, config, set_name="val"):
                 logs["best"]["test_loss"] = logs[epoch][set_name]["losses"]
 
         aggr_loss = {key: torch.tensor(val).mean().item() for key, val in losses.items()}
-        message = "{0:} Epoch {1:d} step {2:d} with ".format(set_name, epoch, current_step)
+        message = "{0:} Epoch {1:} step {2:} with ".format(set_name, epoch, current_step)
         for i, v in aggr_loss.items(): message += "{} : {:.6f} ".format(i, v)
         pbar.set_description(message)
         pbar.refresh()
@@ -213,8 +215,9 @@ def validate(model, dataloaders, logs, epoch, loss, config, set_name="val"):
         sorted_keys = sorted(val["preds"].keys())
         val["preds"] = np.concatenate([val["preds"][k] for k in sorted_keys], axis=0)
         val["label"] = np.concatenate([val["label"][k] for k in sorted_keys], axis=0)
+
         classification_threshold = config.model.args.get("cls_threshold",0.5)
-        metricsStoreTest.evaluate_multiple_predictions(val["label"], (val["preds"] > classification_threshold), key)
+        metricsStoreTest.evaluate_multiple_predictions(val["label"], (val["preds"] > classification_threshold), key.split("_")[0])
 
     res_1 = metricsStoreTest.store_scores()
     metrics = metricsStoreTest.store_metrics()
@@ -247,7 +250,7 @@ def validate(model, dataloaders, logs, epoch, loss, config, set_name="val"):
     #     false_positives_per_second = false_positives / (len(this_label)*config.dataset.fs/total_size)
     #     metrics[total_size]["FAs/24Hr"] = false_positives_per_second * (24*3600*config.dataset.fs/total_size)
 
-    message = "{0:} Epoch {1:d} step {2:d} with \n".format(set_name, epoch, current_step)
+    message = "{0:} Epoch {1:} step {2:} with \n".format(set_name, epoch, current_step)
     for i, v in metrics.items():
         message += "Type of results: {0:} \n".format(i)
         for key, val in v.items():
@@ -322,13 +325,15 @@ def train_loop(epoch, model, optimizer, scheduler, loss, dataloader, logs, confi
     return logs
 
 def load_best_model(model, config):
-    if os.path.exists(config.model.save_dir):
-        checkpoint = torch.load(config.model.save_dir, map_location="cpu")
+    file_name = path.join(config.model.save_base_dir, config.model.save_dir)
+    if os.path.exists(file_name):
+        print(Fore.WHITE + "Loading best model from {}".format(file_name))
+        checkpoint = torch.load(file_name, map_location="cpu", weights_only=False)
         model.load_state_dict(checkpoint["best_model_state_dict"])
     return model
 
 
-def train(config):
+def main_train(config):
     deterministic(config.training_params.seed)
     dataloader_class = globals()[config.dataset.dataloader_class]
     dataloaders = dataloader_class(config)
@@ -344,6 +349,8 @@ def train(config):
         logs = {"best": {"loss": 1e20}, "epoch":0}
 
     try:
+
+        logs[-1] = {"train": defaultdict(list), "val": defaultdict(list), "test": defaultdict(list)}
         _ = validate(model, dataloaders.valid_loader, logs, -1, loss, config, "val")
 
         for logs["epoch"] in range(logs["epoch"], config.early_stopping.max_epoch):
@@ -363,8 +370,41 @@ def train(config):
         raise KeyboardInterrupt
 
     model = load_best_model(model, config)
-    logs = validate(model, dataloaders.test_loader, logs, logs["epoch"], loss, config, "test")
+    logs = validate(model, dataloaders.valid_loader, logs, "post_training", loss, config, "val")
+    # logs = validate(model, dataloaders.test_loader, logs, logs["epoch"], loss, config, "test")
     save_model(False,
-               is_best(logs, logs["epoch"]),
+               False,
                model, optimizer, scheduler, logs, config, dataloaders)
 
+def main_validate(config):
+    deterministic(config.training_params.seed)
+    dataloader_class = globals()[config.dataset.dataloader_class]
+    config.training_params.batch_size = 16
+    config.training_params.test_batch_size = 16
+    dataloaders = dataloader_class(config)
+
+    model = load_model(config)
+    optimizer, scheduler = load_optimizer_and_scheduler(config, model)
+
+    loss = BinaryCrossEntropyWithLabelSmoothingAndWeights()
+
+    file_name = path.join(config.model.save_base_dir, config.model.save_dir)
+    if os.path.exists(file_name) and config.model.get("load_ongoing", True):
+        model, optimizer, scheduler, logs, config, dataloaders = load_dir(config, model, optimizer, scheduler, dataloaders)
+    else:
+        logs = {"best": {"loss": 1e20}, "epoch":0}
+
+
+    model = load_best_model(model, config)
+
+    #initialize the model with random values
+    for p in model.parameters():
+        if p.requires_grad:
+            p.data = torch.randn_like(p.data) * 0.01
+
+    logs["post_training"] = {"train": defaultdict(list), "val": defaultdict(list), "test": defaultdict(list)}
+    logs = validate(model, dataloaders.valid_loader, logs, "post_training", loss, config, "val")
+    # logs = validate(model, dataloaders.test_loader, logs, "post_training", loss, config, "test")
+    save_model(False,
+               False,
+               model, optimizer, scheduler, logs, config, dataloaders)

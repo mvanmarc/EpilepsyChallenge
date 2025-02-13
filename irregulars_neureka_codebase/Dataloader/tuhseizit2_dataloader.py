@@ -112,9 +112,9 @@ class TUHSeizIT2Dataset(Dataset):
     def _subselect_patients(self, mode):
 
         patient_names = list(self.patient_dict.keys())
-        train_patients, test_patients = train_test_split(patient_names, test_size=0.2, random_state=42)
-        train_patients, val_patients = train_test_split(train_patients, test_size=0.2, random_state=42)
-
+        # train_patients, test_patients = train_test_split(patient_names, test_size=0.01, random_state=42)
+        train_patients, val_patients = train_test_split(patient_names, test_size=0.3, random_state=42)
+        test_patients = []
         if mode == "train":
             for patient in val_patients+test_patients:
                 self.patient_dict.pop(patient)
