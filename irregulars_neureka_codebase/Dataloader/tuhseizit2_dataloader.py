@@ -112,9 +112,11 @@ class TUHSeizIT2Dataset(Dataset):
     def _subselect_patients(self, mode):
 
         patient_names = list(self.patient_dict.keys())
+        #We decided for the challenge to skip the test set completely. If you need it change it accordingly
         # train_patients, test_patients = train_test_split(patient_names, test_size=0.01, random_state=42)
-        train_patients, val_patients = train_test_split(patient_names, test_size=0.3, random_state=42)
+        train_patients, val_patients = train_test_split(patient_names, test_size=0.3, random_state=self.config.training_params.seed)
         test_patients = []
+
         if mode == "train":
             for patient in val_patients+test_patients:
                 self.patient_dict.pop(patient)
@@ -215,7 +217,7 @@ class TUHSeizIT2Dataset(Dataset):
 
         #find the label of the corresponding segment
         if len(events) == 0:
-            return torch.zeros(len_to-len_from)
+            return torch.zeros(len_to-len_from), events
         else:
             window_start = len_from
             window_end = len_to
@@ -223,10 +225,10 @@ class TUHSeizIT2Dataset(Dataset):
             total_label = torch.zeros(int(duration*self.config.dataset.fs))
 
             for event in events:
-                event[0] = event[0]*self.config.dataset.fs
-                event[1] = event[1]*self.config.dataset.fs
-                total_label[int(event[0]):int(event[1])] = 1
-            return total_label[window_start:window_end]
+                start = event[0]*self.config.dataset.fs
+                end = event[1]*self.config.dataset.fs
+                total_label[int(start):int(end)] = 1
+            return total_label[window_start:window_end], events
 
     def _get_signals_tuh(self, demographics, label):
         patient = demographics["patient"]
@@ -262,7 +264,7 @@ class TUHSeizIT2Dataset(Dataset):
 
         #find the label of the corresponding segment
         if len(events) == 0:
-            return torch.zeros(len_to-len_from)
+            return torch.zeros(len_to-len_from), events
         else:
             window_start = len_from
             window_end = len_to
@@ -270,22 +272,32 @@ class TUHSeizIT2Dataset(Dataset):
             total_label = torch.zeros(int(duration*self.config.dataset.fs))
 
             for event in events:
-                event[0] = event[0]*self.config.dataset.fs
-                event[1] = event[1]*self.config.dataset.fs
-                total_label[int(event[0]):int(event[1])] = 1
-            return total_label[window_start:window_end]
+                start = event[0]*self.config.dataset.fs
+                end = event[1]*self.config.dataset.fs
+                total_label[int(start):int(end)] = 1
+            return total_label[window_start:window_end], events
+
+    def _fill_in_empty_events(self, events, times):
+        events = np.array(events)
+        for _ in range(times - len(events)):
+            events = np.vstack((events, [0, 0]))
+        return events
 
     def __getitem__(self, idx):
 
         demographics = self._choose_patient_session_recording_len(idx)
         if self.patient_dataset[demographics["patient"]] == "sz2":
-            label = self._get_label_seizit2(demographics)
+            label, events = self._get_label_seizit2(demographics)
+            demographics["events"] = events
             signal = self._get_signals_seizit2(demographics, label)
             signal = self._windowize(signal, self.config.dataset.window_size, self.config.dataset.stride)
         elif self.patient_dataset[demographics["patient"]] == "tuh":
-            label = self._get_label_tuh(demographics)
+            label, events = self._get_label_tuh(demographics)
+            demographics["events"] = events
             signal = self._get_signals_tuh(demographics, label)
             signal = self._windowize(signal, self.config.dataset.window_size, self.config.dataset.stride)
+
+        demographics["events"] = self._fill_in_empty_events(demographics["events"], 50)
 
         return {"data":{"raw":signal},"label": label, "idx": idx, "demographics":demographics}
 

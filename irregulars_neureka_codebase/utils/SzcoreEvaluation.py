@@ -120,7 +120,7 @@ class MetricsStore():
                 "Event results": self.event_results}
         
         name = self.config.model.save_dir.split('/')[-1]
-        print(name)
+
 
         # with open(sampleOutDir+"/sampleResults_"+name+".json", "w") as file:
         #     json.dump(self.sample_results, file, indent=2, sort_keys=False)

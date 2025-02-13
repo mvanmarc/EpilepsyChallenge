@@ -18,6 +18,10 @@ sys.path.insert(0, './')
 from utils.SzcoreEvaluation import MetricsStore
 import os
 from os import path
+from utils.postprocessing import post_processing, mask2eventList
+
+
+
 def save_model(model_save, is_best_model, unwrapped_model, optimizer, scheduler, logs, config, dataloaders, post_test_results=None, verbose=True):
     save_dict = {}
     savior = {}
@@ -208,15 +212,21 @@ def validate(model, dataloaders, logs, epoch, loss, config, set_name="val"):
                 aggregated_patient_preds[name] = {"preds": {}, "label": {}}
             aggregated_patient_preds[name]["preds"]["{}_{}".format(len_from, len_to)] = pred[i]
             aggregated_patient_preds[name]["label"]["{}_{}".format(len_from, len_to)] = label[i]
+            aggregated_patient_preds[name]["events"] = demo["events"][i]
 
     metricsStoreTest = MetricsStore(config)
     #sort the pred len_from, len_to and merge them into one array
     for key, val in aggregated_patient_preds.items():
-        sorted_keys = sorted(val["preds"].keys())
+        sorted_keys = sorted(val["preds"].keys(), key=lambda x: int(x.split("_")[0]))
         val["preds"] = np.concatenate([val["preds"][k] for k in sorted_keys], axis=0)
         val["label"] = np.concatenate([val["label"][k] for k in sorted_keys], axis=0)
-
         classification_threshold = config.model.args.get("cls_threshold",0.5)
+
+        events = post_processing(val["preds"], fs=config.dataset.fs, th=classification_threshold, margin=10)
+        true_events = mask2eventList(val["label"], fs=config.dataset.fs)
+        loaded_events = [ev for ev in val["events"] if ev[0] != ev[1]]
+        print("Loaded events: ", loaded_events)
+        print("Predicted events: ", events)
         metricsStoreTest.evaluate_multiple_predictions(val["label"], (val["preds"] > classification_threshold), key.split("_")[0])
 
     res_1 = metricsStoreTest.store_scores()
@@ -228,29 +238,11 @@ def validate(model, dataloaders, logs, epoch, loss, config, set_name="val"):
         #TODO: Remove this necessity to transform to torch Tensor and back in numpy
         this_label = torch.nn.functional.interpolate(torch.from_numpy(this_label).unsqueeze(dim=1), size=(total_size), mode='nearest').flatten().numpy()
 
-        # this_pred = np.concatenate(total_preds[0], axis=0)
-        # this_pred = (this_pred > 0.5)
-        # this_pred = torch.nn.functional.interpolate(torch.from_numpy(this_pred).unsqueeze(dim=1).float(), size=(total_size), mode='nearest').flatten().numpy().astype(int)
-
-        #print unique label count in percentage with 2 decimal points
         unique, counts = np.unique(this_label, return_counts=True)
         if len(unique) == 1:
             print("Label percentage 0: {:.2f}% 1: {:.2f}%".format(1, 0))
         else:
             print("Label percentage 0: {:.2f}% 1: {:.2f}%".format(counts[0]/len(this_label), counts[1]/len(this_label)))
-    #
-    #     metrics[total_size]["f1"] = f1_score(this_label, this_pred)
-    #     metrics[total_size]["auc"] = roc_auc_score(this_label, this_pred) if len(np.unique(this_label)) > 1 else 0
-    #     metrics[total_size]["confusion_matrix"] = confusion_matrix(this_label, this_pred)
-    #     metrics[total_size]["accuracy"] = accuracy_score(this_label, this_pred)
-    #     metrics[total_size]["precision"] = precision_score(this_label, this_pred)
-    #     metrics[total_size]["recall"] = recall_score(this_label, this_pred)
-    #     metrics[total_size]["specificity"] = specificity_score(this_label, this_pred) if len(np.unique(this_label)) > 1 else 0
-    #
-    #     #estimate False positives per 24 hours
-    #     false_positives = metrics[total_size]["confusion_matrix"][0][1]
-    #     false_positives_per_second = false_positives / (len(this_label)*config.dataset.fs/total_size)
-    #     metrics[total_size]["FAs/24Hr"] = false_positives_per_second * (24*3600*config.dataset.fs/total_size)
 
     message = "{0:} Epoch {1:} step {2:} with \n".format(set_name, epoch, current_step)
     for i, v in metrics.items():
@@ -396,13 +388,7 @@ def main_validate(config):
     else:
         logs = {"best": {"loss": 1e20}, "epoch":0}
 
-
     model = load_best_model(model, config)
-
-    #initialize the model with random values
-    for p in model.parameters():
-        if p.requires_grad:
-            p.data = torch.randn_like(p.data) * 0.01
 
     logs["post_training"] = {"train": defaultdict(list), "val": defaultdict(list), "test": defaultdict(list)}
     logs = validate(model, dataloaders.valid_loader, logs, "post_training", loss, config, "val")

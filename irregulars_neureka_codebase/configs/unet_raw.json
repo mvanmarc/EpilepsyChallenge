@@ -13,10 +13,10 @@
               "window_size": 4096,
               "preproc": "raw"
             },
-          "pretrainedEncoder": {"use": false, "dir": "neureka_pytorch_raw.pth"}
+          "pretrainedEncoder": {"use": true, "dir": "neureka_pytorch_raw.pth"}
         }
         ],
-    "load_ongoing": false,
+    "load_ongoing": true,
     "save_dir": "unet_raw{}.pth"
   }
 }
