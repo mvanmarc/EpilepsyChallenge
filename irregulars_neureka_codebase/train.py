@@ -275,9 +275,7 @@ def is_best(logs, epoch):
     return is_best_model
 
 def train_loop(epoch, model, optimizer, scheduler, loss, dataloader, logs, config):
-    
-    metricsStoreTrain = MetricsStore(config)
-    
+
     # Training loop
     model.train()
     pbar = tqdm(enumerate(dataloader), total=len(dataloader), desc="Training", leave=None, )
@@ -290,8 +288,6 @@ def train_loop(epoch, model, optimizer, scheduler, loss, dataloader, logs, confi
         preds = model(data)
         losses = {}
 
-        metricsStoreTrain.evaluate_multiple_predictions(label, preds[0]>.5, batch['patient'])
-        
         for key_pred, pred in preds.items():
             this_label = einops.rearrange(label, "b t -> b 1 t")
             this_label = torch.nn.functional.interpolate(this_label, size=(pred.shape[1]), mode='nearest').squeeze()
@@ -322,14 +318,6 @@ def train_loop(epoch, model, optimizer, scheduler, loss, dataloader, logs, confi
         #
         # if current_step == 10:
         #     break
-
-    outDir = pathlib.Path("./irregulars_neureka_codebase/predictions/train/epoch_"+epoch)
-    try:
-        os.mkdir(outDir)
-    except Exception as exc:
-        pass
-    metricsStoreTrain.store_scores(outDir)
-    metricsStoreTrain.store_metrics(outDir, outDir)
 
     return logs
 
