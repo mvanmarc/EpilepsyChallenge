@@ -287,7 +287,7 @@ class TUHSeizIT2Dataset(Dataset):
             signal = self._get_signals_tuh(demographics, label)
             signal = self._windowize(signal, self.config.dataset.window_size, self.config.dataset.stride)
 
-        return {"data":{"raw":signal},"label": label, "idx": idx, "patient":demographics["patient"]}
+        return {"data":{"raw":signal},"label": label, "idx": idx, "demographics":demographics}
 
 class TUHSeizIT2_Dataloader():
 
@@ -317,9 +317,9 @@ class TUHSeizIT2_Dataloader():
                                                         num_workers=num_cores,
                                                         shuffle=True,
                                                         pin_memory=self.config.training_params.pin_memory,
-                                                        # generator=g,
+                                                        generator=g,
                                                         # collate_fn=collate_fn_padd,
-                                                        # worker_init_fn=seed_worker
+                                                        worker_init_fn=seed_worker
                                                         )
         self.valid_loader = torch.utils.data.DataLoader(valid_dataset,
                                                         batch_size=self.config.training_params.test_batch_size,

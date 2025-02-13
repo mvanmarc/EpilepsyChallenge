@@ -32,8 +32,8 @@ class MetricsStore():
     def evaluate_multiple_predictions(
             self, reference, predictions, patients, fs = 200
     ) -> None:
-        for i in range(len(patients)):
-            self.evaluate_predictions(reference[i,:], fs, predictions[i,:], fs, patients[i] )
+        # for i in range(len(patients)):
+        self.evaluate_predictions(reference, fs, predictions, fs, patients )
         return None        
 
     def evaluate_predictions(
@@ -50,7 +50,7 @@ class MetricsStore():
         """
 
         FS = 1
-
+        #TODO: check if these two sample_results and event_results should be self.sample_results and self.event_results
         sample_results = dict()
         event_results = dict()
         if patient not in self.sample_results.keys():
@@ -115,27 +115,28 @@ class MetricsStore():
         }
         return output
 
-    def store_scores(self, sampleOutDir: Path, eventOutDir: Path):
+    def store_scores(self, sampleOutDir: Path= None, eventOutDir: Path= None):
         res = {"Sample results": self.sample_results,
-                "Event results": self.self.event_results}
+                "Event results": self.event_results}
         
         name = self.config.model.save_dir.split('/')[-1]
+        print(name)
 
-        with open(sampleOutDir+"/sampleResults_"+name+".json", "w") as file:
-            json.dump(self.sample_results, file, indent=2, sort_keys=False)
-
-        with open(eventOutDir+"/eventResults_"+name+".json", "w") as file:
-            json.dump(self.self.event_results, file, indent=2, sort_keys=False)
+        # with open(sampleOutDir+"/sampleResults_"+name+".json", "w") as file:
+        #     json.dump(self.sample_results, file, indent=2, sort_keys=False)
+        #
+        # with open(eventOutDir+"/eventResults_"+name+".json", "w") as file:
+        #     json.dump(self.self.event_results, file, indent=2, sort_keys=False)
 
         return res
 
-    def store_metrics(self, outDir: Path):
+    def store_metrics(self, outDir: Path= None):
         output = self._compute_scores()
 
         name = self.config.model.save_dir.split('/')[-1]
 
-        with open(outDir+"/metrics_"+name+".json", "w") as file:
-            json.dump(output, file, indent=2, sort_keys=False)
+        # with open(outDir+"/metrics_"+name+".json", "w") as file:
+        #     json.dump(output, file, indent=2, sort_keys=False)
 
         return output
 
